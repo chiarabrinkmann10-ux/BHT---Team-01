@@ -13,8 +13,7 @@
             --accent-color: #3b82f6;
             --card-bg: #ffffff;
             --border-color: #e2e8f0;
-            
-            /* Canvas Block Colors */
+
             --partner-color: #eff6ff;
             --activity-color: #f0fdf4;
             --value-color: #fff7ed;
@@ -38,7 +37,6 @@
             scroll-behavior: smooth;
         }
 
-        /* --- GLOBAL NAV (TOP BAR) --- */
         .global-nav {
             position: sticky;
             top: 0;
@@ -88,12 +86,20 @@
             transform: translateX(-2px);
         }
 
-        /* --- HERO BANNER --- */
         .header-banner {
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             padding: 40px 20px;
             text-align: center;
+        }
+
+        .header-banner p {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 8px;
         }
 
         .header-banner h1 {
@@ -102,30 +108,35 @@
             letter-spacing: -0.5px;
         }
 
-        /* --- CONTAINER --- */
         .main-container {
             max-width: 1400px;
             margin: 40px auto;
             padding: 0 20px;
         }
 
-        /* --- STRATEGISCHE ZUSAMMENFASSUNG --- */
         .summary-section {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 40px;
+            padding: 34px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 50px;
+            margin-bottom: 42px;
             border-top: 6px solid var(--accent-color);
         }
 
         .summary-header h2 {
             font-size: 1.6rem;
             color: var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .summary-header h3 {
+            font-size: 1.05rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 18px;
         }
 
         .summary-indicator {
@@ -136,76 +147,30 @@
             border-radius: 4px;
         }
 
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 25px;
-        }
-
-        @media (max-width: 900px) {
-            .summary-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .summary-box {
-            padding: 25px;
-            border-radius: 8px;
-            background-color: #f8fafc;
-            border: 1px solid var(--border-color);
-        }
-
-        .summary-box h3 { 
-            margin-bottom: 12px; 
-            font-size: 1.1rem; 
-            color: var(--primary-color);
-        }
-        
-        .summary-box ul { 
-            list-style: none; 
-        }
-        
-        .summary-box li { 
-            margin-bottom: 8px; 
-            font-weight: 500; 
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .summary-box li::before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.2rem;
-            position: absolute;
-            left: 0;
-            top: -2px;
-        }
-
-        .strategy-box {
-            background-color: #eff6ff;
-            border-left: 4px solid var(--accent-color);
-            padding: 20px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .strategy-box h4 {
-            color: #1e40af;
+        .summary-section p {
+            color: #475569;
             font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            max-width: 980px;
+            margin-bottom: 16px;
         }
 
-        .strategy-box p {
-            font-size: 0.95rem;
+        .logic-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .logic-chip {
+            background: #eff6ff;
             color: #1e3a8a;
-            font-weight: 500;
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            font-weight: 700;
         }
 
-        /* --- CANVAS TABLE DESIGN --- */
         .canvas-block-title {
             font-size: 1.4rem;
             color: var(--primary-color);
@@ -283,7 +248,6 @@
             margin-bottom: 2px;
         }
 
-        /* Block Backgrounds */
         .border-partner { background-color: var(--partner-color); }
         .border-activity { background-color: var(--activity-color); }
         .border-value { background-color: var(--value-color); }
@@ -299,7 +263,6 @@
             font-style: italic;
         }
 
-        /* --- SEQUENTIAL NAVIGATION --- */
         .seq-nav-container {
             display: flex;
             justify-content: space-between;
@@ -339,141 +302,154 @@
             transform: translateX(4px);
             box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
         }
+
+        @media (max-width: 700px) {
+            .global-nav {
+                padding: 14px 18px;
+                gap: 12px;
+            }
+
+            .global-nav-brand span {
+                display: none;
+            }
+
+            .summary-section {
+                padding: 24px;
+            }
+
+            .seq-nav-container {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+
+            .btn-next,
+            .btn-prev {
+                justify-content: center;
+                text-align: center;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- GLOBLALE TOP BAR -->
     <nav class="global-nav">
         <a href="index.html" class="global-nav-brand">BHT 2033<span>· Strategisches Management</span></a>
         <a href="index.html" class="global-nav-back">← Zum Dashboard</a>
     </nav>
 
-    <!-- HERO BANNER -->
     <div class="header-banner">
-        <h1>Business Model Canvas (Status Quo)</h1>
+        <p>Kapitel 2 · Identität</p>
+        <h1>Business Model Canvas</h1>
     </div>
 
     <div class="main-container">
 
-        <!-- STRATEGISCHE ZUSAMMENFASSUNG -->
-        <div class="summary-section">
+        <section class="summary-section">
             <div class="summary-header">
-                <h2><span class="summary-indicator"></span>Strategische Zusammenfassung: 2. Identität (BMC)</h2>
-            </div>
-            
-            <div class="summary-grid">
-                <div class="summary-box">
-                    <h3>Ausgangslage &amp; Kernherausforderung</h3>
-                    <ul>
-                        <li><b>Etabliertes Fundament:</b> Das aktuelle Modell basiert auf dem größten ingenieurwissenschaftlichen Fächerspektrum der Region sowie kleinen Seminargruppen[cite: 3].</li>
-                        <li><b>Finanzielles Dilemma:</b> Die tragende Einnahmequelle (Landesmittel) stagniert durch politischen Spardruck, während die Betriebskosten für Labore explodieren[cite: 3].</li>
-                        <li><b>Markenproblem:</b> Die Wahrnehmung des Profils und Namens „BHT“ bleibt im dichten Berliner Hochschulmarkt diffus[cite: 3].</li>
-                    </ul>
-                </div>
-                
-                <div class="summary-box">
-                    <h3>Gestalterische Konsequenz</h3>
-                    <ul>
-                        <li><b>Schärfung der Value Proposition:</b> Transformation von einer reinen „Technikausbildung“ hin zu „Technologielösungen für die urbane, nachhaltige Transformation“[cite: 3].</li>
-                        <li><b>Infrastruktur-Finanzierung:</b> Systematische Monetarisierung von Schlüsselpartnerschaften mit Großunternehmen und KMU über Co-Finanzierungsmodelle für Labore[cite: 3].</li>
-                    </ul>
-                </div>
+                <h2><span class="summary-indicator"></span>Business Model Canvas</h2>
+                <h3>BHT als öffentlich getragenes Bildungs- und Forschungsmodell</h3>
             </div>
 
-            <div class="strategy-box">
-                <h4>Strategische Kernableitung</h4>
-                <p>Die BHT muss die finanzielle Abhängigkeit vom Land Berlin durch gezielte strategische Allianzen mit der Industrie reduzieren und ihr Wertversprechen kompromisslos an den gesellschaftlichen Megatrends ausrichten[cite: 3].</p>
-            </div>
-        </div>
+            <p>
+                Das Business Model Canvas zeigt, wie die BHT heute Wert schafft, für wen sie Leistungen erbringt und welche Ressourcen dafür notwendig sind.
+                Ihr zentraler Wert entsteht durch praxisnahe technische Bildung, hochwertige Abschlüsse, anwendungsorientierte Forschung, Laborinfrastruktur und regionale Wirkung in Berlin-Brandenburg.
+            </p>
 
-        <!-- CANVAS MATRIX -->
-        <h3 class="canvas-block-title">Das Strategische Raster (Osterwalder &amp; Pigneur Modell)</h3>
-        
+            <p>
+                Für den Transformationsprozess wird sichtbar: Die BHT muss ihre vorhandenen Stärken stärker bündeln und über fokussierte technologische Profilfelder, strukturierte Bildungswege, adaptive Lehre und gesellschaftlich eingebettete Technologie klarer positionieren.
+            </p>
+
+            <div class="logic-strip">
+                <span class="logic-chip">Ressourcen &amp; Partner</span>
+                <span class="logic-chip">→ Lehre, Forschung &amp; Weiterbildung</span>
+                <span class="logic-chip">→ gesellschaftlich eingebettete Technologie</span>
+                <span class="logic-chip">→ BHT 2033</span>
+            </div>
+        </section>
+
+        <h3 class="canvas-block-title">Canvas-Übersicht</h3>
+
         <div class="canvas-wrapper">
             <table class="canvas-table">
                 <tbody>
                     <tr>
-                        <!-- 8. KEY PARTNERS -->
                         <td rowspan="2" class="border-partner" style="width: 20%;">
                             <div class="block-header">
                                 <span class="block-num">8</span>
-                                <span class="block-name" style="color: #1e40af;">Schlüsselpartner</span>
+                                <span class="block-name" style="color: #1e40af;">Schlüsselpartnerschaften</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Senatsverwaltung Berlin</strong> Hauptfinanzierer und regulatorische Aufsichtsbehörde (Hochschulverträge)[cite: 3].</li>
-                                    <li><strong>Regionale Industrie &amp; KMU</strong> Wichtige Abnehmer für Fachkräfte, Kooperationspartner für Praxissemester und Abschlussarbeiten[cite: 3].</li>
-                                    <li><strong>Wirtschaftsverbände</strong> Zusammenarbeit mit VDI, IHK und UVB zur passgenauen Arbeitsmarktabstimmung[cite: 3].</li>
-                                    <li><strong>140+ Partnerhochschulen</strong> Globales wissenschaftliches Netzwerk für Erasmus+ und Verbundforschung[cite: 3].</li>
+                                    <li><strong>Öffentliche Träger</strong> Land Berlin und Bundesebene / BMBF</li>
+                                    <li><strong>Forschung und Förderung</strong> Forschungs- und Förderinstitutionen, Drittmittelgeber</li>
+                                    <li><strong>Praxispartner</strong> KMU, Verwaltung, Zivilgesellschaft, Unternehmen und regionale Akteure in Berlin-Brandenburg</li>
+                                    <li><strong>Hochschulnetzwerke</strong> internationale Partnerhochschulen, AStA, Studierendenwerk</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 6. KEY ACTIVITIES -->
                         <td class="border-activity" style="width: 20%; height: 260px;">
                             <div class="block-header">
                                 <span class="block-num">6</span>
-                                <span class="block-name" style="color: #16a34a;">Schlüsselaktivitäten</span>
+                                <span class="block-name" style="color: #16a34a;">Kernaktivitäten</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Lehre &amp; Weiterbildung</strong> Konzeption, Akkreditierung und Durchführung praxisnaher MINT-Studiengänge[cite: 3].</li>
-                                    <li><strong>Anwendungsorientierte Forschung</strong> Gewinnung von Transferprojekten und systematische Akquise von Drittmitteln[cite: 3].</li>
-                                    <li><strong>Infrastruktur-Wartung</strong> Erhalt, Betrieb und kontinuierliche Modernisierung hochspezialisierter Laborlandschaften[cite: 3].</li>
+                                    <li><strong>Lehre</strong> praxisnahe Lehre, strukturierter Studieneinstieg und adaptive Lehrformate</li>
+                                    <li><strong>Forschung</strong> anwendungsorientierte Forschung und technologische Profilfelder</li>
+                                    <li><strong>Weiterbildung</strong> Zertifikatsangebote, berufsbegleitende Formate und lebenslanges Lernen</li>
+                                    <li><strong>Vernetzung</strong> Wissens- und Technologietransfer, Gründungsförderung und interdisziplinäre Projektformate</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 1. VALUE PROPOSITIONS -->
                         <td rowspan="2" class="border-value" style="width: 20%;">
                             <div class="block-header">
                                 <span class="block-num">1</span>
-                                <span class="block-name" style="color: #c2410c;">Wertversprechen</span>
+                                <span class="block-name" style="color: #c2410c;">Wertangebot</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Größtes MINT-Portfolio</strong> Umfassendste Auswahl an praxisnahen Ingenieurstudiengängen der Region[cite: 3].</li>
-                                    <li><strong>Maximale Praxisnähe</strong> Wissenschaftlich fundierte Ausbildung durch Professoren mit langjähriger Industrie-Expertise[cite: 3].</li>
-                                    <li><strong>Agiler Wissenstransfer</strong> Barrierefreier und unkomplizierter Zugang zu angewandten Innovationen für KMU[cite: 3].</li>
-                                    <li><strong>Soziale Aufstiegschancen</strong> Gebührenfreie akademische Qualifizierung in einem diversen, urbanen Umfeld[cite: 3].</li>
+                                    <li><strong>Technische Bildung</strong> staatlich geförderte, praxisnahe und zugängliche technische Qualifikation</li>
+                                    <li><strong>Hochwertige Abschlüsse</strong> strukturierte Bildungswege, Orientierung und Studienerfolg</li>
+                                    <li><strong>Profilfelder</strong> fokussierte technologische Profilfelder und gesellschaftlich eingebettete Technologie</li>
+                                    <li><strong>Wirkung</strong> Bildungsaufstieg, berufliche Entwicklung, Netzwerk und Mehrwert für Wirtschaft, Gesellschaft und Region</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 4. CUSTOMER RELATIONSHIPS -->
                         <td class="border-relationship" style="width: 20%;">
                             <div class="block-header">
                                 <span class="block-num">4</span>
-                                <span class="block-name" style="color: #6d28d9;">Kundenbeziehungen</span>
+                                <span class="block-name" style="color: #6d28d9;">Zielgruppenbeziehungen</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Persönliche Betreuung</strong> Lernen in Kleingruppen und enger Austausch in Laboren statt anonymer Massen-Hörsäle[cite: 3].</li>
-                                    <li><strong>Langfristige Netzwerke</strong> Vertrauensbasierte Kooperationen mit Unternehmen der Region[cite: 3].</li>
-                                    <li><strong>Partizipative Governance</strong> Kontinuierliche Einbindung der Studierenden über Qualitätszirkel und Gremien[cite: 3].</li>
+                                    <li><strong>Orientierung</strong> Studienberatung, Einstiegshilfe und transparente Studieninformationen</li>
+                                    <li><strong>Betreuung</strong> persönliche Betreuung, kleine Lehrgruppen und Campus-Angebote</li>
+                                    <li><strong>Bindung</strong> Mitbestimmung, Alumni-Bindung, Community und Weiterbildung</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 2. CUSTOMER SEGMENTS -->
                         <td rowspan="2" class="border-customer" style="width: 20%;">
                             <div class="block-header">
                                 <span class="block-num">2</span>
-                                <span class="block-name" style="color: #dc2626;">Kundensegmente</span>
+                                <span class="block-name" style="color: #dc2626;">Zielgruppen</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Studieninteressierte</strong> Abiturienten, Fachabiturienten und beruflich Qualifizierte mit MINT-Fokus[cite: 3].</li>
-                                    <li><strong>Regionale Wirtschaft</strong> Berliner Start-ups, Mittelstand und Großkonzerne mit Bedarf an praxisnahen Talenten[cite: 3].</li>
-                                    <li><strong>Berliner Stadtgesellschaft</strong> Adressat und Mitgestalter nachhaltiger, urbaner Technologielösungen[cite: 3].</li>
+                                    <li><strong>Lernende</strong> Studierende, Studieninteressierte, zukünftige Lernende, Berufstätige und Quereinsteiger:innen</li>
+                                    <li><strong>Akademische Zielgruppen</strong> Alumni, Masterstudierende, Promotionsinteressierte und Forschende</li>
+                                    <li><strong>Praxis und Gesellschaft</strong> Unternehmen, Start-ups, öffentliche Institutionen, Zivilgesellschaft und regionale Öffentlichkeit</li>
                                 </ul>
                             </div>
                         </td>
                     </tr>
 
                     <tr>
-                        <!-- 7. KEY RESOURCES -->
                         <td class="border-activity" style="width: 20%; height: 260px;">
                             <div class="block-header">
                                 <span class="block-num">7</span>
@@ -481,14 +457,14 @@
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Humankapital</strong> Professorenschaft mit Praxiserfahrung, akademischer Mittelbau und Techniker[cite: 3].</li>
-                                    <li><strong>Spezial-Infrastruktur</strong> Moderne Großgeräte, PC-Pools, Werkstätten und zentraler innerstädtischer Campus[cite: 3].</li>
-                                    <li><strong>Finanzierungsströme</strong> Landesseitige Grundfinanzierung und eingeworbene Drittmittel[cite: 3].</li>
+                                    <li><strong>Infrastruktur</strong> Labore, Werkstätten, Räume, technische Ausstattung und digitale Infrastruktur</li>
+                                    <li><strong>Expertise</strong> qualifiziertes Personal, ingenieurwissenschaftliches Know-how und Forschungsnetzwerke</li>
+                                    <li><strong>Portfolio</strong> breites Studienangebot als Grundlage für fokussierte technologische Profilfelder</li>
+                                    <li><strong>Standort</strong> regionale Verankerung im Wedding und in Berlin-Brandenburg</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 3. CHANNELS -->
                         <td class="border-relationship" style="width: 20%;">
                             <div class="block-header">
                                 <span class="block-num">3</span>
@@ -496,17 +472,15 @@
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Digitale Touchpoints</strong> Integrierte Moodle-Plattform, Webpräsenz, Online-Studiengangsberatung[cite: 3].</li>
-                                    <li><strong>Physische Präsenz</strong> Hochschulmarketing auf Bildungsmessen, Campus-Tage, Schüler-Labore[cite: 3].</li>
-                                    <li><strong>Sichtbarkeit</strong> Wissenschaftliche Publikationen und Fachforen[cite: 3].</li>
+                                    <li><strong>Digitale Kanäle</strong> Website, Social Media, digitale Lehrplattformen und Online-Studienberatung</li>
+                                    <li><strong>Direkte Ansprache</strong> Studienberatung, Hochschulmessen, Veranstaltungen und Campus-Formate</li>
+                                    <li><strong>Netzwerke</strong> Praxisnetzwerke, Kooperationen, PR und Alumni-Netzwerk</li>
                                 </ul>
                             </div>
                         </td>
                     </tr>
 
-                    <!-- FINANCIAL FOOTER -->
                     <tr>
-                        <!-- 9. COST STRUCTURE -->
                         <td colspan="2" class="border-cost" style="width: 50%;">
                             <div class="block-header">
                                 <span class="block-num">9</span>
@@ -514,24 +488,23 @@
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Personalkosten</strong> Haupttreiber der Ausgaben für Lehre, anwendungsorientierte Forschung und Hochschulverwaltung[cite: 3].</li>
-                                    <li><strong>Infrastruktur &amp; Betrieb</strong> Massiver finanzieller Aufwand für Mieten, Laborenergie, Instandhaltung und Geräte-Upgrades[cite: 3].</li>
-                                    <li><strong>Projekt- &amp; Akkreditierungskosten</strong> Budgets für Qualitätssicherung, Marketing und Forschungsanschub[cite: 3].</li>
+                                    <li><strong>Personal</strong> Personalkosten für Lehre, Forschung, Verwaltung und Betreuung</li>
+                                    <li><strong>Infrastruktur</strong> Räume, Labore, Werkstätten, technische Ausstattung, Energie- und Nebenkosten</li>
+                                    <li><strong>Entwicklung</strong> Digitalisierung, Forschung, Öffentlichkeitsarbeit, Weiterbildung und Transformationsprojekte</li>
                                 </ul>
                             </div>
                         </td>
 
-                        <!-- 5. REVENUE STREAMS -->
                         <td colspan="3" class="border-revenue" style="width: 50%;">
                             <div class="block-header">
                                 <span class="block-num">5</span>
-                                <span class="block-name" style="color: #15803d;">Einnahmequellen</span>
+                                <span class="block-name" style="color: #15803d;">Finanzierung</span>
                             </div>
                             <div class="block-content">
                                 <ul>
-                                    <li><strong>Landeszuweisungen</strong> Grundfinanzierung durch das Land Berlin basierend auf vereinbarten Kennzahlen und Absolventenquoten[cite: 3].</li>
-                                    <li><strong>Drittmittelbezug</strong> Kompetitiv eingeworbene Forschungsgelder durch BMBF, EU, DFG sowie direkte Industrieaufträge[cite: 3].</li>
-                                    <li><strong>Sonstige Erträge</strong> Einnahmen aus studentischen Semesterbeiträgen und kostenpflichtigen Weiterbildungsformaten[cite: 3].</li>
+                                    <li><strong>Öffentliche Mittel</strong> Mittel des Landes Berlin sowie Bundes- und Landesförderung</li>
+                                    <li><strong>Forschung und Förderung</strong> Drittmittel, Forschungsförderung und projektbezogene Fördermittel</li>
+                                    <li><strong>Weitere Mittel</strong> Semesterbeiträge, Kooperationsprojekte und Weiterbildungsangebote</li>
                                 </ul>
                             </div>
                         </td>
@@ -540,9 +513,10 @@
             </table>
         </div>
 
-        <p class="source-footer">Quelle: Eigene Ausarbeitung auf Basis des offiziellen BHT-Fallstudienbriefings und des Frameworks von Osterwalder/Pigneur[cite: 3].</p>
+        <p class="source-footer">
+            Quelle: Eigene Ausarbeitung auf Basis der BHT-Fallunterlagen und des Business Model Canvas nach Osterwalder/Pigneur.
+        </p>
 
-        <!-- SEQUENTIELLE NAVIGATION AM ENDE -->
         <div class="seq-nav-container">
             <a href="stakeholder.html" class="btn-prev">← Zurück zu: Stakeholder-Analyse</a>
             <a href="vision.html" class="btn-next">Weiter zu Kapitel 3: Vision &amp; Ziele →</a>

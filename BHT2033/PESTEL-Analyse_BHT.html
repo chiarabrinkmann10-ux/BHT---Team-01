@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESTEL-Analyse BHT – Makro-Umwelt</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --text-main: #1e293b;
+            --primary-color: #0f172a;
+            --accent-color: #3b82f6;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            
+            /* Badge Colors */
+            --badge-starke-chance: #16a34a;
+            --badge-chance: #22c55e;
+            --badge-chance-risiko: #eab308;
+            --badge-risiko: #ef4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* --- STICKY BACK BUTTON --- */
+        .back-to-dashboard {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-to-dashboard:hover {
+            transform: translateX(-3px);
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- BIG PESTEL NAVIGATION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1e3a8a 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            color: #94a3b8;
+        }
+
+        .pestel-nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .pestel-nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 15vw;
+            font-weight: 900;
+            line-height: 1;
+            transition: all 0.3s ease;
+            text-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .pestel-nav a:hover {
+            color: var(--accent-color);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        /* --- CONTENT CONTAINER --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- SUMMARY (Zusammenfassung) --- */
+        .summary-section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+            border-top: 6px solid var(--accent-color);
+        }
+
+        .summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .summary-score {
+            text-align: right;
+        }
+
+        .summary-score .value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .summary-box {
+            padding: 25px;
+            border-radius: 8px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-box h3 { margin-bottom: 15px; font-size: 1.2rem; }
+        .summary-box ul { list-style: none; }
+        .summary-box li { margin-bottom: 10px; font-weight: 500; }
+
+        .strategy-box {
+            background-color: #eff6ff;
+            border-left: 4px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* --- SECTION TABLES --- */
+        .section-block {
+            margin-bottom: 60px;
+            scroll-margin-top: 40px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-header h2 { font-size: 1.5rem; }
+        .section-meta { font-size: 1rem; color: #cbd5e1; }
+        .section-meta strong { color: white; margin: 0 5px; }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background-color: #f8fafc; }
+
+        .factor-col { font-weight: 700; color: #0f172a; width: 25%; }
+        .weight-col { color: #64748b; font-weight: 600; white-space: nowrap; width: 10%; }
+        .desc-col { width: 40%; }
+        .dyn-col { width: 25%; }
+
+        .attr-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-weight: 700;
+            color: white;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .bg-green-600 { background-color: #16a34a; }
+        .bg-green-500 { background-color: #22c55e; }
+        .bg-yellow-500 { background-color: #eab308; }
+        .bg-red-500 { background-color: #ef4444; }
+
+        @media (max-width: 1024px) {
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .pestel-nav a { font-size: 20vw; gap: 10px; }
+            th, td { padding: 10px; font-size: 0.9rem; }
+            .factor-col, .desc-col, .dyn-col { width: auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-to-dashboard">← Dashboard</a>
+
+    <div class="hero">
+        <p>Makro-Umwelt-Analyse (PESTEL)</p>
+        <div class="pestel-nav">
+            <a href="#politik">P</a>
+            <a href="#oekonomie">E</a>
+            <a href="#gesellschaft">S</a>
+            <a href="#technologie">T</a>
+            <a href="#oekologie">E</a>
+            <a href="#recht">L</a>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="summary-section">
+            <div class="summary-header">
+                <div>
+                    <h2>Wissenschaftliche Systemabgrenzung</h2>
+                    <p style="color: #64748b; font-size: 1.1rem; margin-top: 5px;">Analyse der unbeeinflussbaren, externen Rahmenbedingungen (Makro-Umfeld).</p>
+                </div>
+                <div class="summary-score">
+                    <div class="value">3.8</div>
+                </div>
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-box">
+                    <h3 style="color: #16a34a;">Dominante Makro-Chancen (O)</h3>
+                    <ul>
+                        <li>Disruptiver Technologie-Schub (KI & Robotik)</li>
+                        <li>Anhaltend akuter MINT-Fachkräftemangel</li>
+                        <li>Fokus auf lebenslanges Lernen in der Metropolenregion</li>
+                    </ul>
+                </div>
+                <div class="summary-box">
+                    <h3 style="color: #ef4444;">Dominante Makro-Risiken (T)</h3>
+                    <ul>
+                        <li>Stagnierende reale Landeshaushalte</li>
+                        <li>Explodierende Energie- und Rohstoffmarktpreise</li>
+                        <li>Hohe regulatorische Hemmnisse im öffentlichen Sektor</li>
+                    </ul>
+                </div>
+            </div>
+
+  
+
+        <div id="politik" class="section-block">
+            <div class="section-header">
+                <h2>P · Politische Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>15 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Landespolitik & Berliner Hochschulverträge</td>
+                            <td class="weight-col">60 %</td>
+                            <td class="desc-col">Die Zielvereinbarungen und leistungsorientierten Mittelverteilungen der Senatsverwaltung definieren den strategischen Korridor staatlicher Hochschulen.</td>
+                            <td><span class="attr-badge bg-yellow-500">3.0</span></td>
+                            <td class="dyn-col">Politischer Spardruck des Landes erhöht die Notwendigkeit, gesellschaftliche Relevanz und Output-Metriken radikal nachzuweisen.</td>
+                            <td><span class="status-badge bg-yellow-500">Chance & Risiko</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Bundespolitische Förderprogramme</td>
+                            <td class="weight-col">40 %</td>
+                            <td class="desc-col">Sonderbudgets des Bundes (z. B. für Digitalisierung, Transferstrukturen und Reallabore).</td>
+                            <td><span class="attr-badge bg-green-500">4.0</span></td>
+                            <td class="dyn-col">Hoher wettbewerblicher Druck. Bietet exzellente Hebel zur Drittmittel-Skalierung abseits der Grundfinanzierung.</td>
+                            <td><span class="status-badge bg-green-500">Chance</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="oekonomie" class="section-block">
+            <div class="section-header">
+                <h2>E · Ökonomische Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>20 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Akuter MINT-Fachkräftemangel</td>
+                            <td class="weight-col">50 %</td>
+                            <td class="desc-col">Die Berliner und deutsche Wirtschaft verzeichnet einen strukturellen Mangel an akademisch qualifizierten Ingenieuren und Tech-Spezialisten.</td>
+                            <td><span class="attr-badge bg-green-600">5.0</span></td>
+                            <td class="dyn-col">Sichert HAWs mit technischem Profil eine dauerhaft maximale Systemrelevanz und hohe Nachfrage auf dem Bildungsmarkt.</td>
+                            <td><span class="status-badge bg-green-600">Starke Chance</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Reallohnentwicklung & Inflation in Berlin</td>
+                            <td class="weight-col">30 %</td>
+                            <td class="desc-col">Die drastisch gestiegenen Lebenshaltungskosten in der Hauptstadt zwingen Studierende zu verstärkter Erwerbstätigkeit parallel zum Studium.</td>
+                            <td><span class="attr-badge bg-yellow-500">3.0</span></td>
+                            <td class="dyn-col">Klassische Vollzeit-Studiengänge verlieren an Attraktivität; die Nachfrage nach maximal flexiblen, modularisierten Bildungsangeboten steigt.</td>
+                            <td><span class="status-badge bg-yellow-500">Chance & Risiko</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Globale Energie- und Rohstoffmarktpreise</td>
+                            <td class="weight-col">20 %</td>
+                            <td class="desc-col">Die makroökonomische Preisentwicklung verteuert den laufenden Unterhalt energieintensiver Großforschungsanlagen und Laborlandschaften substantiell.</td>
+                            <td><span class="attr-badge bg-red-500">2.0</span></td>
+                            <td class="dyn-col">Erhöht den Druck auf Flächeneffizienz, Asset-Sharing und die Notwendigkeit von Co-Finanzierungsmodellen mit der Industrie.</td>
+                            <td><span class="status-badge bg-red-500">Risiko</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="gesellschaft" class="section-block">
+            <div class="section-header">
+                <h2>S · Soziokulturelle Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>20 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Heterogenität der Bildungsbiografien</td>
+                            <td class="weight-col">60 %</td>
+                            <td class="desc-col">Der klassische, lineare Bildungsweg weicht einer soziokulturellen Diversifizierung (Zweiter Bildungsweg, Quereinsteiger, beruflich Qualifizierte).</td>
+                            <td><span class="attr-badge bg-green-500">4.0</span></td>
+                            <td class="dyn-col">Erfordert die strategische Öffnung der Hochschule und den Abbau bürokratischer Zugangshürden („Offenheit für alle“).</td>
+                            <td><span class="status-badge bg-green-500">Chance</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Erwartungshaltung der Gen Z & Alpha (EdTech-Trend)</td>
+                            <td class="weight-col">40 %</td>
+                            <td class="desc-col">Die Zielgruppen fordern ein Abkehren von analogen Frontalstrukturen hin zu kollaborativen, ortsunabhängigen und digitalen Lernökosystemen.</td>
+                            <td><span class="attr-badge bg-green-500">4.0</span></td>
+                            <td class="dyn-col">Zwingt akademische Institutionen zur Einführung von Modellen wie dem Inverted Classroom und hybriden Lehrformaten.</td>
+                            <td><span class="status-badge bg-green-500">Chance</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="technologie" class="section-block">
+            <div class="section-header">
+                <h2>T · Technologische Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>25 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Kommerzialisierungsschub bei KI & Humanoid Robotics</td>
+                            <td class="weight-col">60 %</td>
+                            <td class="desc-col">Der disruptive Durchbruch von Künstlicher Intelligenz und autonomer Robotik verändert industrielle Berufsbilder im globalen Maßstab.</td>
+                            <td><span class="attr-badge bg-green-600">5.0</span></td>
+                            <td class="dyn-col">Bietet einer technisch fokussierten Institution die historische Chance, anwendungsorientierte Leitmärkte (z.B. Humanoide Robotik) zu besetzen.</td>
+                            <td><span class="status-badge bg-green-600">Starke Chance</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Automatisierung von Verwaltungsprozessen (Cloud & SaaS)</td>
+                            <td class="weight-col">40 %</td>
+                            <td class="desc-col">Globale Reife von End-to-End-Automatisierungssoftware für transaktionale Workflows und datengestütztes Management (Learning Analytics).</td>
+                            <td><span class="attr-badge bg-green-500">4.0</span></td>
+                            <td class="dyn-col">Ermöglicht den theoretischen Abbau von administrativer Ineffizienz durch konsequente Standardisierung in Shared Service Centern.</td>
+                            <td><span class="status-badge bg-green-500">Chance</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="oekologie" class="section-block">
+            <div class="section-header">
+                <h2>E · Ökologische Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>10 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Gesellschaftlicher und politischer Dekarbonisierungsdruck</td>
+                            <td class="weight-col">100 %</td>
+                            <td class="desc-col">Die fundamentale Anforderung zur Transformation von urbanen Räumen hin zur vollständigen Klimaneutralität.</td>
+                            <td><span class="attr-badge bg-green-500">4.0</span></td>
+                            <td class="dyn-col">Generiert massiven Forschungs-, Transfer- und Bildungsbedarf im Sektor Green Tech, urbaner Ökologie und Nachhaltigkeits-Governance.</td>
+                            <td><span class="status-badge bg-green-500">Chance</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="recht" class="section-block">
+            <div class="section-header">
+                <h2>L · Rechtliche Faktoren</h2>
+                <div class="section-meta">
+                    Gewicht: <strong>10 %</strong>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Umweltfaktor (Makro)</th>
+                            <th>Gewicht</th>
+                            <th>Bedeutung für die Hochschullandschaft</th>
+                            <th>Attraktivitäts-Score (1-5)</th>
+                            <th>Dynamik & Kontext</th>
+                            <th>Wertung</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="factor-col">Das Berliner Klimaschutz- und Energiewendegesetz (EWG Bln)</td>
+                            <td class="weight-col">40 %</td>
+                            <td class="desc-col">Gesetzliche Verpflichtung für öffentliche Institutionen des Landes, die vollständige Netto-Treibhausgasneutralität der Gebäudeinfrastruktur bis spätestens 2033 zu realisieren.</td>
+                            <td><span class="attr-badge bg-yellow-500">3.0</span></td>
+                            <td class="dyn-col">Erzeugt akuten, rechtlich bindenden Handlungsdruck und erzwingt ein radikales, messbares internes Umweltmanagement (Kapitel 6).</td>
+                            <td><span class="status-badge bg-yellow-500">Chance & Aufgabe</span></td>
+                        </tr>
+                        <tr>
+                            <td class="factor-col">Regulatorische Compliance (DSGVO, Vergaberecht, TV-L)</td>
+                            <td class="weight-col">60 %</td>
+                            <td class="desc-col">Die rechtliche Dichte des öffentlichen Dienstes bezüglich Datensicherheit, Beschaffungswegen und starren Tarifstrukturen.</td>
+                            <td><span class="attr-badge bg-red-500">2.0</span></td>
+                            <td class="dyn-col">Verlangsamt Innovations- und Transformationszyklen im staatlichen Raum massiv und kollidiert mit agilen Organisationswünschen.</td>
+                            <td><span class="status-badge bg-red-500">Risiko</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

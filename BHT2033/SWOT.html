@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SWOT & TOWS-Analyse – BHT 2033</title>
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --text-main: #1e293b;
+      --primary-color: #0f172a;
+      --secondary-color: #1e3a8a;
+      --accent-color: #3b82f6;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .header-banner {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .header-banner p {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .header-banner h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 20px auto 0 auto;
+      padding: 0 20px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s;
+    }
+
+    .back-link:hover {
+      transform: translateX(-4px);
+    }
+
+    .main-content {
+      max-width: 1200px;
+      margin: 20px auto 60px auto;
+      padding: 0 20px;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 12px;
+      margin-bottom: 25px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: var(--secondary-color);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #334155;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    @media (max-width: 768px) {
+      .matrix-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .matrix-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .matrix-box.positive { border-left: 4px solid #10b981; }
+    .matrix-box.negative { border-left: 4px solid #ef4444; }
+    .matrix-box.strategy {
+      border-left: 4px solid var(--accent-color);
+      background: rgba(59, 130, 246, 0.02);
+    }
+
+    .tag-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+
+    .tag-s { background: #dcfce7; color: #15803d; }
+    .tag-w { background: #fee2e2; color: #b91c1c; }
+    .tag-o { background: #dbeafe; color: #1e40af; }
+    .tag-t { background: #fef3c7; color: #9a3412; }
+    .tag-strat { background: #ede9fe; color: #6d28d9; }
+
+    ul {
+      margin-left: 20px;
+      list-style-type: square;
+    }
+
+    li {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .code-ref {
+      font-weight: 700;
+      color: #0f172a;
+      background-color: #e2e8f0;
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    strong {
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-banner">
+    <p>Kapitel 4 · Strategie</p>
+    <h1>SWOT-Analyse & TOWS-Matrix (Validierte Version)</h1>
+  </div>
+
+  <div class="nav-container">
+    <a href="index.html" class="back-link">← Zurück zum Strategie-Dashboard</a>
+  </div>
+
+  <main class="main-content">
+
+    <!-- SEKTION 1: SWOT MATRIX -->
+    <div class="section-card">
+      <h2>1. Interne und externe Bestandsaufnahme (SWOT)</h2>
+      <p>
+        Die SWOT-Analyse führt die internen Stärken und Schwächen der BHT mit den externen Chancen und Risiken des Berliner Makro-Umfelds zusammen. Alle externen Faktoren basieren kausal auf den Ergebnissen der vorgelagerten PESTEL-Analyse.
+      </p>
+
+      <div class="matrix-grid">
+        <!-- STÄRKEN -->
+        <div class="matrix-box positive">
+          <span class="tag-title tag-s">Stärken (Strengths) – Intern</span>
+          <ul>
+            <li><span class="code-ref">S1</span> <strong>Kritische Masse:</strong> Über 12.000 Studierende ermöglichen signifikante Skalierungseffekte in Infrastruktur und zentraler Verwaltung.</li>
+            <li><span class="code-ref">S2</span> <strong>Regionale Verankerung:</strong> Exzellente Vernetzung mit der Berliner Industrie und dem industriellen Mittelstand für den direkten Wissens- und Technologietransfer.</li>
+            <li><span class="code-ref">S3</span> <strong>Praxisorientiertes HAW-Profil:</strong> Stark ausgeprägte Anwendungsorientierung und anerkannte Laborlandschaften in den Ingenieur- und Naturwissenschaften.</li>
+          </ul>
+        </div>
+
+        <!-- SCHWÄCHEN -->
+        <div class="matrix-box negative">
+          <span class="tag-title tag-w">Schwächen (Weaknesses) – Intern</span>
+          <ul>
+            <li><span class="code-ref">W1</span> <strong>Inflexible Administrationsprozesse:</strong> Bürokratische Hürden des öffentlichen Dienstes und lange Durchlaufzeiten bei Studienordnungsanpassungen.</li>
+            <li><span class="code-ref">W2</span> <strong>Strukturelle Silos:</strong> Geringe interdisziplinäre Kooperation und mangelnder projektbezogener Austausch zwischen den etablierten Fachbereichen.</li>
+            <li><span class="code-ref">W3</span> <strong>Infrastruktureller Sanierungsstau:</strong> Hohe Fixkosten- und Betriebsbelastung durch energetisch ineffiziente Gebäude und starre, nicht-dynamische Raumnutzungskonzepte.</li>
+          </ul>
+        </div>
+
+        <!-- CHANCEN -->
+        <div class="matrix-box positive">
+          <span class="tag-title tag-o">Chancen (Opportunities) – Extern</span>
+          <ul>
+            <li><span class="code-ref">O1</span> <strong>MINT-Fachkräftemangel & Tech-Boom:</strong> Extrem hohe Nachfrage nach Tech-Absolventen sowie der kommerzielle Durchbruch von KI und humanoider Robotik.</li>
+            <li><span class="code-ref">O2</span> <strong>Nachhaltigkeits- & Dekarbonisierungsbedarf:</strong> Hoher Berliner Forschungs-, Drittmittel- und Bildungsbedarf im Bereich Green Tech und urbane Ökologie.</li>
+            <li><span class="code-ref">O3</span> <strong>EdTech-Wandel & Neue Zielgruppen:</strong> Steigende Nachfrage nach flexiblen, hybriden Studienmodellen, Micro-Credentials und Angeboten für heterogene Bildungsbiografien (Gen Z / Alpha).</li>
+          </ul>
+        </div>
+
+        <!-- RISIKEN -->
+        <div class="matrix-box negative">
+          <span class="tag-title tag-t">Risiken (Threats) – Extern</span>
+          <ul>
+            <li><span class="code-ref">T1</span> <strong>Fiskalischer Spardruck des Landes:</strong> Reale Budgetkürzungen oder stagnierende Zuschüsse im Rahmen der leistungsorientierten Berliner Hochschulverträge.</li>
+            <li><span class="code-ref">T2</span> <strong>Rechtliche Dekarbonisierungspflicht:</strong> Das Berliner Klimaschutzgesetz (EWG Bln) erzwingt eine rechtlich bindende Netto-Treibhausgasneutralität der Liegenschaften bis spätestens 2033.</li>
+            <li><span class="code-ref">T3</span> <strong>Agiler privater Wettbewerb:</strong> Aggressives Wachstum privater Bildungsanbieter mit voll-digitalisierten Ökosystemen und extrem kurzen Time-to-Market-Zyklen für neue Curricula.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEKTION 2: TOWS MATRIX -->
+    <div class="section-card">
+      <h2>2. TOWS-Matrix: Strategische Optionen & Ableitungen</h2>
+      <p>
+        Durch die gezielte relationale Verknüpfung der internen und externen Dimensionen werden hier die strategischen Handlungsoptionen für das Zielbild BHT 2033 definiert.
+      </p>
+
+      <div class="matrix-grid">
+        <!-- SO STRATEGIEN -->
+        <div class="matrix-box strategy">
+          <span class="tag-title tag-strat">SO-Strategien (Ausbauen)</span>
+          <h3>Stärken nutzen, um Chancen zu ergreifen</h3>
+          <ul>
+            <li><strong>Leuchtturm für humane Robotik & KI etablieren:</strong> Die exzellente industrielle Vernetzung (<span class="code-ref">S2</span>) nutzen, um gemeinsam mit Berliner Unternehmen anwendungsorientierte Konsortien für den Tech-Boom (<span class="code-ref">O1</span>) zu gründen und Drittmittel zu maximieren.</li>
+            <li><strong>Zertifikats-Offensive für Tech-Quereinsteiger:</strong> Das praxisnahe Profil (<span class="code-ref">S3</span>) nutzen, um hochgradig nachgefragte Micro-Credentials im MINT-Sektor für veränderte Bildungsbiografien (<span class="code-ref">O1</span>, <span class="code-ref">O3</span>) zu platzieren.</li>
+          </ul>
+        </div>
+
+        <!-- WO STRATEGIEN -->
+        <div class="matrix-box strategy">
+          <span class="tag-title tag-strat">WO-Strategien (Aufholen)</span>
+          <h3>Schwächen minimieren durch Chancen</h3>
+          <ul>
+            <li><strong>Interdisziplinäre Green-Tech-Cluster gründen:</strong> Den extremen Berliner Transformationsdruck (<span class="code-ref">O2</span>) als Katalysator nutzen, um fächerübergreifende Forschungszentren einzurichten und die starre Fachbereichs-Isoliertheit (<span class="code-ref">W2</span>) aufzubrechen.</li>
+            <li><strong>Hybride Didaktik-Modelle einführen:</strong> Den EdTech-Trend und moderne digitale Lernökosysteme (<span class="code-ref">O3</span>) nutzen, um veraltete, raumintensive Präsenzlehrstrukturen (<span class="code-ref">W3</span>) schrittweise in effiziente, ortsunabhängige Lehrkonzepte (z. B. Inverted Classroom) zu überführen.</li>
+          </ul>
+        </div>
+
+        <!-- ST STRATEGIEN -->
+        <div class="matrix-box strategy">
+          <span class="tag-title tag-strat">ST-Strategien (Absichern)</span>
+          <h3>Stärken nutzen, um Risiken zu kontern</h3>
+          <ul>
+            <li><strong>Effizienzrendite durch Zentralisierung:</strong> Die kritische Masse von 12.000 Studierenden (<span class="code-ref">S1</span>) nutzen, um administrative Prozesse in Shared Service Centern zu bündeln und so die Handlungsfähigkeit gegen den landesseitigen Spardruck (<span class="code-ref">T1</span>) abzusichern.</li>
+            <li><strong>Reallabor-Erlebnis als unkopierbarer USP:</strong> Die physischen Laborlandschaften (<span class="code-ref">S3</span>) und die Industriekooperationen (<span class="code-ref">S2</span>) so tief in den Fokus rücken, dass private Anbieter, die rein digitale Fernlehre anbieten (<span class="code-ref">T3</span>), qualitativ deklassiert werden.</li>
+          </ul>
+        </div>
+
+        <!-- WT STRATEGIEN -->
+        <div class="matrix-box strategy">
+          <span class="tag-title tag-strat">WT-Strategien (Vermeiden)</span>
+          <h3>Schwächen abbauen und Risiken umgehen</h3>
+          <ul>
+            <li><strong>Klimaschutzgesetz als Hebel für Sanierung nutzen:</strong> Den massiven Sanierungsstau (<span class="code-ref">W3</span>) unter dem unnachgiebigen Druck des Gesetzes (<span class="code-ref">T2</span>) auflösen, indem die BHT durch Sonderförderprogramme des Bundes als energetische Muster-Liegenschaft des Landes Berlin positioniert wird.</li>
+            <li><strong>Agile Curriculum-Taskforce etablieren:</strong> Bürokratische und langwierige Freigabeprozesse (<span class="code-ref">W1</span>) durch die Einführung modularer Rahmenprüfungsordnungen radikal verkürzen, um die Wettbewerbsfähigkeit gegenüber hochgradig agilen, privaten Bildungsanbietern (<span class="code-ref">T3</span>) nicht zu verlieren.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+</body>
+</html>

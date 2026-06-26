@@ -1,412 +1,565 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stakeholder-Analyse – BHT 2033</title>
-  <style>
-    :root {
-      --bg-main: #f8fafc;
-      --text-main: #1e293b;
-      --primary-color: #0f172a;
-      --secondary-color: #1e3a8a;
-      --accent-color: #3b82f6;
-      --card-bg: #ffffff;
-      --border-color: #e2e8f0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stakeholder-Analyse – BHT 2033</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --text-main: #1e293b;
+            --primary-color: #0f172a;
+            --secondary-color: #1e3a8a;
+            --accent-color: #3b82f6;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --muted-color: #64748b;
+            --soft-blue: #eff6ff;
+            --soft-green: #f0fdf4;
+            --soft-orange: #fff7ed;
+            --soft-purple: #faf5ff;
+        }
 
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
 
-    .header-banner {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    .header-banner p {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: #94a3b8;
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+        .global-nav {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 9999;
+        }
 
-    .header-banner h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
+        .global-nav-brand {
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.3px;
+            text-decoration: none;
+        }
 
-    .nav-container {
-      max-width: 1200px;
-      margin: 20px auto 0 auto;
-      padding: 0 20px;
-    }
+        .global-nav-brand span {
+            color: #93c5fd;
+            font-weight: 400;
+            margin-left: 5px;
+        }
 
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 0.2s;
-    }
+        .global-nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
 
-    .back-link:hover {
-      transform: translateX(-4px);
-    }
+        .global-nav-back:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateX(-2px);
+        }
 
-    .main-content {
-      max-width: 1200px;
-      margin: 20px auto 60px auto;
-      padding: 0 20px;
-    }
+        .header-banner {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 55px 20px;
+            text-align: center;
+        }
 
-    .section-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      padding: 40px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    }
+        .header-banner p {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
 
-    h2 {
-      font-size: 1.5rem;
-      color: var(--primary-color);
-      border-left: 4px solid var(--accent-color);
-      padding-left: 12px;
-      margin-bottom: 25px;
-      font-weight: 800;
-      letter-spacing: -0.3px;
-    }
+        .header-banner h1 {
+            font-size: 2.2rem;
+            font-weight: 850;
+            letter-spacing: -0.6px;
+        }
 
-    h3 {
-      font-size: 1.2rem;
-      color: var(--secondary-color);
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto 70px;
+            padding: 0 20px;
+        }
 
-    p {
-      margin-bottom: 15px;
-      color: #334155;
-    }
+        .section-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 38px;
+            box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+            margin-bottom: 38px;
+            border: 1px solid var(--border-color);
+        }
 
-    .matrix-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 15px;
-      margin: 30px 0;
-    }
+        .section-header {
+            margin-bottom: 24px;
+        }
 
-    .matrix-cell {
-      width: 50%;
-      background: #f8fafc;
-      border: 2px dashed #cbd5e1;
-      border-radius: 12px;
-      padding: 25px;
-      vertical-align: top;
-    }
+        .section-kicker {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #0f9ca8;
+            font-size: 0.72rem;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
 
-    .matrix-cell.high-high {
-      border-color: #3b82f6;
-      background: rgba(59, 130, 246, 0.03);
-    }
+        .section-header h2 {
+            font-size: 1.55rem;
+            color: var(--primary-color);
+            font-weight: 850;
+            letter-spacing: -0.3px;
+            margin-bottom: 8px;
+        }
 
-    .quadrant-title {
-      font-size: 0.9rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
+        .section-header p {
+            color: var(--muted-color);
+            font-size: 0.95rem;
+            max-width: 900px;
+        }
 
-    .title-key { color: #1e3a8a; background: #dbeafe; }
-    .title-keep { color: #15803d; background: #dcfce7; }
-    .title-show { color: #b45309; background: #fef3c7; }
-    .title-mon { color: #475569; background: #f1f5f9; }
+        .intro-box {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 22px;
+            color: #475569;
+            font-size: 1rem;
+            max-width: 980px;
+            margin-bottom: 28px;
+        }
 
-    .stakeholder-tag {
-      background: var(--primary-color);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-right: 8px;
-      margin-bottom: 8px;
-    }
+        .matrix-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 16px;
+            table-layout: fixed;
+        }
 
-    .details-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+        .matrix-cell {
+            background: #ffffff;
+            border: 1px dashed #cbd5e1;
+            border-radius: 14px;
+            padding: 22px;
+            vertical-align: top;
+            min-height: 230px;
+        }
 
-    .details-table th,
-    .details-table td {
-      border: 1px solid #e2e8f0;
-      padding: 14px;
-      text-align: left;
-      font-size: 0.95rem;
-      vertical-align: top;
-    }
+        .matrix-cell h3 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 6px;
+        }
 
-    .details-table th {
-      background-color: #f1f5f9;
-      color: var(--primary-color);
-      font-weight: 700;
-    }
+        .matrix-cell p {
+            font-size: 0.84rem;
+            color: var(--muted-color);
+            margin-bottom: 16px;
+        }
 
-    .details-table tr:nth-child(even) {
-      background-color: #f8fafc;
-    }
+        .key-player {
+            background: var(--soft-blue);
+        }
 
-    .strategy-text {
-      font-weight: 600;
-      color: var(--secondary-color);
-    }
+        .keep-satisfied {
+            background: var(--soft-green);
+        }
 
-    .source-footer {
-      font-size: 0.85rem;
-      color: #64748b;
-      text-align: right;
-      font-style: italic;
-      margin-top: 20px;
-    }
+        .keep-informed {
+            background: var(--soft-orange);
+        }
 
-    @media (max-width: 900px) {
-      .section-card {
-        padding: 25px;
-      }
+        .minimal-effort {
+            background: var(--soft-purple);
+        }
 
-      .matrix-table,
-      .matrix-table tbody,
-      .matrix-table tr,
-      .matrix-table td {
-        display: block;
-        width: 100%;
-      }
+        .stakeholder-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.75);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            color: #334155;
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 7px 10px;
+            border-radius: 8px;
+            margin: 4px 4px 4px 0;
+        }
 
-      .matrix-cell {
-        margin-bottom: 15px;
-      }
+        .details-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+        }
 
-      .details-table {
-        display: block;
-        overflow-x: auto;
-        white-space: normal;
-      }
-    }
-  </style>
+        .details-table th,
+        .details-table td {
+            padding: 18px 18px;
+            text-align: left;
+            vertical-align: top;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .details-table th {
+            background: #f1f5f9;
+            color: var(--primary-color);
+            font-size: 0.88rem;
+            font-weight: 850;
+        }
+
+        .details-table td {
+            color: #334155;
+            font-size: 0.9rem;
+        }
+
+        .details-table td:first-child {
+            width: 210px;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .details-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .strategy-text {
+            color: #475569;
+        }
+
+        .source-footer {
+            margin-top: 24px;
+            font-size: 0.84rem;
+            color: #64748b;
+            text-align: right;
+            font-style: italic;
+        }
+
+        .seq-nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .btn-prev {
+            color: #64748b;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .btn-prev:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-next {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-decoration: none;
+            padding: 16px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-next:hover {
+            transform: translateX(4px);
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+        }
+
+        @media (max-width: 900px) {
+            .matrix-table {
+                border-spacing: 0;
+            }
+
+            .matrix-table,
+            .matrix-table tbody,
+            .matrix-table tr,
+            .matrix-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .matrix-cell {
+                margin-bottom: 16px;
+            }
+
+            .details-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            .section-card {
+                padding: 26px;
+            }
+
+            .seq-nav-container {
+                flex-direction: column;
+                gap: 18px;
+                align-items: stretch;
+            }
+
+            .btn-next,
+            .btn-prev {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .global-nav {
+                padding: 14px 18px;
+                gap: 12px;
+            }
+
+            .global-nav-brand span {
+                display: none;
+            }
+
+            .header-banner h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <div class="header-banner">
-    <p>Kapitel 1 · Ausgangspunkt</p>
-    <h1>Stakeholder-Analyse</h1>
-  </div>
+    <nav class="global-nav">
+        <a href="index.html" class="global-nav-brand">BHT 2033<span>· Strategisches Management</span></a>
+        <a href="index.html" class="global-nav-back">← Zum Dashboard</a>
+    </nav>
 
-  <div class="nav-container">
-    <a href="index.html" class="back-link">← Zurück zum Strategie-Dashboard</a>
-  </div>
-
-  <main class="main-content">
-
-    <div class="section-card">
-      <h2>1. Strategische Verortung im Zielsystem</h2>
-      <p>
-        Die Stakeholder-Analyse zeigt, welche Anspruchsgruppen mit der BHT in Beziehung stehen und welche Erwartungen daraus entstehen. Für den Transformationsprozess BHT 2033 ist entscheidend, welche Gruppen eng eingebunden, gezielt informiert oder beobachtet werden müssen.
-      </p>
-
-      <table class="matrix-table">
-        <tr>
-          <td class="matrix-cell high-high">
-            <span class="quadrant-title title-key">Key Player</span>
-            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">
-              Eng einbinden, aktiv beteiligen und strategisch abstimmen.
-            </p>
-            <div class="stakeholder-tag">Hochschulleitung / Präsidium</div>
-            <div class="stakeholder-tag">Land Berlin / Senat</div>
-            <div class="stakeholder-tag">Fachbereiche</div>
-            <div class="stakeholder-tag">zentrale Verwaltung</div>
-          </td>
-
-          <td class="matrix-cell">
-            <span class="quadrant-title title-keep">Keep Satisfied</span>
-            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">
-              Gezielt informieren, Bedarfe berücksichtigen und kritische Entscheidungen abstimmen.
-            </p>
-            <div class="stakeholder-tag">Bundesebene / BMFTR</div>
-            <div class="stakeholder-tag">Forschungs- und Förderinstitutionen</div>
-            <div class="stakeholder-tag">Personalrat</div>
-            <div class="stakeholder-tag">strategische Infrastrukturpartner</div>
-          </td>
-        </tr>
-
-        <tr>
-          <td class="matrix-cell">
-            <span class="quadrant-title title-show">Keep Informed</span>
-            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">
-              Kontinuierlich informieren, Beteiligung ermöglichen und Rückkopplung sichern.
-            </p>
-            <div class="stakeholder-tag">Studierende und zukünftige Lernende</div>
-            <div class="stakeholder-tag">Mitarbeitende</div>
-            <div class="stakeholder-tag">Wirtschaft und Praxispartner</div>
-            <div class="stakeholder-tag">Gesellschaft und regionale Öffentlichkeit</div>
-            <div class="stakeholder-tag">Alumni</div>
-          </td>
-
-          <td class="matrix-cell">
-            <span class="quadrant-title title-mon">Minimal Effort</span>
-            <p style="font-size:0.85rem; color:#64748b; margin-bottom:15px;">
-              Beobachten und punktuell einbinden, wenn Vergleich, Infrastruktur oder Außenwirkung relevant werden.
-            </p>
-            <div class="stakeholder-tag">Konkurrenz und andere Hochschulen</div>
-            <div class="stakeholder-tag">Standardlieferanten</div>
-            <div class="stakeholder-tag">externe Dienstleister</div>
-            <div class="stakeholder-tag">allgemeine Marktbeobachtung</div>
-          </td>
-        </tr>
-      </table>
+    <div class="header-banner">
+        <p>Kapitel 1 · Stakeholder</p>
+        <h1>Stakeholder-Analyse</h1>
     </div>
 
-    <div class="section-card">
-      <h2>2. Detaillierte Stakeholder-Steckbriefe und Maßnahmen</h2>
-      <p>
-        Die folgende Übersicht verbindet die zentralen Erwartungen der Stakeholder mit möglichen Risiken und konkreten Maßnahmen für den Transformationsprozess.
-      </p>
+    <main class="main-content">
 
-      <table class="details-table">
-        <thead>
-          <tr>
-            <th style="width: 20%;">Stakeholder</th>
-            <th style="width: 30%;">Kerninteresse / Erwartung</th>
-            <th style="width: 25%;">Potenzielles Risiko</th>
-            <th style="width: 25%;">Strategische Maßnahme</th>
-          </tr>
-        </thead>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-kicker">Einordnung</div>
+                <h2>Stakeholder im Transformationsprozess der BHT</h2>
+                <p>
+                    Die Stakeholder-Analyse zeigt, welche Akteure den Transformationsprozess der BHT beeinflussen, welche Erwartungen sie an die Hochschule haben und welche strategische Bedeutung daraus für die Umsetzung der BHT 2033 entsteht.
+                </p>
+            </div>
 
-        <tbody>
-          <tr>
-            <td><strong>Hochschulleitung / Präsidium</strong></td>
-            <td>Profilbildung, Zukunftsfähigkeit, strategische Steuerung, Reputation und Umsetzung der BHT 2033.</td>
-            <td>Unklare Priorisierung, Akzeptanzkonflikte in Fachbereichen, schwache Außenwirkung.</td>
-            <td class="strategy-text">Transformationsprozess klar steuern; Fachbereiche, Verwaltung, Forschung und externe Partner besser vernetzen.</td>
-          </tr>
+            <div class="intro-box">
+                Für die BHT ist besonders relevant, wie interne Anspruchsgruppen, öffentliche Träger, Praxispartner, Forschungsakteure und gesellschaftliche Öffentlichkeit zusammenwirken. Die Analyse macht sichtbar, wo aktive Einbindung, gezielte Information oder strategische Steuerung notwendig ist.
+            </div>
+        </section>
 
-          <tr>
-            <td><strong>Studierende und zukünftige Lernende</strong></td>
-            <td>Hochwertige Lehre, Orientierung, Praxisbezug, Studienerfolg, berufsbegleitende Möglichkeiten und Anschluss für unterschiedliche Bildungsbiografien.</td>
-            <td>Fehlende Identifikation mit der BHT, Unzufriedenheit, Betreuungsschwächen, Einstiegshürden, Studienabbrüche und Abwanderung zu sichtbareren oder flexibleren Anbietern.</td>
-            <td class="strategy-text">Strukturierte Studienwege stärken; Orientierungssemester, adaptive Lehrformate, Peer-Betreuung und praxisnahe Einstiegshilfen ausbauen.</td>
-          </tr>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-kicker">Power-Interest-Matrix</div>
+                <h2>Einfluss und Interesse der Stakeholder</h2>
+                <p>
+                    Die Matrix ordnet Stakeholder danach ein, wie groß ihr Einfluss auf die BHT ist und wie stark sie vom Transformationsprozess betroffen sind oder daran interessiert sind.
+                </p>
+            </div>
 
-          <tr>
-            <td><strong>Mitarbeitende</strong></td>
-            <td>Faire Arbeitsbedingungen, Mitbestimmung, akademische Freiheit, gute Ausstattung und klare Prozesse.</td>
-            <td>Überlastung, Widerstand gegen Veränderung, Innovationsbremse durch fragmentierte Strukturen.</td>
-            <td class="strategy-text">Einbindung stärken; Infrastruktur öffnen; Silostrukturen aufbrechen; interdisziplinäre Lehr- und Forschungsformate durch Kooperationen stärken.</td>
-          </tr>
+            <table class="matrix-table">
+                <tbody>
+                    <tr>
+                        <td class="matrix-cell key-player">
+                            <h3>Key Player</h3>
+                            <p>Hoher Einfluss und hohes Interesse. Diese Stakeholder müssen eng eingebunden und aktiv beteiligt werden.</p>
+                            <span class="stakeholder-tag">Hochschulleitung / Präsidium</span>
+                            <span class="stakeholder-tag">Land Berlin / Senat</span>
+                            <span class="stakeholder-tag">Fachbereiche</span>
+                            <span class="stakeholder-tag">zentrale Verwaltung</span>
+                        </td>
 
-          <tr>
-            <td><strong>Personalrat</strong></td>
-            <td>Beschäftigteninteressen, Mitbestimmung, faire Arbeitsbedingungen und transparente Veränderungsprozesse.</td>
-            <td>Vertrauensverlust, Konflikte bei Veränderungsprozessen, Verzögerungen durch unklare Beteiligung.</td>
-            <td class="strategy-text">Transparenz stärken; gemeinsame Abstimmungsprozesse durch digitale Methoden beschleunigen.</td>
-          </tr>
+                        <td class="matrix-cell keep-satisfied">
+                            <h3>Keep Satisfied</h3>
+                            <p>Hoher Einfluss, aber punktuelles Interesse. Diese Stakeholder sollten gezielt informiert und strategisch zufriedengestellt werden.</p>
+                            <span class="stakeholder-tag">Bundesebene / BMFTR</span>
+                            <span class="stakeholder-tag">Forschungs- und Förderinstitutionen</span>
+                            <span class="stakeholder-tag">Personalrat</span>
+                            <span class="stakeholder-tag">strategische Infrastrukturpartner</span>
+                        </td>
+                    </tr>
 
-          <tr>
-            <td><strong>Land Berlin / Senat</strong></td>
-            <td>Fachkräftesicherung, verantwortungsvoller Umgang mit öffentlichen Mitteln, Bildungsqualität und regionale Wirkung.</td>
-            <td>Finanzierungsdruck, stärkere politische Steuerung, Kürzungen bei unklarer Wirkung.</td>
-            <td class="strategy-text">Wirkung der BHT in Berlin-Brandenburg sichtbarer machen; Profilfelder mit Fachkräftesicherung und gesellschaftlicher Entwicklung verbinden.</td>
-          </tr>
+                    <tr>
+                        <td class="matrix-cell keep-informed">
+                            <h3>Keep Informed</h3>
+                            <p>Hohes Interesse, aber begrenzter direkter Einfluss. Diese Gruppen brauchen transparente Kommunikation und Beteiligungsmöglichkeiten.</p>
+                            <span class="stakeholder-tag">Studierende und zukünftige Lernende</span>
+                            <span class="stakeholder-tag">Mitarbeitende</span>
+                            <span class="stakeholder-tag">Wirtschaft und Praxispartner</span>
+                            <span class="stakeholder-tag">Gesellschaft und regionale Öffentlichkeit</span>
+                            <span class="stakeholder-tag">Alumni</span>
+                        </td>
 
-          <tr>
-            <td><strong>Bundesebene / BMFTR</strong></td>
-            <td>Bundesweite Forschungs-, Technologie- und Innovationsziele; Förderung von Zukunftsthemen wie Digitalisierung, KI, Robotik, Nachhaltigkeit und Transformation.</td>
-            <td>Förderpotenziale und Bundesprogramme werden nicht genutzt; die BHT bleibt in relevanten Zukunftsthemen zu wenig sichtbar.</td>
-            <td class="strategy-text">Drittmittelstrategie stärken; Zukunftsthemen in förderfähige Projekte übersetzen; Sichtbarkeit in den Profilfeldern erhöhen.</td>
-          </tr>
+                        <td class="matrix-cell minimal-effort">
+                            <h3>Minimal Effort</h3>
+                            <p>Geringerer direkter Einfluss und geringeres unmittelbares Interesse. Diese Stakeholder werden beobachtet und bei Bedarf einbezogen.</p>
+                            <span class="stakeholder-tag">Konkurrenz und andere Hochschulen</span>
+                            <span class="stakeholder-tag">Standardlieferanten</span>
+                            <span class="stakeholder-tag">externe Dienstleister</span>
+                            <span class="stakeholder-tag">allgemeine Marktbeobachtung</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
 
-          <tr>
-            <td><strong>Wirtschaft und Praxispartner</strong></td>
-            <td>Qualifizierte Absolventen, praxisrelevante Kompetenzen, verlässliche Kooperationen und anwendungsnahe Forschung.</td>
-            <td>Kooperationen verlieren Relevanz; Praxispartner wenden sich an sichtbarere Hochschulen.</td>
-            <td class="strategy-text">Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und dem Startup Hub gezielter in Projektmodule, Labore und Abschlussarbeiten einbinden.</td>
-          </tr>
+        <section class="section-card">
+            <div class="section-header">
+                <div class="section-kicker">Stakeholder-Übersicht</div>
+                <h2>Interessen, Risiken und strategische Maßnahmen</h2>
+                <p>
+                    Die Detailanalyse verbindet die Erwartungen der Stakeholder mit möglichen Risiken und daraus abgeleiteten strategischen Maßnahmen für die BHT.
+                </p>
+            </div>
 
-          <tr>
-            <td><strong>Forschungs- und Förderinstitutionen</strong></td>
-            <td>Wissenschaftliche Qualität, belastbare Projektergebnisse, transparente Mittelverwendung und anschlussfähige Forschung.</td>
-            <td>Fördermittel bleiben ungenutzt; Forschungsprojekte bleiben zu vereinzelt; technologische Profilfelder bleiben unklar.</td>
-            <td class="strategy-text">Forschungsschwerpunkte bündeln; Projektanträge und Kooperationen stärker an den Profilfeldern der BHT ausrichten.</td>
-          </tr>
+            <table class="details-table">
+                <thead>
+                    <tr>
+                        <th>Stakeholder</th>
+                        <th>Kerninteresse / Erwartung</th>
+                        <th>Potenzielles Risiko</th>
+                        <th>Strategische Maßnahme</th>
+                    </tr>
+                </thead>
 
-          <tr>
-            <td><strong>Gesellschaft und regionale Öffentlichkeit</strong></td>
-            <td>Bildungsgerechtigkeit, Diversität, Transparenz, Nachhaltigkeit, Gemeinwohlbeitrag und Zugang zu öffentlichen Werkstätten wie der GLASBOX.</td>
-            <td>Verlust gesellschaftlicher Legitimation; Standortpotenzial Wedding bleibt ungenutzt; öffentliche Angebote der BHT werden zu wenig wahrgenommen.</td>
-            <td class="strategy-text">Standort Wedding und Berlin-Brandenburg als Wirkungsraum stärken; öffentliche Werkstätten wie die GLASBOX sowie Projekte zu Teilhabe, Technologie und Verantwortung sichtbarer machen.</td>
-          </tr>
+                <tbody>
+                    <tr>
+                        <td>Hochschulleitung / Präsidium</td>
+                        <td>Profilbildung, Zukunftsfähigkeit, strategische Steuerung, Reputation und Umsetzung der BHT 2033.</td>
+                        <td>Unklare Priorisierung, Akzeptanzkonflikte in Fachbereichen und schwache Außenwirkung.</td>
+                        <td class="strategy-text">Transformationsprozess klar steuern; Fachbereiche, Verwaltung, Forschung und externe Partner besser vernetzen.</td>
+                    </tr>
 
-          <tr>
-            <td><strong>Alumni</strong></td>
-            <td>Langfristige Bindung, Weiterbildung, Netzwerk und fachlicher Austausch.</td>
-            <td>Verlust wertvoller Kontakte, schwaches Netzwerk, geringe Rückbindung an die Hochschule.</td>
-            <td class="strategy-text">Alumni für Mentoring, Weiterbildung, Praxisprojekte und Kommunikation aktivieren.</td>
-          </tr>
+                    <tr>
+                        <td>Studierende und zukünftige Lernende</td>
+                        <td>Hochwertige Lehre, Orientierung, Praxisbezug, Studienerfolg, berufsbegleitende Möglichkeiten und Anschluss für unterschiedliche Bildungsbiografien.</td>
+                        <td>Fehlende Identifikation mit der BHT, Unzufriedenheit, Betreuungsschwächen, Einstiegshürden, Studienabbrüche und Abwanderung zu sichtbareren oder flexibleren Anbietern.</td>
+                        <td class="strategy-text">Strukturierte Studienwege stärken; adaptive Lehrformate, Peer-Betreuung und praxisnahe Einstiegshilfen ausbauen.</td>
+                    </tr>
 
-          <tr>
-            <td><strong>Konkurrenz und andere Hochschulen</strong></td>
-            <td>Wettbewerb um Studierende, Fördermittel, Fachpersonal, Sichtbarkeit und Kooperationen.</td>
-            <td>Profil der BHT bleibt unscharf; andere Hochschulen haben eine klarere Positionierung.</td>
-            <td class="strategy-text">Klare Differenzierungsstrategie entwickeln; BHT mit einem spezialisierten Hochschulprofil für zugängliche und transformative Technologie darstellen.</td>
-          </tr>
+                    <tr>
+                        <td>Mitarbeitende</td>
+                        <td>Faire Arbeitsbedingungen, Mitbestimmung, akademische Freiheit, gute Ausstattung und klare Prozesse.</td>
+                        <td>Überlastung, Widerstand gegen Veränderung und Innovationsbremse durch fragmentierte Strukturen.</td>
+                        <td class="strategy-text">Einbindung stärken; Infrastruktur öffnen; Silostrukturen aufbrechen; interdisziplinäre Lehr- und Forschungsformate durch Kooperationen stärken.</td>
+                    </tr>
 
-          <tr>
-            <td><strong>Lieferanten und externe Partner</strong></td>
-            <td>Verlässliche Zusammenarbeit, klare Anforderungen, funktionierende technische Infrastruktur und praxisnahe Kooperationen.</td>
-            <td>Operative Störungen; digitale, räumliche oder technische Infrastruktur unterstützt Lehre, Forschung und Transformation nicht ausreichend.</td>
-            <td class="strategy-text">Vereinfachung durch campusweite, transparente Systeme; Labore, Werkstätten und externe Partnerschaften gezielt für flexible Lehre, Forschung und Transformation einsetzen.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+                    <tr>
+                        <td>Personalrat</td>
+                        <td>Beschäftigteninteressen, Mitbestimmung, faire Arbeitsbedingungen und transparente Veränderungsprozesse.</td>
+                        <td>Vertrauensverlust, Konflikte bei Veränderungsprozessen und Verzögerungen durch unklare Beteiligung.</td>
+                        <td class="strategy-text">Transparenz stärken; gemeinsame Abstimmungsprozesse durch digitale Methoden beschleunigen.</td>
+                    </tr>
 
-    <div class="section-card">
-      <h2>3. Strategische Ableitung</h2>
-      <p>
-        Die Stakeholder-Analyse macht sichtbar, dass die BHT ihre Transformation nicht nur intern steuern kann. Entscheidend ist die Verbindung aus strukturierter Studienorientierung, verlässlicher Finanzierung, interdisziplinärer Zusammenarbeit, praxisnahen Kooperationen und gesellschaftlicher Wirkung in Berlin-Brandenburg.
-      </p>
-    </div>
+                    <tr>
+                        <td>Land Berlin / Senat</td>
+                        <td>Fachkräftesicherung, verantwortungsvoller Umgang mit öffentlichen Mitteln, Bildungsqualität und regionale Wirkung.</td>
+                        <td>Finanzierungsdruck, stärkere politische Steuerung und Kürzungen bei unklarer Wirkung.</td>
+                        <td class="strategy-text">Wirkung der BHT in Berlin-Brandenburg sichtbarer machen; Profilfelder mit Fachkräftesicherung und gesellschaftlicher Entwicklung verbinden.</td>
+                    </tr>
 
-    <p class="source-footer">
-      Quelle: Eigene Ausarbeitung auf Basis der BHT-Fallunterlagen und der Stakeholder-Analyse.
-    </p>
+                    <tr>
+                        <td>Bundesebene / BMFTR</td>
+                        <td>Bundesweite Forschungs-, Technologie- und Innovationsziele; Förderung von Zukunftsthemen wie Digitalisierung, KI, Robotik, Nachhaltigkeit und Transformation.</td>
+                        <td>Förderpotenziale und Bundesprogramme werden nicht genutzt; die BHT bleibt in relevanten Zukunftsthemen zu wenig sichtbar.</td>
+                        <td class="strategy-text">Drittmittelstrategie stärken; Zukunftsthemen in förderfähige Projekte übersetzen; Sichtbarkeit in den Profilfeldern erhöhen.</td>
+                    </tr>
 
-  </main>
+                    <tr>
+                        <td>Wirtschaft und Praxispartner</td>
+                        <td>Qualifizierte Absolventen, praxisrelevante Kompetenzen, verlässliche Kooperationen und anwendungsnahe Forschung.</td>
+                        <td>Kooperationen verlieren Relevanz; Praxispartner wenden sich an sichtbarere Hochschulen.</td>
+                        <td class="strategy-text">Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und dem Startup Hub gezielter in Projektmodule, Labore und Abschlussarbeiten einbinden.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Forschungs- und Förderinstitutionen</td>
+                        <td>Wissenschaftliche Qualität, belastbare Projektergebnisse, transparente Mittelverwendung und anschlussfähige Forschung.</td>
+                        <td>Fördermittel bleiben ungenutzt; Forschungsprojekte bleiben zu vereinzelt; technologische Profilfelder bleiben unklar.</td>
+                        <td class="strategy-text">Forschungsschwerpunkte bündeln; Projektanträge und Kooperationen stärker an den Profilfeldern der BHT ausrichten.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Gesellschaft und regionale Öffentlichkeit</td>
+                        <td>Bildungsgerechtigkeit, Diversität, Transparenz, Nachhaltigkeit, Gemeinwohlbeitrag und Zugang zu öffentlichen Werkstätten wie der GLASBOX.</td>
+                        <td>Verlust gesellschaftlicher Legitimation; Standortpotenzial Wedding bleibt ungenutzt; öffentliche Angebote der BHT werden zu wenig wahrgenommen.</td>
+                        <td class="strategy-text">Standort Wedding und Berlin-Brandenburg als Wirkungsraum stärken; öffentliche Werkstätten wie die GLASBOX sowie Projekte zu Teilhabe, Technologie und Verantwortung sichtbarer machen.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Alumni</td>
+                        <td>Langfristige Bindung, Weiterbildung, Netzwerk und fachlicher Austausch.</td>
+                        <td>Verlust wertvoller Kontakte, schwaches Netzwerk und geringe Rückbindung an die Hochschule.</td>
+                        <td class="strategy-text">Alumni für Mentoring, Weiterbildung, Praxisprojekte und Kommunikation aktivieren.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Konkurrenz und andere Hochschulen</td>
+                        <td>Wettbewerb um Studierende, Fördermittel, Fachpersonal, Sichtbarkeit und Kooperationen.</td>
+                        <td>Profil der BHT bleibt unscharf; andere Hochschulen haben eine klarere Positionierung.</td>
+                        <td class="strategy-text">Klare Differenzierungsstrategie entwickeln; BHT mit einem spezialisierten Hochschulprofil für zugängliche und transformative Technologie darstellen.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lieferanten und externe Partner</td>
+                        <td>Verlässliche Zusammenarbeit, klare Anforderungen, funktionierende technische Infrastruktur und praxisnahe Kooperationen.</td>
+                        <td>Operative Störungen; digitale, räumliche oder technische Infrastruktur unterstützt Lehre, Forschung und Transformation nicht ausreichend.</td>
+                        <td class="strategy-text">Vereinfachung durch campusweite, transparente Systeme; Labore, Werkstätten und externe Partnerschaften gezielt für flexible Lehre, Forschung und Transformation einsetzen.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <p class="source-footer">
+            Quelle: Eigene Ausarbeitung auf Basis der BHT-Fallunterlagen und der Stakeholderanalyse.
+        </p>
+
+        <div class="seq-nav-container">
+            <a href="index.html" class="btn-prev">← Zurück zum Dashboard</a>
+            <a href="Canvas.html" class="btn-next">Weiter zu: Business Model Canvas →</a>
+        </div>
+
+    </main>
 
 </body>
 </html>

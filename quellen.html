@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Literaturverzeichnis – BHT 2033</title>
+  <title>Quellenverzeichnis – BHT 2033</title>
   <style>
     :root {
       --bg-main: #f8fafc;
@@ -13,6 +13,8 @@
       --accent-color: #3b82f6;
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
+      --muted-color: #64748b;
+      --soft-blue: #eff6ff;
     }
 
     * {
@@ -25,10 +27,9 @@
     body {
       background-color: var(--bg-main);
       color: var(--text-main);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    /* Der einzige echte Link auf der Seite */
     .back-to-dashboard {
       position: fixed;
       top: 20px;
@@ -57,6 +58,15 @@
       text-align: center;
     }
 
+    .header-banner p {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
     .header-banner h1 {
       font-size: 2.2rem;
       font-weight: 800;
@@ -64,38 +74,120 @@
     }
 
     main {
-      max-width: 850px;
+      max-width: 1200px;
       margin: 50px auto;
       padding: 0 20px;
     }
 
-    .bibliography-list {
-      margin-top: 30px;
+    .intro-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-color);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 34px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
     }
 
-    /* Normaler Textfluss ohne Link-Indikatoren (kein Unterstrich, kein Pointer-Cursor) */
-    .bib-entry {
-      padding-left: 35px;
-      text-indent: -35px;
-      margin-bottom: 25px;
-      font-size: 1.05rem;
-      color: var(--text-main);
-      text-align: justify;
-      cursor: default;
+    .intro-card p {
+      color: #475569;
+      font-size: 0.98rem;
+      max-width: 900px;
     }
 
-    .bib-author {
-      font-weight: 700;
+    .source-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 34px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #0f9ca8;
+      font-size: 0.72rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .source-section h2 {
+      font-size: 1.35rem;
+      color: var(--primary-color);
+      margin-bottom: 18px;
+      font-weight: 850;
+      letter-spacing: -0.3px;
+    }
+
+    .source-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+
+    .source-table th,
+    .source-table td {
+      padding: 16px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .source-table th {
+      background: #f1f5f9;
+      color: var(--primary-color);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .source-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .source-table td {
+      color: #334155;
+      font-size: 0.9rem;
+    }
+
+    .source-table td:first-child {
+      width: 28%;
+      font-weight: 750;
       color: var(--primary-color);
     }
 
-    .bib-title {
-      font-style: italic;
-      color: var(--primary-color); /* Schwarz statt Blau, um Verwechslung mit Links zu vermeiden */
+    .source-table td:nth-child(2) {
+      width: 42%;
     }
 
-    .bib-meta {
-      color: #64748b;
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--soft-blue);
+      color: #1e3a8a;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .url {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted-color);
+      font-size: 0.78rem;
+      font-weight: 500;
+      word-break: break-word;
     }
 
     .footer-note {
@@ -106,38 +198,430 @@
       border-top: 1px solid var(--border-color);
       padding-top: 20px;
     }
+
+    @media (max-width: 850px) {
+      .source-table,
+      .source-table thead,
+      .source-table tbody,
+      .source-table th,
+      .source-table td,
+      .source-table tr {
+        display: block;
+        width: 100%;
+      }
+
+      .source-table thead {
+        display: none;
+      }
+
+      .source-table tr {
+        border-bottom: 1px solid var(--border-color);
+        padding: 14px 0;
+      }
+
+      .source-table td {
+        border-bottom: none;
+        padding: 8px 14px;
+      }
+
+      .source-table td:first-child,
+      .source-table td:nth-child(2) {
+        width: 100%;
+      }
+
+      .back-to-dashboard {
+        position: absolute;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <a href="index.html" class="back-to-dashboard">← Dashboard</a>
 
   <div class="header-banner">
-    <h1>Literaturverzeichnis</h1>
+    <p>BHT 2033 · Quellen</p>
+    <h1>Quellenverzeichnis</h1>
   </div>
 
   <main>
-    <div class="bibliography-list">
-      
-      <div class="bib-entry">
-        <span class="bib-author">Berliner Hochschule für Technik.</span> (2026). 
-        <span class="bib-title">Zukunftsbild BHT 2033: Strategische Ausrichtung der Lehre und technologische Schwerpunkte</span>. 
-        <span class="bib-meta">Berlin: BHT-Eigenverlag.</span>
-      </div>
 
-      <div class="bib-entry">
-        <span class="bib-author">Investitionsbank Berlin.</span> (2025). 
-        <span class="bib-title">Innovationsbericht Berlin-Brandenburg: Analyse regionaler Bedarfe in den Bereichen Transformation Design, HCI und humanoide Robotik</span>. 
-        <span class="bib-meta">Berlin: IBB-Marktforschung.</span>
-      </div>
-
-      <div class="bib-entry">
-        <span class="bib-author">Senatsverwaltung für Wissenschaft, Gesundheit und Pflege.</span> (2024). 
-        <span class="bib-title">Hochschulverträge des Landes Berlin (2024–2028): Leistungsorientierte Mittelzuweisung und Zielvereinbarungen</span>. 
-        <span class="bib-meta">Berlin: SenWGPG-Dokumentation.</span>
-      </div>
-
+    <div class="intro-card">
+      <p>
+        Das Quellenverzeichnis bündelt die zentralen Fallunterlagen, offiziellen BHT-Webquellen, rechtlichen und politischen Rahmenquellen, Unterrichtsmaterialien, Modelle sowie studentische Arbeitsstände, die für die strategische Ausarbeitung zum BHT-Case genutzt wurden.
+      </p>
     </div>
+
+    <section class="source-section">
+      <div class="section-kicker">01 · Fallunterlagen</div>
+      <h2>BHT-Case und interne Arbeitsgrundlagen</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BHT-Briefing.pdf<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Grundlage des Cases: Kerngeschäft, Marktrolle, Transformationsanlass und Arbeitsauftrag.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">BMC</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Selbstverständnis.pdf<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Heutige Identität der BHT: technische Prägung, Praxisnähe, Vielfalt, Bildungsaufstieg und Berlin-Bezug.</td>
+            <td><div class="tag-list"><span class="tag">Stakeholder</span><span class="tag">BMC</span><span class="tag">Vision</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Spannungsfelder.pdf<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Zukunftsfragen zu Profilklarheit, Breite, Interdisziplinarität, regionaler Rolle, Sichtbarkeit und strategischer Positionierung.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Stärken-Schwächen.pdf<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Interne Stärken und Schwächen der Hochschule als Grundlage für SWOT, TOWS und strategische Ableitungen.</td>
+            <td><div class="tag-list"><span class="tag">SWOT/TOWS</span><span class="tag">Marktanalyse</span><span class="tag">Handlungsempfehlungen</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Zukunftsbild.pdf<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Zielbild der BHT 2033 mit Bezug zu Profilbildung, Durchlässigkeit, technologischen Schwerpunkten und regionaler Wirkung.</td>
+            <td><div class="tag-list"><span class="tag">Vision</span><span class="tag">Mission</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>PESTEL Vorlage BHT<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Methodische und tabellarische Grundlage der PESTEL-Analyse.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Stakeholder Analyse Vorlage<br><span class="url">Bereitgestellt im Modul, Prof. Dr. Michael Müller</span></td>
+            <td>Methodische Grundlage zu Stakeholdern, Austauschbeziehungen und verantwortungsrelevanten Ansprüchen.</td>
+            <td><div class="tag-list"><span class="tag">Stakeholder</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Gespräch mit der Präsidentin der BHT<br><span class="url">Eigene Gesprächsnotizen aus dem Modul</span></td>
+            <td>Primärquelle zu Profilbildung, Wettbewerb, interner Kommunikation, Demokratie, Infrastruktur und Fachbereichen.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">02 · Offizielle BHT-Webquellen</div>
+      <h2>Hochschule, Studium, Zugang und Weiterbildung</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BHT Website<br><span class="url">https://www.bht-berlin.de</span></td>
+            <td>Allgemeine Informationen zur Hochschule, Organisation, Studium, Forschung, Transfer und öffentlichen Angeboten.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Stakeholder</span><span class="tag">Marktanalyse</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Zahlen und Fakten<br><span class="url">https://www.bht-berlin.de/23</span></td>
+            <td>Studierendenzahl, Frauenanteil, internationale Studierende und allgemeine Rahmendaten der Hochschule.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">BMC</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Studiengänge<br><span class="url">https://www.bht-berlin.de/studiengaenge</span></td>
+            <td>Überblick über Studienangebot, technische Ausrichtung und fachliche Profilfelder.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Beruflich Qualifizierte / Hochschulzugang ohne Abitur<br><span class="url">https://www.bht-berlin.de/beruflich-qualifiziert</span></td>
+            <td>Bildungsaufstieg, unterschiedliche Bildungsbiografien und Zugang zur Hochschule.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">Vision</span><span class="tag">Marktanalyse</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Zentrale Studienberatung<br><span class="url">https://www.bht-berlin.de/studienberatung</span></td>
+            <td>Beratungsangebote, Studienorientierung, Zugang zur Hochschule und Unterstützung unterschiedlicher Zielgruppen.</td>
+            <td><div class="tag-list"><span class="tag">Stakeholder</span><span class="tag">BMC</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Weiterbildung / Fernstudieninstitut<br><span class="url">https://www.bht-berlin.de/fsi</span></td>
+            <td>Weiterbildung, Fernstudium, Onlineangebote und lebenslanges Lernen.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Vision</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Zertifikatskurse<br><span class="url">https://www.bht-berlin.de/weiterbildung</span></td>
+            <td>Konkrete Weiterbildungsangebote und berufsbegleitende Qualifikationen.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Vision</span><span class="tag">Marktanalyse</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">03 · BHT Research</div>
+      <h2>Forschung, Transfer und technologische Profilfelder</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>BHT Forschung und Technologietransfer<br><span class="url">https://www.bht-berlin.de/forschung</span></td>
+            <td>Forschung, Transfer, Kooperationen, Innovation, Startup Hub, GLASBOX und Drittmittelbezug.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Stakeholder</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Forschungsschwerpunkte<br><span class="url">https://www.bht-berlin.de/4773</span></td>
+            <td>Technologische Forschungsfelder, Data Science, KI, Kommunikationstechnologien, urbane Technologien und Lebenswissenschaften.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">BMC</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Forschungsverbünde / HARMONIK<br><span class="url">https://www.bht-berlin.de/4503</span></td>
+            <td>Humanoide Robotik und Mensch-Technik-Interaktion als interdisziplinäres Forschungsfeld der BHT.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">BMC</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Künstliche Intelligenz<br><span class="url">https://www.bht-berlin.de/4773</span></td>
+            <td>KI im Kontext von Data Science, Forschungsschwerpunkten, Studium, Lehre und Hochschulentwicklung.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Humanoide Robotik<br><span class="url">https://www.bht-berlin.de/b-hrob</span></td>
+            <td>Robotik als konkretes technologisches Profilfeld der BHT in Studium, Lehre und Forschung.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Robotik / Haus der Robotik<br><span class="url">https://www.bht-berlin.de/3873/article/9952</span></td>
+            <td>Robotik als Labor-, Infrastruktur- und Forschungsumfeld der BHT.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">BMC</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Startup Hub<br><span class="url">https://www.bht-berlin.de/startup</span></td>
+            <td>Gründungsförderung, Praxis-Transfer, Beratung, Kooperationen und Startup-Infrastruktur.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Stakeholder</span><span class="tag">Marktanalyse</span><span class="tag">Handlungsempfehlungen</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT GLASBOX / Makerspace<br><span class="url">https://www.bht-berlin.de/3897/article/9004</span></td>
+            <td>Öffentliche Werkstatt, Makerspace, Begegnungsraum, Stadtgesellschaft und Öffnung der Hochschule.</td>
+            <td><div class="tag-list"><span class="tag">Stakeholder</span><span class="tag">BMC</span><span class="tag">Marktanalyse</span><span class="tag">Handlungsempfehlungen</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">04 · Recht, Finanzierung und Rahmenbedingungen</div>
+      <h2>Politische, rechtliche, ökologische und digitale Quellen</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hochschulvertrag BHT 2024 bis 2028<br><span class="url">Land Berlin / Hochschulverträge, 2024–2028</span></td>
+            <td>Finanzierung, politische Steuerung, Leistungsauftrag, Lehre, Forschung, Transfer und öffentliche Verantwortung.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">BMC</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Meldung zum Änderungsvertrag der Hochschulverträge<br><span class="url">https://www.bht-berlin.de/3873/article/10245</span></td>
+            <td>Finanzierungsdruck, geringerer Mittelaufwuchs und Sparmaßnahmen.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">SWOT/TOWS</span><span class="tag">Marktanalyse</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Berliner Hochschulgesetz<br><span class="url">https://gesetze.berlin.de/bsbe/document/jlr-HSchulGBE2011V35P2</span></td>
+            <td>Rechtlicher Rahmen für Hochschulauftrag, Organisation, Studium, Lehre, Prüfungen und Mitbestimmung.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BMFTR<br><span class="url">https://www.bmftr.bund.de</span></td>
+            <td>Bundespolitischer Rahmen für Forschung, Technologie, Raumfahrt, Innovation und Förderprogramme.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">Marktanalyse</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Datenschutz<br><span class="url">https://www.bht-berlin.de/datenschutz</span></td>
+            <td>Rechtliche Anforderungen im Umgang mit personenbezogenen Daten und digitaler Hochschulkommunikation.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">BMC</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Barrierefreiheit<br><span class="url">https://www.bht-berlin.de/barrierefreiheit</span></td>
+            <td>Digitale Barrierefreiheit, gesetzliche Anforderungen, BITV 2.0 und inklusiver Zugang.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">Vision</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Klimaschutz<br><span class="url">https://www.bht-berlin.de/klimaschutz</span></td>
+            <td>Klimabeirat, Klima- und Umweltmanagement sowie ökologische Verantwortung der Hochschule.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Mobilität<br><span class="url">https://www.bht-berlin.de/4915</span></td>
+            <td>Nachhaltige Mobilität, Pendelverkehr, Dienstreisen und Exkursionen.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT Mobilitätsumfrage 2025<br><span class="url">https://www.bht-berlin.de/mobilitaetsumfrage</span></td>
+            <td>Datenbasis für Mobilität und Treibhausgasbilanz.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span><span class="tag">Stakeholder</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">05 · Unterrichtsmaterialien und Modelle</div>
+      <h2>Methodische Grundlagen</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wettbewerbsvorlesung<br><span class="url">26-SoSe_STV_SU-08-Wettbewerb_mmfertig (1).pdf, Prof. Dr. Michael Müller</span></td>
+            <td>Grundlage für strategische Marktanalyse, Wettbewerbsvorteile, Branchenstruktur und Porter Five Forces.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">Porter</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Porter, Michael E.: Five Forces / Branchenstrukturanalyse</td>
+            <td>Methodische Grundlage zur Analyse von Rivalität, neuen Anbietern, Ersatzleistungen, Nachfragern und Anbietern.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">Porter</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Osterwalder, Alexander / Pigneur, Yves: Business Model Canvas</td>
+            <td>Methodische Grundlage zur Beschreibung von Wertangebot, Zielgruppen, Ressourcen, Aktivitäten, Partnern, Kostenstruktur und Finanzierung.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span></div></td>
+          </tr>
+
+          <tr>
+            <td>SWOT- und TOWS-Analyse</td>
+            <td>Strategische Analyse- und Ableitungsmethode zur Verbindung interner und externer Faktoren.</td>
+            <td><div class="tag-list"><span class="tag">SWOT/TOWS</span><span class="tag">Handlungsempfehlungen</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Stakeholderanalyse / Power-Interest-Matrix</td>
+            <td>Methode zur Einordnung relevanter Anspruchsgruppen nach Einfluss, Interesse und strategischer Bedeutung.</td>
+            <td><div class="tag-list"><span class="tag">Stakeholder</span></div></td>
+          </tr>
+
+          <tr>
+            <td>PESTEL-Analyse</td>
+            <td>Methode zur Analyse politischer, ökonomischer, sozialer, technologischer, ökologischer und rechtlicher Einflussfaktoren.</td>
+            <td><div class="tag-list"><span class="tag">PESTEL</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">06 · Beispiele und Arbeitsstände</div>
+      <h2>Fallbeispiele und studentische Vergleichsarbeiten</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Zwischenpräsentation_Strategie_Mahlendorf_Hirn.pdf</td>
+            <td>Studentisches Fallbeispiel zur strategischen Marktanalyse, Wettbewerb und Positionierung im BHT-Case.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">Porter</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Projektarbeit BHT_Identität.pdf</td>
+            <td>Studentischer Arbeitsstand zur Identität der BHT, Business Model Canvas und strategischen Einordnung.</td>
+            <td><div class="tag-list"><span class="tag">BMC</span><span class="tag">Vision</span><span class="tag">SWOT/TOWS</span></div></td>
+          </tr>
+
+          <tr>
+            <td>BHT-Case_Vision und Mission.pdf</td>
+            <td>Studentischer Arbeitsstand zu Vision, Mission, Purpose, Werten und Kultur der BHT.</td>
+            <td><div class="tag-list"><span class="tag">Vision</span><span class="tag">Mission</span><span class="tag">Handlungsempfehlungen</span></div></td>
+          </tr>
+
+          <tr>
+            <td>Fallbeispiele und Arbeitsstände der Kommilitonen</td>
+            <td>Vergleichende Grundlage für Marktabgrenzung, Five Forces, BMC, SWOT/TOWS, Vision und Handlungsmöglichkeiten.</td>
+            <td><div class="tag-list"><span class="tag">Marktanalyse</span><span class="tag">BMC</span><span class="tag">SWOT/TOWS</span><span class="tag">Vision</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="source-section">
+      <div class="section-kicker">07 · Eigene Ausarbeitung</div>
+      <h2>Projektarbeit BHT 2033</h2>
+
+      <table class="source-table">
+        <thead>
+          <tr>
+            <th>Quelle</th>
+            <th>Inhaltlicher Bezug</th>
+            <th>Analyse-Tags</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Eigene strategische Ausarbeitung im BHT-Case</td>
+            <td>Zusammenführung von Stakeholderanalyse, BMC, Vision und Mission, strategischer Marktanalyse, SWOT/TOWS und Handlungsempfehlungen.</td>
+            <td><div class="tag-list"><span class="tag">Gesamtprojekt</span><span class="tag">BHT 2033</span><span class="tag">Strategie</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
     <p class="footer-note">
       Projektdokumentation • Stand: Juni 2026

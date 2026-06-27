@@ -118,6 +118,14 @@
       font-size: 0.98rem;
     }
 
+    .intro-box p {
+      margin-bottom: 14px;
+    }
+
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+
     main {
       max-width: 1120px;
       margin: 0 auto 70px;
@@ -141,7 +149,7 @@
       font-size: 1.45rem;
       color: var(--primary-color);
       font-weight: 850;
-      margin-bottom: 8px;
+      margin-bottom: 18px;
       letter-spacing: -0.3px;
     }
 
@@ -194,15 +202,8 @@
       margin-bottom: 12px;
     }
 
-    .market-card h3 {
-      font-size: 1rem;
-      line-height: 1.25;
-      color: var(--primary-color);
-      margin-bottom: 8px;
-    }
-
     .market-card p {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: #475569;
       margin-bottom: 16px;
     }
@@ -263,44 +264,21 @@
       color: white;
     }
 
-    .analysis-table {
-      width: 100%;
-      border-collapse: collapse;
-      overflow: hidden;
-      border-radius: 12px;
-      background: white;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .analysis-table th,
-    .analysis-table td {
-      padding: 18px 20px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .analysis-table th {
-      background: #f1f5f9;
+    .analysis-card h3 {
+      font-size: 1rem;
       color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .analysis-card p {
       font-size: 0.9rem;
-      font-weight: 850;
-    }
-
-    .analysis-table td:first-child {
-      width: 260px;
-      font-weight: 800;
-      color: var(--primary-color);
-    }
-
-    .analysis-table td:last-child {
-      color: #334155;
-      font-size: 0.94rem;
-    }
-
-    .analysis-table tr:last-child td {
-      border-bottom: none;
+      color: #475569;
     }
 
     .forces-grid {
@@ -314,7 +292,7 @@
     }
 
     .force-card h3 {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--primary-color);
       margin-bottom: 8px;
     }
@@ -357,31 +335,32 @@
 
     .action-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 14px;
     }
 
     .action-card {
       background: #ffffff;
       border-top: 4px solid #38bdf8;
-      min-height: 165px;
+      min-height: 120px;
+      padding: 18px;
     }
 
     .action-num {
       color: #94a3b8;
       font-size: 0.72rem;
       font-weight: 850;
-      margin-bottom: 10px;
-    }
-
-    .action-card h3 {
-      font-size: 0.96rem;
-      color: var(--primary-color);
       margin-bottom: 8px;
     }
 
+    .action-card h3 {
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      margin-bottom: 6px;
+    }
+
     .action-card p {
-      font-size: 0.84rem;
+      font-size: 0.8rem;
       color: #475569;
     }
 
@@ -491,6 +470,7 @@
       .market-map,
       .forces-grid,
       .internal-grid,
+      .analysis-grid,
       .action-grid,
       .process-line {
         grid-template-columns: 1fr;
@@ -507,11 +487,6 @@
 
       .market-center {
         min-height: auto;
-      }
-
-      .analysis-table {
-        display: block;
-        overflow-x: auto;
       }
 
       .hero h1 {
@@ -546,47 +521,57 @@
     <div class="hero-subtitle">Differenzierung im Hochschulmarkt Berlin-Brandenburg</div>
 
     <div class="intro-box">
-Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine starke Ausgangsposition: technische Breite, Praxisnähe, Laborinfrastruktur und einen zentralen, diversen Standort im Wedding. Dieses Potenzial ist jedoch bislang nicht ausreichend sichtbar; besonders im direkten Umfeld bleibt die Hochschule vielen Akteuren wenig bekannt. Im dichten Hochschulmarkt Berlin-Brandenburg konkurriert die BHT nicht primär über Preis oder Größe. Entscheidend werden daher Profilklarheit, Studienerfolg, Forschungsstärke, Kooperationen und öffentliche Sichtbarkeit. Daraus ergibt sich die strategische Aufgabe, die vorhandenen Stärken der BHT zu einem klar erkennbaren Differenzierungsprofil zu bündeln.    </div>
+      <p>
+        Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine starke Ausgangsposition: technische Breite, Praxisnähe, Laborinfrastruktur und einen zentralen, diversen Standort im Wedding. Dieses Potenzial ist jedoch besonders im direkten Umfeld nicht bekannt.
+      </p>
+      <p>
+        Im dichten Hochschulmarkt Berlin-Brandenburg konkurriert die BHT nicht primär über Preis oder Größe. Entscheidend für die Sichtbarkeit werden daher Profilklarheit, Interdisziplinarität, Forschungsstärke, Kooperationen und Praxis-Transfer.
+      </p>
+    </div>
   </header>
 
   <main>
 
     <section>
-      <h2 class="section-title">Marktumfeld auf einen Blick</h2>
-      <p class="section-note">Die Grafik zeigt, aus welchen Richtungen Wettbewerbsdruck, Erwartungen und strategische Handlungsspielräume entstehen.</p>
+      <h2 class="section-title">Marktumfeld</h2>
 
       <div class="market-map">
 
         <div class="market-card direct">
           <div class="map-label">01 · Direkte Mitbewerber</div>
-          <h3>Praxisnahe Hochschulen mit ähnlicher Ausrichtung</h3>
-          <p>Die BHT steht im Wettbewerb mit Hochschulen, die ebenfalls technische, wirtschaftliche und anwendungsorientierte Studienangebote anbieten.</p>
+          <p>
+            Die BHT steht im Wettbewerb mit Hochschulen, die ebenfalls technische und anwendungsorientierte Studienangebote anbieten.
+          </p>
           <div class="tag-wrap">
             <span class="tag">HTW Berlin</span>
             <span class="tag">TH Wildau</span>
             <span class="tag">TH Brandenburg</span>
-            <span class="tag">HWR Berlin</span>
           </div>
         </div>
 
         <div class="market-center">
-          <div class="map-label">Zentrale Referenz</div>
+          <div class="map-label">Differenzierungsmerkmal</div>
           <h2>BHT 2033</h2>
           <p>
-            Die BHT kann eine starke Ausgangsposition nicht allein durch technische Breite sichern. Ihr eindeutiges Differenzierungsmerkmal entsteht durch interdisziplinäre technologische Schwerpunkte, zugängliche Studienwege, praxisnahe Forschung und die Einbindung in die Region Berlin-Brandenburg.
+            Die BHT kann eine starke Ausgangsposition nicht allein durch technische Breite sichern. Ein klarer USP ist essentiell.
           </p>
           <div class="reference-tags">
-            <span class="reference-tag">Technologische Schwerpunkte</span>
+            <span class="reference-tag">Transformation Design</span>
+            <span class="reference-tag">Human-Computer Interaction</span>
+            <span class="reference-tag">Humanoide Robotik</span>
             <span class="reference-tag">Zugängliche Studienwege</span>
             <span class="reference-tag">Praxisnahe Forschung</span>
             <span class="reference-tag">Regionale Einbindung</span>
+            <span class="reference-tag">Interdisziplinarität</span>
+            <span class="reference-tag">Praxis-Transfer</span>
           </div>
         </div>
 
         <div class="market-card indirect">
           <div class="map-label">02 · Indirekte Mitbewerber</div>
-          <h3>Akteure in angrenzenden Zukunftsfeldern</h3>
-          <p>Universitäten und spezialisierte Hochschulen prägen Forschung, Nachhaltigkeit, Gestaltung, Gesellschaft und Transformation.</p>
+          <p>
+            Universitäten und spezialisierte Hochschulen prägen angrenzende Felder wie Forschung, Nachhaltigkeit, Gestaltung, Gesellschaft, Verwaltung, Wirtschaft und Transformation.
+          </p>
           <div class="tag-wrap">
             <span class="tag">TU Berlin</span>
             <span class="tag">BTU</span>
@@ -594,17 +579,18 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
             <span class="tag">FH Potsdam</span>
             <span class="tag">UdK Berlin</span>
             <span class="tag">ASH Berlin</span>
+            <span class="tag">HWR Berlin</span>
           </div>
         </div>
 
         <div class="market-card alternative">
           <div class="map-label">03 · Alternative Bildungsangebote</div>
-          <h3>Flexible Wege zum Kompetenzaufbau</h3>
-          <p>Private Hochschulen, digitale Lernplattformen, Bootcamps und Unternehmensakademien ersetzen das Hochschulstudium nicht vollständig, erhöhen aber die Erwartungen an Flexibilität, Kommunikation und sichtbaren Mehrwert.</p>
+          <p>
+            Private Hochschulen, digitale Lernplattformen und Unternehmensakademien ersetzen das Hochschulstudium nicht vollständig, erhöhen aber die Erwartungen an Flexibilität, Betreuung, Laborpraxis und sichtbaren Mehrwert akademischer Bildung.
+          </p>
           <div class="tag-wrap">
             <span class="tag">Private Hochschulen</span>
             <span class="tag">IU</span>
-            <span class="tag">Bootcamps</span>
             <span class="tag">Online-Kurse</span>
             <span class="tag">Digitale Zertifikate</span>
           </div>
@@ -612,14 +598,16 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
 
         <div class="market-card resources">
           <div class="map-label">04 · Zielgruppen und Ressourcen</div>
-          <h3>Erwartungen und Handlungsspielräume</h3>
-          <p>Studierende, Praxispartner, öffentliche Mittel, Personal, Räume und Labore bestimmen, wie sichtbar, anschlussfähig und entwicklungsfähig die BHT im Markt agieren kann.</p>
+          <p>
+            Studierende, Praxispartner, öffentliche Mittel, Personal, Räume, Labore und das Standortumfeld bestimmen, wie sichtbar, anschlussfähig und entwicklungsfähig die BHT im Hochschulmarkt agieren kann.
+          </p>
           <div class="tag-wrap">
             <span class="tag">Studierende</span>
             <span class="tag">Praxispartner</span>
             <span class="tag">Land Berlin</span>
             <span class="tag">BMFTR</span>
             <span class="tag">Labore</span>
+            <span class="tag">Standort Wedding</span>
           </div>
         </div>
 
@@ -627,88 +615,82 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
     </section>
 
     <section>
-      <h2 class="section-title">Analysefelder</h2>
-      <p class="section-note">Kurzlogik: Beobachtung, Bedeutung für die BHT und strategische Verantwortung</p>
+      <h2 class="section-title">Strategische Auswertung</h2>
 
-      <table class="analysis-table">
-        <thead>
-          <tr>
-            <th>Analysepunkt</th>
-            <th>Inhaltlicher Zusammenhang</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Direkte Mitbewerber</td>
-            <td>HTW Berlin, TH Wildau, TH Brandenburg und HWR Berlin verfügen über ähnliche technische, praxisnahe und anwendungsorientierte Studienangebote. Für die BHT entsteht daraus die Verantwortung, ihr Profil klarer zu schärfen, ihre Sichtbarkeit zu stärken und ihre Differenzierung im HAW-Markt nachvollziehbar zu kommunizieren.</td>
-          </tr>
-          <tr>
-            <td>Indirekte Mitbewerber</td>
-            <td>TU Berlin, BTU Cottbus-Senftenberg, HNEE Eberswalde, FH Potsdam, UdK Berlin und ASH Berlin prägen angrenzende Felder wie Forschung, Nachhaltigkeit, Gestaltung, Gesellschaft und Transformation. Für die BHT liegt darin die Chance, Technologie stärker mit gesellschaftlicher Verantwortung und interdisziplinären Zukunftsfeldern zu verbinden.</td>
-          </tr>
-          <tr>
-            <td>Alternative Bildungsangebote</td>
-            <td>Private Hochschulen, IU, Online-Plattformen, Bootcamps und Unternehmensakademien erhöhen den Druck auf klassische Studienmodelle durch flexible, digitale und berufsbegleitende Bildungsangebote. Die BHT sollte eigene berufsbegleitende, digitale und flexible Formate sichtbarer machen, ohne ihr Profil auf kurzfristige Zertifikatslogiken zu reduzieren.</td>
-          </tr>
-          <tr>
-            <td>Ersatzangebote</td>
-            <td>Online-Kurse, digitale Zertifikate, modulare Weiterbildungsangebote und Lernplattformen ermöglichen den Erwerb einzelner technischer Kompetenzen außerhalb klassischer Studiengänge. Die BHT muss deshalb den Mehrwert von akademischem Abschluss, Forschung, Praxis, Betreuung und Netzwerk klarer zeigen.</td>
-          </tr>
-          <tr>
-            <td>Zielgruppen</td>
-            <td>Studierende, Studieninteressierte, Berufstätige, Quereinsteiger und Alumni vergleichen Hochschulen stärker nach Flexibilität, Betreuung, Berufsperspektive, Vereinbarkeit und Sinnbezug. Daraus ergibt sich für die BHT die Aufgabe, ihre Angebote zugänglich, verständlich und zielgruppenspezifisch zu kommunizieren.</td>
-          </tr>
-          <tr>
-            <td>Ressourcenquellen</td>
-            <td>Land Berlin, Bundesebene / BMFTR, Fördermittel, Drittmittel, Personal, Labore und Räume bestimmen den strategischen Handlungsspielraum der BHT. Begrenzte Ressourcen müssen gezielt in profilbildende Zukunftsfelder, Studienerfolg, Infrastruktur und Kooperationen gelenkt werden.</td>
-          </tr>
-          <tr>
-            <td>Interne Wettbewerbsvorteile</td>
-            <td>Die BHT verfügt über technische Breite, Praxisnähe, reale Durchlässigkeit, eine starke Laborlandschaft, lokale Verankerung, Wissens- und Technologietransfer sowie Lehrende mit Strahlkraft. Diese Stärken bilden eine gute Ausgangsposition, müssen aber als zusammenhängendes Zukunftsprofil BHT 2033 sichtbarer kommuniziert werden.</td>
-          </tr>
-          <tr>
-            <td>Interne Problemfelder</td>
-            <td>Geringe Sichtbarkeit, unklare Profilkommunikation, fragmentierte Strukturen, Ressourcenstau, finanzielle Abhängigkeit von öffentlichen Mitteln, ausbaufähige Digitalisierung sowie Raum- und Campusprobleme schwächen die strategische Wirkung der BHT. Deshalb müssen Silo-Denken abgebaut, Kommunikation gestärkt und Schwerpunkte klarer gesetzt werden.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="analysis-grid">
+        <div class="analysis-card">
+          <h3>Profilwettbewerb und Differenzierung</h3>
+          <p>
+            Im Hochschulmarkt Berlin-Brandenburg reicht technische Breite allein nicht als Differenzierungsmerkmal. Strategisch relevant wird die Bündelung klarer Profilschwerpunkte wie Transformation Design, Human-Computer Interaction und Humanoide Robotik.
+          </p>
+        </div>
+
+        <div class="analysis-card">
+          <h3>Neue Bildungslogiken und Ersatzangebote</h3>
+          <p>
+            Private Hochschulen, digitale Lernplattformen, Online-Kurse, digitale Zertifikate und Unternehmensakademien verändern die Erwartungen an Flexibilität, Vereinbarkeit, Betreuung und sichtbaren Mehrwert akademischer Bildung.
+          </p>
+        </div>
+
+        <div class="analysis-card">
+          <h3>Zielgruppen und Studienzugang</h3>
+          <p>
+            Die Zielgruppen der BHT sind heterogen: klassische Studierende, Studieninteressierte mit unterschiedlichen Bildungswegen, Berufstätige, Quereinsteiger und Alumni. Studienzugang, Betreuung und beruflicher Anschluss werden damit selbst zu Wettbewerbsfaktoren.
+          </p>
+        </div>
+
+        <div class="analysis-card">
+          <h3>Ressourcen, Infrastruktur und interne Engpässe</h3>
+          <p>
+            Öffentliche Mittel, Drittmittel, Personal, Labore, Räume und digitale Infrastruktur bestimmen den Handlungsspielraum. Die vorhandenen Stärken werden strategisch wirksam, wenn sie gebündelt, über Fachbereichsgrenzen hinweg nutzbar gemacht und mit funktionierenden Strukturen verbunden werden.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section>
       <h2 class="section-title">Marktkräfte nach Porter</h2>
-      <p class="section-note">Five-Forces-Logik, angepasst auf den Hochschulmarkt</p>
 
       <div class="forces-grid">
         <div class="force-card">
-          <h3>Rivalität</h3>
-          <p>Wettbewerb um Studierende, Personal, Sichtbarkeit, Kooperationen und öffentliche Mittel.</p>
+          <h3>Rivalität unter bestehenden Wettbewerbern</h3>
+          <p>
+            Wettbewerb um Studierende, Personal, Forschungsstärke, Sichtbarkeit, Kooperationen und öffentliche Mittel.
+          </p>
         </div>
 
         <div class="force-card">
-          <h3>Neue Anbieter</h3>
-          <p>Private Hochschulen und digitale Anbieter erhöhen den Druck durch flexible Formate.</p>
+          <h3>Bedrohung durch neue Anbieter</h3>
+          <p>
+            Private Hochschulen und digitale Bildungsanbieter erhöhen den Druck durch flexible und stark vermarktete Studienmodelle.
+          </p>
         </div>
 
         <div class="force-card">
-          <h3>Ersatzangebote</h3>
-          <p>Digitale Zertifikate, Online-Kurse und Unternehmensakademien ersetzen einzelne Kompetenzpfade.</p>
+          <h3>Bedrohung durch Ersatzprodukte/-leistungen</h3>
+          <p>
+            Online-Kurse, digitale Zertifikate und Unternehmensakademien ersetzen einzelne Kompetenzpfade.
+          </p>
         </div>
 
         <div class="force-card">
-          <h3>Zielgruppen</h3>
-          <p>Studierende vergleichen stärker nach Flexibilität, Betreuung, Berufsperspektive und Sinnbezug.</p>
+          <h3>Verhandlungsmacht der Nachfrager</h3>
+          <p>
+            Studierende und Studieninteressierte vergleichen stärker nach Orientierung, Betreuung, Vereinbarkeit und Berufsperspektive.
+          </p>
         </div>
 
         <div class="force-card">
-          <h3>Ressourcenquellen</h3>
-          <p>Landesmittel, Fördermittel, Personal, Labore und Räume bestimmen den Handlungsspielraum.</p>
+          <h3>Verhandlungsmacht der Anbieter</h3>
+          <p>
+            Öffentliche Mittel, Personalmarkt, Räume, Labore und digitale Infrastruktur bestimmen den strategischen Handlungsspielraum.
+          </p>
         </div>
       </div>
     </section>
 
     <section>
       <h2 class="section-title">Interne Position</h2>
-      <p class="section-note">Wettbewerbsvorteile und Problemfelder der BHT</p>
 
       <div class="internal-grid">
         <div class="internal-card">
@@ -717,7 +699,7 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
             <div class="pill"><strong>Studium:</strong> großes Portfolio, technische Breite und reale Durchlässigkeit</div>
             <div class="pill"><strong>Forschung:</strong> anwendungsorientierte Forschung, Laborlandschaft und technologische Zukunftsfelder</div>
             <div class="pill"><strong>Praxis:</strong> Wissens- und Technologietransfer mit KMU, Verwaltung und Zivilgesellschaft</div>
-            <div class="pill"><strong>Standort:</strong> lokale Verankerung und Diversität am Standort Wedding</div>
+            <div class="pill"><strong>Standort:</strong> zentraler, urbaner und diverser Campusstandort im Wedding mit bisher nicht ausgeschöpftem Sichtbarkeits- und Transferpotenzial</div>
           </div>
         </div>
 
@@ -725,9 +707,10 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
           <h3>Problemfelder</h3>
           <div class="pill-list">
             <div class="pill"><strong>Sichtbarkeit:</strong> geringe Außenwirkung und unklare Profilkommunikation</div>
-            <div class="pill"><strong>Struktur:</strong> fragmentierte Strukturen zwischen Fachbereichen, Verwaltung und Forschung</div>
-            <div class="pill"><strong>Ressourcen:</strong> Ressourcenstau, finanzielle Abhängigkeit und begrenzter Handlungsspielraum</div>
+            <div class="pill"><strong>Struktur:</strong> Silo-Denken, fragmentierte Strukturen und veraltete Entscheidungsmethoden bremsen effiziente Abstimmung und Entwicklung</div>
+            <div class="pill"><strong>Ressourcen:</strong> begrenzte Ressourcen, finanzielle Abhängigkeit und begrenzter Handlungsspielraum</div>
             <div class="pill"><strong>Campus:</strong> ausbaufähige Digital-, Raum-, Monitoring- und Wissensstrukturen</div>
+            <div class="pill"><strong>Standortwirkung:</strong> geringe Bekanntheit im direkten Umfeld und ungenutztes Potenzial für öffentliche Präsenz, Transfer und regionale Einbindung</div>
           </div>
         </div>
       </div>
@@ -735,38 +718,42 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
 
     <section>
       <h2 class="section-title">Handlungsmöglichkeiten</h2>
-      <p class="section-note">Aus der Marktanalyse ergeben sich zentrale Ansatzpunkte für die Transformation in Richtung BHT 2033.</p>
 
       <div class="action-grid">
         <div class="action-card">
           <div class="action-num">01</div>
           <h3>Profil sichtbar machen</h3>
-          <p>Technologische Schwerpunkte, Forschung und Praxisprojekte müssen klarer gebündelt und nach außen verständlich kommuniziert werden.</p>
+          <p>Technologische Schwerpunkte und Praxisprojekte bündeln.</p>
         </div>
 
         <div class="action-card">
           <div class="action-num">02</div>
           <h3>Studienzugang stärken</h3>
-          <p>Zugängliche Studienwege, transparente Informationen und gute Einstiegshilfen erhöhen Orientierung und Studienerfolg.</p>
+          <p>Orientierung, Einstiegshilfen und transparente Informationen verbessern.</p>
         </div>
 
         <div class="action-card">
           <div class="action-num">03</div>
           <h3>Praxis und Transfer ausbauen</h3>
-          <p>Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und Startup Hub stärken die regionale Wirkung der BHT.</p>
+          <p>Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und Startup Hub stärken.</p>
         </div>
 
         <div class="action-card">
           <div class="action-num">04</div>
+          <h3>Standortpotenzial nutzen</h3>
+          <p>Wedding stärker als öffentlicher Transfer- und Begegnungsraum einbinden.</p>
+        </div>
+
+        <div class="action-card">
+          <div class="action-num">05</div>
           <h3>Strukturen verbinden</h3>
-          <p>Interdisziplinäre Formate, gemeinsame Infrastruktur und digitale Wissensstrukturen helfen, Silos abzubauen.</p>
+          <p>Silos abbauen und Infrastruktur fachübergreifend nutzbar machen.</p>
         </div>
       </div>
     </section>
 
     <section>
       <h2 class="section-title">Strategische Logik</h2>
-      <p class="section-note">Vom Wettbewerbsumfeld zur Zielposition BHT 2033</p>
 
       <div class="process-line">
         <div class="step-card">
@@ -784,7 +771,7 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
         <div class="step-card">
           <div class="step-num">03</div>
           <h3>Handlungsfelder</h3>
-          <p>Profilkommunikation, Studienzugang, Transfer, Digitalisierung und Infrastruktur</p>
+          <p>Profil, Studienzugang, Transfer, Standortwirkung und Infrastruktur</p>
         </div>
 
         <div class="step-card target-step">
@@ -799,12 +786,12 @@ Die BHT besitzt als staatliche Hochschule für angewandte Wissenschaften eine st
       <div class="section-kicker">Fazit</div>
       <h2>Strategische Ableitung</h2>
       <p>
-        Die BHT stärkt ihre Marktposition nicht über Preis oder Größe, sondern über ein klares Hochschulprofil. Entscheidend ist die Verbindung aus Durchlässigkeit, hochwertigen Abschlüssen, praxisnaher Lehre, fokussierten technologischen Profilfeldern, interdisziplinärer Zusammenarbeit und konkreter Wirkung in Berlin-Brandenburg.
+        Die Marktanalyse zeigt: Die BHT hat starke Voraussetzungen, nutzt sie aber noch nicht konsequent als erkennbares Profil. Für BHT 2033 wird entscheidend, technologische Schwerpunkte, Studienzugang, Forschungstransfer und Standortwirkung stärker miteinander zu verbinden.
       </p>
     </div>
 
     <p class="source-footer">
-      Quelle: Eigene Ausarbeitung auf Basis der BHT-Fallunterlagen und der Wettbewerbsanalyse nach Porter.
+      Quelle: Eigene Ausarbeitung auf Basis der BHT-Fallunterlagen, der Wettbewerbsanalyse nach Porter und allen benannten Quellen im Literaturverzeichnis.
     </p>
 
     <div class="seq-nav-container">

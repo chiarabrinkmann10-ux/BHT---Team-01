@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>In Konstruktion – BHT 2033</title>
+  <title>In Vorbereitung – BHT 2033</title>
 
   <style>
     :root {
@@ -13,6 +12,8 @@
       --primary-color: #0f172a;
       --secondary-color: #1e3a8a;
       --accent-color: #3b82f6;
+      --card-bg: rgba(255, 255, 255, 0.06);
+      --border-color: rgba(255, 255, 255, 0.1);
     }
 
     * {
@@ -26,94 +27,148 @@
       min-height: 100vh;
       background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
       color: white;
-      overflow: hidden;
-      position: relative;
       display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* --- GLOBAL NAV MATCHING THE SYSTEM --- */
+    .global-nav {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    .global-nav-brand {
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.3px;
+      text-decoration: none;
+    }
+
+    .global-nav-brand span {
+      color: #93c5fd;
+      font-weight: 400;
+      margin-left: 5px;
+    }
+
+    .global-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.2s ease;
+    }
+
+    .global-nav-back:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      transform: translateX(-2px);
+    }
+
+    /* --- CONTENT AREA --- */
+    .main-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      margin: auto;
+      padding: 60px 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .bg-text {
       position: absolute;
-      font-size: 22vw;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 26vw;
       font-weight: 900;
-      opacity: 0.04;
+      opacity: 0.03;
       line-height: 1;
       user-select: none;
       pointer-events: none;
       white-space: nowrap;
-    }
-
-    .wrapper {
-      max-width: 1100px;
-      width: 100%;
-      position: relative;
-      z-index: 2;
+      z-index: 1;
     }
 
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: 4px;
       color: #93c5fd;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
       font-size: 0.95rem;
       font-weight: 700;
     }
 
     h1 {
-      font-size: clamp(4rem, 10vw, 9rem);
-      line-height: 0.95;
+      font-size: clamp(3rem, 7vw, 6rem);
+      line-height: 1.05;
       font-weight: 900;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       text-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
     p {
-      max-width: 720px;
+      max-width: 750px;
       color: #cbd5e1;
       font-size: 1.2rem;
       line-height: 1.7;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
     }
 
+    /* --- CARDS GRID --- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     .card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
       border-radius: 18px;
-      padding: 28px;
+      padding: 24px;
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-4px);
       background: rgba(255,255,255,0.09);
       border-color: rgba(255,255,255,0.18);
     }
 
     .card-number {
       color: #93c5fd;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 2px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       text-transform: uppercase;
     }
 
     .card h2 {
-      font-size: 1.4rem;
-      line-height: 1.3;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      font-weight: 700;
     }
 
-    .footer {
+    /* --- FOOTER / BUTTONS --- */
+    .button-group {
       display: flex;
       gap: 20px;
       flex-wrap: wrap;
@@ -123,98 +178,94 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 15px 26px;
+      padding: 16px 28px;
       border-radius: 12px;
       font-weight: 700;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease-in-out;
     }
 
     .primary {
       background: var(--accent-color);
       color: white;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
     }
 
     .primary:hover {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
       background: #2563eb;
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
     }
 
-    .secondary {
-      border: 1px solid rgba(255,255,255,0.15);
-      color: white;
-      background: rgba(255,255,255,0.04);
-    }
-
-    .secondary:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.08);
+    .source-footer {
+      font-size: 0.85rem;
+      color: #64748b;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      background: rgba(15, 23, 42, 0.1);
     }
 
     @media (max-width: 700px) {
-      h1 {
-        font-size: 4rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .footer {
-        flex-direction: column;
-      }
-
-      .button {
-        width: 100%;
-      }
+      .global-nav-brand span { display: none; }
+      .main-wrapper { padding: 40px 20px; }
+      h1 { font-size: 2.5rem; }
+      p { font-size: 1rem; }
+      .button-group { flex-direction: column; }
+      .button { width: 100%; }
     }
   </style>
 </head>
 <body>
 
+  <nav class="global-nav">
+    <a href="index.html" class="global-nav-brand">BHT 2033<span>· Strategisches Management</span></a>
+    <a href="index.html" class="global-nav-back">← Zum Dashboard</a>
+  </nav>
+
   <div class="bg-text">404</div>
 
-  <div class="wrapper">
+  <div class="main-wrapper">
 
-    <div class="eyebrow">BHT 2033 · In Konstruktion</div>
+    <div class="eyebrow">Kapitel 5 &amp; 6 · Ausblick</div>
 
     <h1>
-      Hier entsteht<br>
-      gerade etwas.
+      Noch ein wenig<br>
+      Geduld.
     </h1>
 
     <p>
-      Diese Seite befindet sich aktuell noch im Aufbau.
-      Bald stehen hier weitere Inhalte, Analysen und Konzepte
-      rund um BHT 2033 zur Verfügung.
+      Danke für Ihr Interesse und Ihre Neugierde, aber dieses Kapitel wird erst zur finalen Abgabe freigeschaltet.
     </p>
 
     <div class="grid">
 
       <div class="card">
-        <div class="card-number">STATUS</div>
-        <h2>In Konstruktion X</h2>
+        <div class="card-number">PROJEKT-STATUS</div>
+        <h2>Inhalte befinden sich in der finalen Abstimmung</h2>
       </div>
 
       <div class="card">
-        <div class="card-number">FORTSCHRITT</div>
-        <h2>Kaffee vorhanden</h2>
+        <div class="card-number">DOKUMENTATION</div>
+        <h2>Analysen und strategische Konzepte stehen bereit</h2>
       </div>
 
       <div class="card">
-        <div class="card-number">SYSTEM</div>
-        <h2>Strategisches Chaos stabil</h2>
+        <div class="card-number">ZEITHORIZONT</div>
+        <h2>Veröffentlichung erfolgt planmäßig zum Abgabetermin</h2>
       </div>
 
     </div>
 
-    <div class="footer">
-      <a href="index.html" class="button primary">Zurück zur Startseite</a>
-      <a href="PESTEL-Analyse_BHT.html" class="button secondary">PESTEL-Analyse öffnen</a>
+    <div class="button-group">
+      <a href="index.html" class="button primary">Zurück zum Dashboard</a>
     </div>
 
   </div>
 
+  <p class="source-footer">
+    Wird zur fianlen Abgabe freigeschaltet
+  </p>
+
 </body>
 </html>
-```

@@ -100,12 +100,6 @@
       font-weight: 850;
       color: var(--primary-color);
       letter-spacing: -0.8px;
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      color: var(--muted-color);
-      font-size: 1rem;
       margin-bottom: 24px;
     }
 
@@ -165,6 +159,10 @@
       border-radius: 14px;
       padding: 22px;
       box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      min-height: 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .logic-card:nth-child(1) {
@@ -189,38 +187,6 @@
     .logic-card h3 {
       color: var(--primary-color);
       font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .logic-card p {
-      color: #475569;
-      font-size: 0.9rem;
-    }
-
-    .dimension-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .dimension-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 16px 18px;
-    }
-
-    .dimension-card strong {
-      display: block;
-      color: var(--primary-color);
-      margin-bottom: 4px;
-      font-size: 0.92rem;
-    }
-
-    .dimension-card span {
-      color: #64748b;
-      font-size: 0.82rem;
     }
 
     .rec-section {
@@ -264,6 +230,13 @@
     .rec-head p {
       color: #dbeafe;
       font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .vision-link {
+      color: #bfdbfe;
+      font-size: 0.82rem;
+      font-weight: 700;
     }
 
     .rec-meta {
@@ -442,7 +415,7 @@
 
     .final-box p {
       color: #475569;
-      max-width: 900px;
+      max-width: 920px;
       font-size: 0.95rem;
     }
 
@@ -491,7 +464,6 @@
 
     @media (max-width: 950px) {
       .logic-grid,
-      .dimension-row,
       .goal-grid,
       .rec-head {
         grid-template-columns: 1fr;
@@ -542,11 +514,10 @@
   <header class="hero">
     <div class="hero-label">Teil 2 · Transformation und Verantwortung</div>
     <h1>Nachhaltige Ziele</h1>
-    <div class="hero-subtitle">Operative SMART-Ziele für zentrale Stakeholder</div>
 
     <div class="intro-box">
       <p>
-        Nachhaltige Ziele werden hier nicht als Zusatzthema verstanden, sondern als Steuerungsinstrument. Die strategischen Handlungsempfehlungen werden in operative Ziele übersetzt, damit ihre Wirkung messbar wird.
+        Nachhaltige Ziele steuern und messen mittels operativer SMART-Ziele die Umsetzung unserer definierten Handlungsempfehlungen.
       </p>
     </div>
   </header>
@@ -554,43 +525,23 @@
   <main>
 
     <section>
-      <div class="section-kicker">Zielsystem</div>
-      <h2 class="section-title">Von der Strategie zur Messung</h2>
+      <div class="section-kicker">Aufbau</div>
+      <h2 class="section-title">Aufbau der Zielübersetzung</h2>
 
       <div class="logic-grid">
         <div class="logic-card">
           <div class="logic-number">01</div>
-          <h3>Strategische Richtung</h3>
-          <p>Die BHT bündelt Profilfelder, Studienzugang, Laborinfrastruktur und Praxis-Transfer.</p>
+          <h3>Handlungsempfehlung</h3>
         </div>
 
         <div class="logic-card">
           <div class="logic-number">02</div>
-          <h3>Operative Übersetzung</h3>
-          <p>Jede Handlungsempfehlung wird für relevante Stakeholder in konkrete Ziele übersetzt.</p>
+          <h3>Stakeholder</h3>
         </div>
 
         <div class="logic-card">
           <div class="logic-number">03</div>
-          <h3>Messbare Steuerung</h3>
-          <p>Jedes Ziel enthält eine Quote, Anzahl oder Prozentzahl und einen klaren Zieltermin.</p>
-        </div>
-      </div>
-
-      <div class="dimension-row">
-        <div class="dimension-card">
-          <strong>Ökonomisch</strong>
-          <span>Ressourcen, Finanzierung, Studienerfolg, Kooperationen</span>
-        </div>
-
-        <div class="dimension-card">
-          <strong>Ökologisch</strong>
-          <span>gemeinsame Nutzung von Infrastruktur, weniger Doppelstrukturen, Ressourceneffizienz</span>
-        </div>
-
-        <div class="dimension-card">
-          <strong>Sozial</strong>
-          <span>Zugang, Beteiligung, Betreuung, regionale Verantwortung</span>
+          <h3>Messgröße</h3>
         </div>
       </div>
     </section>
@@ -601,6 +552,7 @@
         <div>
           <h2>Profilfelder sichtbar bündeln</h2>
           <p>Transformation Design, Human-Computer Interaction und Humanoide Robotik werden als gemeinsame Zukunftsfelder der BHT sichtbar gemacht.</p>
+          <div class="vision-link">Bezug zu BHT 2033: technische Breite, klare Profilfelder und interdisziplinäre Lehre</div>
         </div>
         <div class="rec-meta">
           <span class="meta-tag">Profilbildung</span>
@@ -678,6 +630,7 @@
         <div>
           <h2>Laborzugang und Shared Equipment aufbauen</h2>
           <p>Labore und technische Ressourcen werden transparenter erfasst, zugänglicher gemacht und fachbereichsübergreifend genutzt.</p>
+          <div class="vision-link">Bezug zu BHT 2033: zugängliche Laborstrukturen, Ressourceneffizienz und praxisnahe Forschung</div>
         </div>
         <div class="rec-meta">
           <span class="meta-tag">Labore</span>
@@ -755,6 +708,7 @@
         <div>
           <h2>Praxis-Transfer in Berlin-Brandenburg stärken</h2>
           <p>Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und Praxispartnern werden messbar ausgebaut.</p>
+          <div class="vision-link">Bezug zu BHT 2033: angewandte Forschung, regionale Wirkung und Praxis-Transfer</div>
         </div>
         <div class="rec-meta">
           <span class="meta-tag">Transfer</span>
@@ -828,10 +782,10 @@
     </section>
 
     <section>
-      <div class="section-kicker">Übersicht</div>
-      <h2 class="section-title">SMART-Ziele nach Handlungsempfehlung</h2>
+      <div class="section-kicker">Kontrolle</div>
+      <h2 class="section-title">Messübersicht</h2>
       <p class="section-note">
-        Die Übersicht bündelt die operativen Ziele nach Stakeholder, Zeitraum und Messgröße.
+        Die Messübersicht prüft, ob jede Handlungsempfehlung tatsächlich steuerbar wird: mit Stakeholder, Zeitraum und Kennzahl.
       </p>
 
       <div class="summary-table-wrap">
@@ -947,9 +901,9 @@
     </section>
 
     <div class="final-box">
-      <h2>Kernaussage</h2>
+      <h2>Kritische Einordnung</h2>
       <p>
-        Die nachhaltigen Ziele machen die Strategie steuerbar. Entscheidend ist nicht nur, welche Zukunftsfelder die BHT benennt, sondern ob diese für Studierende, Mitarbeitende, Fachbereiche, Praxispartner und regionale Öffentlichkeit messbar wirksam werden.
+        Die Ziele zeigen, woran BHT 2033 scheitern oder wirksam werden kann: Wenn bis 2029 keine messbare Beteiligung an HCI-Lehrprojekten, kein transparenter Laborzugang und kein belastbares KMU-Netzwerk entstehen, bleibt die Vision ein Profilversprechen ohne operative Wirkung.
       </p>
     </div>
 

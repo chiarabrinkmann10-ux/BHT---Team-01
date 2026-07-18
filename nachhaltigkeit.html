@@ -11,7 +11,6 @@
       --text-main: #1e293b;
       --primary-color: #0f172a;
       --secondary-color: #1e3a8a;
-      --accent-blue: #3b82f6;
       --accent-orange: #fb7e03;
       --accent-cyan: #0f9ca8;
       --muted-color: #64748b;
@@ -20,8 +19,6 @@
       --soft-blue: #eff6ff;
       --soft-orange: #fff7ed;
       --soft-green: #f0fdf4;
-      --soft-purple: #faf5ff;
-      --soft-cyan: #ecfeff;
     }
 
     * {
@@ -104,13 +101,16 @@
     }
 
     .intro-box {
-      max-width: 860px;
+      max-width: 760px;
       margin: 0 auto;
-      text-align: left;
-      border-left: 3px solid var(--accent-orange);
-      padding-left: 22px;
+      text-align: center;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 22px 28px;
       color: #475569;
-      font-size: 0.98rem;
+      font-size: 1rem;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
     }
 
     main {
@@ -145,48 +145,6 @@
       font-size: 0.92rem;
       max-width: 850px;
       margin-bottom: 22px;
-    }
-
-    .logic-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .logic-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-      min-height: 96px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .logic-card:nth-child(1) {
-      background: var(--soft-blue);
-    }
-
-    .logic-card:nth-child(2) {
-      background: var(--soft-purple);
-    }
-
-    .logic-card:nth-child(3) {
-      background: var(--soft-green);
-    }
-
-    .logic-number {
-      color: #94a3b8;
-      font-size: 0.72rem;
-      font-weight: 850;
-      margin-bottom: 8px;
-    }
-
-    .logic-card h3 {
-      color: var(--primary-color);
-      font-size: 1rem;
     }
 
     .rec-section {
@@ -230,13 +188,6 @@
     .rec-head p {
       color: #dbeafe;
       font-size: 0.92rem;
-      margin-bottom: 8px;
-    }
-
-    .vision-link {
-      color: #bfdbfe;
-      font-size: 0.82rem;
-      font-weight: 700;
     }
 
     .rec-meta {
@@ -463,7 +414,6 @@
     }
 
     @media (max-width: 950px) {
-      .logic-grid,
       .goal-grid,
       .rec-head {
         grid-template-columns: 1fr;
@@ -525,25 +475,8 @@
   <main>
 
     <section>
-      <div class="section-kicker">Aufbau</div>
-      <h2 class="section-title">Aufbau der Zielübersetzung</h2>
-
-      <div class="logic-grid">
-        <div class="logic-card">
-          <div class="logic-number">01</div>
-          <h3>Handlungsempfehlung</h3>
-        </div>
-
-        <div class="logic-card">
-          <div class="logic-number">02</div>
-          <h3>Stakeholder</h3>
-        </div>
-
-        <div class="logic-card">
-          <div class="logic-number">03</div>
-          <h3>Messgröße</h3>
-        </div>
-      </div>
+      <div class="section-kicker">SMART-Ziele</div>
+      <h2 class="section-title">Operative Ziele je Handlungsempfehlung</h2>
     </section>
 
     <section class="rec-section">
@@ -551,24 +484,24 @@
         <div class="rec-num">01</div>
         <div>
           <h2>Profilfelder sichtbar bündeln</h2>
-          <p>Transformation Design, Human-Computer Interaction und Humanoide Robotik werden als gemeinsame Zukunftsfelder der BHT sichtbar gemacht.</p>
-          <div class="vision-link">Bezug zu BHT 2033: technische Breite, klare Profilfelder und interdisziplinäre Lehre</div>
+          <p>Transformation Design, Human-Computer Interaction und Humanoide Robotik werden als verbindliche Zukunftsfelder der BHT festgelegt und über Lehre, Laborpraxis und Transferprojekte sichtbar gemacht.</p>
         </div>
         <div class="rec-meta">
           <span class="meta-tag">Profilbildung</span>
           <span class="meta-tag">Interdisziplinarität</span>
           <span class="meta-tag">Sichtbarkeit</span>
+          <span class="meta-tag">Technische Breite</span>
         </div>
       </div>
 
       <div class="goal-grid">
         <div class="goal-card">
           <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Ende 2026 beschließt die BHT drei verbindliche Profilfelder für BHT 2033.</h3>
+          <h3>Bis Ende 2026 beschließt die BHT die drei Profilfelder Transformation Design, Human-Computer Interaction und Humanoide Robotik als verbindliche Zukunftsfelder für BHT 2033.</h3>
           <div class="smart-row">
             <div class="smart-item"><span>Messgröße</span><strong>3 beschlossene Profilfelder</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2026</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Strategieboard</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Hochschulleitung / Strategieboard</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>gesamt BHT</strong></div>
           </div>
           <div class="goal-tags">
@@ -579,12 +512,12 @@
 
         <div class="goal-card">
           <div class="stakeholder-label">Studierende</div>
-          <h3>Im SoSe 2027 nehmen mindestens 20 % der Studierenden aus FB 6 und FB 7 am ersten interfakultären HCI-Lehrprojekt teil.</h3>
+          <h3>Im SoSe 2027 nehmen mindestens 20 % der Studierenden aus den priorisierten Profilstudiengängen an einem interdisziplinären Projektkurs „Mensch-Technik-Interaktion“ teil.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>Teilnahmequote 20 %</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>20 % Teilnahmequote</strong></div>
             <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Lehrende FB 6 / FB 7</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>FB 6 und FB 7</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Lehrende der Profilstudiengänge</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>Transformation Design, HCI, Humanoide Robotik</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag green">sozial</span>
@@ -593,13 +526,13 @@
         </div>
 
         <div class="goal-card">
-          <div class="stakeholder-label">Mitarbeitende und Lehrende</div>
-          <h3>Bis WiSe 2026/27 arbeiten mindestens 15 Lehrende und Mitarbeitende aus 4 Fachbereichen in Profilfeld-Teams mit.</h3>
+          <div class="stakeholder-label">Lehrende und Laborverantwortliche</div>
+          <h3>Bis WiSe 2026/27 werden drei Profilfeld-Pilotgruppen eingerichtet, jeweils eine für Transformation Design, Human-Computer Interaction und Humanoide Robotik.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>15 Personen / 4 Fachbereiche</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>3 Pilotgruppen mit mindestens 5 Beteiligten</strong></div>
             <div class="smart-item"><span>Termin</span><strong>WiSe 2026/27</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Hochschulleitung</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>interdisziplinäre Teams</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Laborverantwortliche</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>Profilfelder der BHT</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag green">sozial</span>
@@ -609,11 +542,11 @@
 
         <div class="goal-card">
           <div class="stakeholder-label">Praxispartner</div>
-          <h3>Bis Ende 2028 entstehen mindestens 10 Praxisprojekte in den drei Profilfeldern mit Partnern aus Berlin-Brandenburg.</h3>
+          <h3>Bis Ende 2028 entstehen je Profilfeld mindestens 3 Praxisprojekte mit Partnern aus Berlin-Brandenburg; KMU werden dabei priorisiert.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>10 Praxisprojekte</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>9 Praxisprojekte, davon mindestens 6 mit KMU</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Fachbereiche</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Praxis-Transfer</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>Berlin-Brandenburg</strong></div>
           </div>
           <div class="goal-tags">
@@ -629,24 +562,24 @@
         <div class="rec-num">02</div>
         <div>
           <h2>Laborzugang und Shared Equipment aufbauen</h2>
-          <p>Labore und technische Ressourcen werden transparenter erfasst, zugänglicher gemacht und fachbereichsübergreifend genutzt.</p>
-          <div class="vision-link">Bezug zu BHT 2033: zugängliche Laborstrukturen, Ressourceneffizienz und praxisnahe Forschung</div>
+          <p>Labore und technische Geräte werden nicht mehr isoliert je Fachbereich gedacht, sondern als gemeinsam sichtbare und freigabebasierte Infrastruktur für priorisierte Profilstudiengänge nutzbar gemacht.</p>
         </div>
         <div class="rec-meta">
-          <span class="meta-tag">Labore</span>
+          <span class="meta-tag">Zugängliche Labore</span>
           <span class="meta-tag">Ressourcen</span>
-          <span class="meta-tag">Shared Service</span>
+          <span class="meta-tag">Shared Equipment</span>
+          <span class="meta-tag">Praxisnähe</span>
         </div>
       </div>
 
       <div class="goal-grid">
         <div class="goal-card">
-          <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Ende 2026 werden 100 % der Laborausstattungen in FB 6 und FB 7 auditiert und inventarisiert.</h3>
+          <div class="stakeholder-label">Laborleitungen</div>
+          <h3>Bis Ende 2026 erfassen die Laborleitungen 100 % der Geräte in FB 6 und FB 7 und markieren mindestens 30 Geräte als fachbereichsübergreifend nutzbar.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>100 % Inventarisierung</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>100 % Inventarisierung / 30 freigegebene Geräte</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2026</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Laborleitungen</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Laborleitungen FB 6 / FB 7</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>FB 6 und FB 7</strong></div>
           </div>
           <div class="goal-tags">
@@ -657,11 +590,11 @@
 
         <div class="goal-card">
           <div class="stakeholder-label">Studierende</div>
-          <h3>Im SoSe 2027 erhalten Studierende Zugang zu mindestens 30 freigeschalteten Geräten über die Shared-Equipment-Plattform.</h3>
+          <h3>Im SoSe 2027 erhalten Studierende aus Transformation Design, Human-Computer Interaction und Humanoider Robotik Zugang zur Shared-Equipment-Plattform.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>30 freigeschaltete Geräte</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>3 Profilstudiengänge / 30 einsehbare oder anfragbare Geräte</strong></div>
             <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Laborleitungen / Fachbereiche</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Laborleitungen / IT</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>digitale Plattform</strong></div>
           </div>
           <div class="goal-tags">
@@ -671,13 +604,13 @@
         </div>
 
         <div class="goal-card">
-          <div class="stakeholder-label">Mitarbeitende</div>
-          <h3>Bis SoSe 2027 werden mindestens 20 Laborverantwortliche und Mitarbeitende im Umgang mit der Shared-Equipment-Plattform geschult.</h3>
+          <div class="stakeholder-label">Laborverantwortliche und technische Mitarbeitende</div>
+          <h3>Bis SoSe 2027 werden mindestens 20 Personen für Buchung, Einweisung und Gerätefreigabe über die Shared-Equipment-Plattform geschult.</h3>
           <div class="smart-row">
             <div class="smart-item"><span>Messgröße</span><strong>20 geschulte Personen</strong></div>
             <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Hochschulleitung / IT / Labore</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Labor- und Verwaltungsbereiche</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Laborleitungen / IT</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>Labor- und Technikbereiche</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag green">sozial</span>
@@ -686,12 +619,12 @@
         </div>
 
         <div class="goal-card">
-          <div class="stakeholder-label">Fachbereiche</div>
-          <h3>Bis Ende 2028 wird das Shared-Service-Prinzip auf 100 % der technisch ausgerichteten Fachbereiche übertragen.</h3>
+          <div class="stakeholder-label">Technische Fachbereiche</div>
+          <h3>Bis Ende 2028 wird das Shared-Equipment-Prinzip auf alle technisch ausgerichteten Fachbereiche übertragen.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>100 % der technischen Fachbereiche</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>100 % der technischen Fachbereiche mit buchbaren Laborressourcen</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Dekanate</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Dekanate / Laborleitungen</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>technische Fachbereiche</strong></div>
           </div>
           <div class="goal-tags">
@@ -707,24 +640,25 @@
         <div class="rec-num">03</div>
         <div>
           <h2>Praxis-Transfer in Berlin-Brandenburg stärken</h2>
-          <p>Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und Praxispartnern werden messbar ausgebaut.</p>
-          <div class="vision-link">Bezug zu BHT 2033: angewandte Forschung, regionale Wirkung und Praxis-Transfer</div>
+          <p>Die BHT verknüpft ihre drei Profilfelder mit KMU, Forschung, Startup Hub und öffentlichen Transferformaten in Berlin-Brandenburg.</p>
         </div>
         <div class="rec-meta">
           <span class="meta-tag">Transfer</span>
           <span class="meta-tag">KMU</span>
           <span class="meta-tag">Region</span>
+          <span class="meta-tag">Forschung</span>
+          <span class="meta-tag">Startup Hub</span>
         </div>
       </div>
 
       <div class="goal-grid">
         <div class="goal-card">
           <div class="stakeholder-label">Wirtschaft und Praxispartner</div>
-          <h3>Bis Ende 2029 baut die BHT 50 aktive KMU-Praxispartnerschaften in Berlin-Brandenburg auf.</h3>
+          <h3>Bis Ende 2029 baut die BHT 50 aktive Praxispartnerschaften in Berlin-Brandenburg auf; mindestens 30 davon mit KMU aus KI, Responsible Design, Bildungsrobotik, Mensch-Technik-Interaktion oder angewandter Technologieentwicklung.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>50 aktive Partnerschaften</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>50 Partnerschaften, davon 30 KMU</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2029</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Fachbereiche</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Praxis-Transfer / Fachbereiche</strong></div>
             <div class="smart-item"><span>Zielort</span><strong>Berlin-Brandenburg</strong></div>
           </div>
           <div class="goal-tags">
@@ -735,12 +669,12 @@
 
         <div class="goal-card">
           <div class="stakeholder-label">Studierende</div>
-          <h3>Bis Ende 2029 entstehen 80 % aller Abschlussarbeiten mit Praxispartnern aus Berlin-Brandenburg.</h3>
+          <h3>Bis Ende 2029 entstehen 80 % der Abschlussarbeiten in den drei Profilfeldern mit ausgewählten Praxispartnern aus Berlin-Brandenburg.</h3>
           <div class="smart-row">
             <div class="smart-item"><span>Messgröße</span><strong>80 % Praxis-Abschlussarbeiten</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Ende 2029</strong></div>
             <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Praxispartner</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Studium und Transfer</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>Transformation Design, HCI, Humanoide Robotik</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag green">sozial</span>
@@ -749,13 +683,28 @@
         </div>
 
         <div class="goal-card">
-          <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Mitte 2027 startet die BHT 3 Joint Labs mit Praxispartnern und interdisziplinären BHT-Teams.</h3>
+          <div class="stakeholder-label">Forschung und Startup Hub</div>
+          <h3>Bis Ende 2028 werden 6 Forschungs- oder Gründungsvorhaben aus den Profilfeldern in eine Transferpipeline mit Startup Hub, Fachbereichen und Praxispartnern überführt.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>3 Joint Labs</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>6 Transfer- oder Gründungsvorhaben</strong></div>
+            <div class="smart-item"><span>Termin</span><strong>Ende 2028</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Startup Hub / Forschung / Fachbereiche</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>BHT und Praxisnetzwerk</strong></div>
+          </div>
+          <div class="goal-tags">
+            <span class="goal-tag">ökonomisch</span>
+            <span class="goal-tag green">sozial</span>
+          </div>
+        </div>
+
+        <div class="goal-card">
+          <div class="stakeholder-label">Hochschulleitung und Fachbereiche</div>
+          <h3>Bis Mitte 2027 startet die BHT 3 Joint-Lab-Formate: je eines zu Transformation Design, Human-Computer Interaction und Humanoider Robotik.</h3>
+          <div class="smart-row">
+            <div class="smart-item"><span>Messgröße</span><strong>3 Joint-Lab-Formate</strong></div>
             <div class="smart-item"><span>Termin</span><strong>Mitte 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Transferstelle</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>BHT und Partnerstandorte</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Praxis-Transfer</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>Profilfelder der BHT</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag">ökonomisch</span>
@@ -766,12 +715,12 @@
 
         <div class="goal-card">
           <div class="stakeholder-label">Gesellschaft und regionale Öffentlichkeit</div>
-          <h3>Ab 2028 organisiert die BHT jährlich 6 öffentliche Transferformate mit mindestens 300 Teilnehmenden aus Stadtgesellschaft und Region.</h3>
+          <h3>Ab 2028 organisiert die BHT pro Semester 3 öffentliche GLASBOX- oder Campus-Transferformate, darunter KI-Kompetenztraining, Robotik zum Anfassen und Responsible-Design-Werkstätten mit Schulen, sozialen Trägern oder Stadtteilakteuren.</h3>
           <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>6 Formate / 300 Teilnehmende</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>jährlich ab 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Kommunikation</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Campus, GLASBOX, Wedding</strong></div>
+            <div class="smart-item"><span>Messgröße</span><strong>6 Formate / 300 Teilnehmende pro Jahr</strong></div>
+            <div class="smart-item"><span>Termin</span><strong>ab 2028 pro Semester</strong></div>
+            <div class="smart-item"><span>Verantwortung</span><strong>GLASBOX / Studierende / Fachbereiche</strong></div>
+            <div class="smart-item"><span>Zielort</span><strong>GLASBOX, Campus, Wedding</strong></div>
           </div>
           <div class="goal-tags">
             <span class="goal-tag green">sozial</span>
@@ -803,63 +752,63 @@
             <tr>
               <td>Profilfelder bündeln</td>
               <td>Hochschulleitung</td>
-              <td>3 verbindliche Profilfelder für BHT 2033 beschließen</td>
+              <td>Transformation Design, HCI und Humanoide Robotik verbindlich beschließen</td>
               <td>Ende 2026</td>
-              <td>3 Profilfelder</td>
+              <td>3 beschlossene Profilfelder</td>
             </tr>
 
             <tr>
               <td>Profilfelder bündeln</td>
               <td>Studierende</td>
-              <td>Teilnahme am ersten interfakultären HCI-Lehrprojekt</td>
+              <td>Teilnahme am Projektkurs „Mensch-Technik-Interaktion“</td>
               <td>SoSe 2027</td>
-              <td>20 % Teilnahmequote aus FB 6 und FB 7</td>
+              <td>20 % Teilnahmequote</td>
             </tr>
 
             <tr>
               <td>Profilfelder bündeln</td>
-              <td>Mitarbeitende und Lehrende</td>
-              <td>Aufbau interdisziplinärer Profilfeld-Teams</td>
+              <td>Lehrende und Laborverantwortliche</td>
+              <td>Profilfeld-Pilotgruppen einrichten</td>
               <td>WiSe 2026/27</td>
-              <td>15 Personen aus 4 Fachbereichen</td>
+              <td>3 Gruppen mit je mindestens 5 Beteiligten</td>
             </tr>
 
             <tr>
               <td>Profilfelder bündeln</td>
               <td>Praxispartner</td>
-              <td>Praxisprojekte in den drei Profilfeldern umsetzen</td>
+              <td>Praxisprojekte je Profilfeld umsetzen</td>
               <td>Ende 2028</td>
-              <td>10 Praxisprojekte</td>
+              <td>9 Praxisprojekte, davon mindestens 6 mit KMU</td>
             </tr>
 
             <tr>
               <td>Shared Equipment</td>
-              <td>Hochschulleitung</td>
-              <td>Laborausstattung in FB 6 und FB 7 auditieren</td>
+              <td>Laborleitungen</td>
+              <td>Geräte in FB 6 und FB 7 erfassen und freigeben</td>
               <td>Ende 2026</td>
-              <td>100 % Inventarisierung</td>
+              <td>100 % Inventarisierung / 30 freigegebene Geräte</td>
             </tr>
 
             <tr>
               <td>Shared Equipment</td>
               <td>Studierende</td>
-              <td>Zugang zu Laborressourcen über Plattform ermöglichen</td>
+              <td>Zugang zur Shared-Equipment-Plattform ermöglichen</td>
               <td>SoSe 2027</td>
-              <td>30 freigeschaltete Geräte</td>
+              <td>3 Profilstudiengänge / 30 Geräte</td>
             </tr>
 
             <tr>
               <td>Shared Equipment</td>
-              <td>Mitarbeitende</td>
-              <td>Schulung zur Shared-Equipment-Plattform</td>
+              <td>Laborverantwortliche und technische Mitarbeitende</td>
+              <td>Schulung zu Buchung, Einweisung und Gerätefreigabe</td>
               <td>SoSe 2027</td>
               <td>20 geschulte Personen</td>
             </tr>
 
             <tr>
               <td>Shared Equipment</td>
-              <td>Fachbereiche</td>
-              <td>Shared-Service-Prinzip ausrollen</td>
+              <td>Technische Fachbereiche</td>
+              <td>Shared-Equipment-Prinzip ausrollen</td>
               <td>Ende 2028</td>
               <td>100 % der technischen Fachbereiche</td>
             </tr>
@@ -867,33 +816,41 @@
             <tr>
               <td>Praxis-Transfer</td>
               <td>Wirtschaft und Praxispartner</td>
-              <td>KMU-Praxispartnerschaften aufbauen</td>
+              <td>Praxispartnerschaften mit KMU und Technologiepartnern aufbauen</td>
               <td>Ende 2029</td>
-              <td>50 aktive Partnerschaften</td>
+              <td>50 Partnerschaften, davon 30 KMU</td>
             </tr>
 
             <tr>
               <td>Praxis-Transfer</td>
               <td>Studierende</td>
-              <td>Abschlussarbeiten mit Praxispartnern verbinden</td>
+              <td>Abschlussarbeiten mit Praxispartnern in den Profilfeldern verbinden</td>
               <td>Ende 2029</td>
               <td>80 % Praxis-Abschlussarbeiten</td>
             </tr>
 
             <tr>
               <td>Praxis-Transfer</td>
-              <td>Hochschulleitung</td>
-              <td>Joint Labs mit Praxispartnern starten</td>
+              <td>Forschung und Startup Hub</td>
+              <td>Forschungs- oder Gründungsvorhaben in Transferpipeline überführen</td>
+              <td>Ende 2028</td>
+              <td>6 Transfer- oder Gründungsvorhaben</td>
+            </tr>
+
+            <tr>
+              <td>Praxis-Transfer</td>
+              <td>Hochschulleitung und Fachbereiche</td>
+              <td>Joint-Lab-Formate je Profilfeld starten</td>
               <td>Mitte 2027</td>
-              <td>3 Joint Labs</td>
+              <td>3 Joint-Lab-Formate</td>
             </tr>
 
             <tr>
               <td>Praxis-Transfer</td>
               <td>Gesellschaft und regionale Öffentlichkeit</td>
-              <td>Öffentliche Transferformate für Stadtgesellschaft und Region umsetzen</td>
-              <td>jährlich ab 2028</td>
-              <td>6 Formate / 300 Teilnehmende</td>
+              <td>GLASBOX- und Campus-Transferformate umsetzen</td>
+              <td>ab 2028 pro Semester</td>
+              <td>6 Formate / 300 Teilnehmende pro Jahr</td>
             </tr>
           </tbody>
         </table>
@@ -903,7 +860,7 @@
     <div class="final-box">
       <h2>Kritische Einordnung</h2>
       <p>
-        Die Ziele zeigen, woran BHT 2033 scheitern oder wirksam werden kann: Wenn bis 2029 keine messbare Beteiligung an HCI-Lehrprojekten, kein transparenter Laborzugang und kein belastbares KMU-Netzwerk entstehen, bleibt die Vision ein Profilversprechen ohne operative Wirkung.
+        Die Ziele zeigen, woran BHT 2033 messbar wird: Bis 2029 müssen die drei Profilfelder verbindlich beschlossen, 30 Laborgeräte fachbereichsübergreifend zugänglich, 50 Praxispartnerschaften aufgebaut und 80 % der Abschlussarbeiten in den Profilfeldern mit Praxispartnern verbunden sein. Ohne diese operative Umsetzung bleibt BHT 2033 ein Profilversprechen ohne überprüfbare Wirkung.
       </p>
     </div>
 

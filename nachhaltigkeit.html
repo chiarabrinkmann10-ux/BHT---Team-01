@@ -511,35 +511,46 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 42px;
-      padding-top: 18px;
-      border-top: 1px solid var(--border-color);
+      margin-top: 52px;
+      padding-top: 32px;
+      border-top: 1px solid #cbd5e1;
     }
 
     .btn-prev {
       color: #64748b;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
+      font-weight: 650;
+      font-size: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-prev:hover {
+      color: var(--secondary-color);
+      transform: translateX(-3px);
     }
 
     .btn-next {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
       color: white;
       text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 12px;
-      font-weight: 650;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+      padding: 18px 34px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.22);
       transition: all 0.2s ease-in-out;
     }
 
     .btn-next:hover {
       transform: translateX(4px);
-      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.28);
     }
 
     @media (max-width: 850px) {
@@ -641,7 +652,6 @@
 
         <div class="stakeholder-slide active" data-slider="studieneinstieg" data-title="Hochschulleitung / Präsidium">
           <div class="slide-content">
-
             <div class="goal-card blue">
               <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
               <h3>BHT-Startcheck vorbereiten</h3>
@@ -677,13 +687,11 @@
                 <span class="impact-pill economic">ökonomisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="studieneinstieg" data-title="Studierende">
           <div class="slide-content">
-
             <div class="goal-card green">
               <div class="stakeholder-label">Studierende</div>
               <h3>Orientierungssemester testen</h3>
@@ -718,13 +726,11 @@
                 <span class="impact-pill social">sozial</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="studieneinstieg" data-title="Mitarbeitende / Lehrende">
           <div class="slide-content single">
-
             <div class="goal-card purple">
               <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
               <h3>Profilgrundlagen-Kurse testen</h3>
@@ -742,7 +748,6 @@
                 <span class="impact-pill economic">ökonomisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -780,7 +785,6 @@
 
         <div class="stakeholder-slide active" data-slider="reallabor" data-title="Hochschulleitung / Präsidium">
           <div class="slide-content single">
-
             <div class="goal-card blue">
               <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
               <h3>Transfercluster festlegen</h3>
@@ -798,13 +802,11 @@
                 <span class="impact-pill ecological">ökologisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="reallabor" data-title="Wirtschaft und Praxispartner">
           <div class="slide-content">
-
             <div class="goal-card green">
               <div class="stakeholder-label">Wirtschaft und Praxispartner</div>
               <h3>Joint Labs für Praxisprojekte starten</h3>
@@ -840,13 +842,11 @@
                 <span class="impact-pill social">sozial</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="reallabor" data-title="Studierende">
           <div class="slide-content single">
-
             <div class="goal-card">
               <div class="stakeholder-label">Studierende</div>
               <h3>Abschlussarbeiten mit Praxispartnern verbinden</h3>
@@ -864,13 +864,11 @@
                 <span class="impact-pill economic">ökonomisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="reallabor" data-title="Gesellschaft und regionale Öffentlichkeit">
           <div class="slide-content single">
-
             <div class="goal-card green">
               <div class="stakeholder-label">Gesellschaft und regionale Öffentlichkeit</div>
               <h3>GLASBOX-Formate öffnen</h3>
@@ -888,23 +886,21 @@
                 <span class="impact-pill ecological">ökologisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="reallabor" data-title="Land Berlin / Senat">
           <div class="slide-content single">
-
             <div class="goal-card blue">
               <div class="stakeholder-label">Land Berlin / Senat</div>
-              <h3>Regionale Transferwirkung erhöhen</h3>
+              <h3>Transfer in öffentliche Aufgabenfelder stärken</h3>
               <ul>
-                <li>mindestens 30 der 50 KMU-Partnerschaften aus Berlin-Brandenburg</li>
-                <li>Joint Labs und GLASBOX-Formate auf regionale Problemstellungen ausrichten</li>
-                <li>Beitrag zu Fachkräfteaufbau und Innovationsstandort Berlin-Brandenburg stärken</li>
+                <li>Praxisprojekte mit Berliner Verwaltung und öffentlichen Einrichtungen</li>
+                <li>Reallabore auf regionale Problemstellungen ausrichten</li>
+                <li>Anschlussmöglichkeiten für Studierende schaffen</li>
               </ul>
               <div class="metric-row">
-                <div class="metric"><span>Messgröße</span><p>30 regionale KMU-Partnerschaften</p></div>
+                <div class="metric"><span>Messgröße</span><p>10 Praxisprojekte, davon 5 mit Anschlussoption</p></div>
                 <div class="metric"><span>Termin</span><p>Ende 2029</p></div>
               </div>
               <div class="impact-row">
@@ -912,7 +908,6 @@
                 <span class="impact-pill social">sozial</span>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -949,7 +944,6 @@
 
         <div class="stakeholder-slide active" data-slider="laborsynergien" data-title="Hochschulleitung / Präsidium">
           <div class="slide-content">
-
             <div class="goal-card green">
               <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
               <h3>Shared-Equipment-Policy beschließen</h3>
@@ -985,13 +979,11 @@
                 <span class="impact-pill ecological">ökologisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="laborsynergien" data-title="Mitarbeitende / Lehrende">
           <div class="slide-content">
-
             <div class="goal-card blue">
               <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
               <h3>Labor-Audit FB 6 &amp; FB 7 durchführen</h3>
@@ -1014,26 +1006,24 @@
               <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
               <h3>FB6/7 Lehrprojekt starten</h3>
               <ul>
-                <li>gemeinsames Lehrprojekt von FB 6 und FB 7</li>
-                <li>Thema: Mensch-Technik-Interaktion</li>
-                <li>Verbindung von Informatik, Medien, Robotik und Sensorik</li>
+                <li>gemeinsames Modul von FB 6 und FB 7</li>
+                <li>inhaltliche Arbeit zu Mensch-Technik-Interaktion</li>
+                <li>Projektarbeit mit Dozenteninput aus beiden Fachbereichen</li>
               </ul>
               <div class="metric-row">
-                <div class="metric"><span>Messgröße</span><p>1 Lehrprojekt / 2 Fachbereiche</p></div>
-                <div class="metric"><span>Termin</span><p>SoSe 2027</p></div>
+                <div class="metric"><span>Messgröße</span><p>1 gemeinsames Lehrprojekt pro Semester</p></div>
+                <div class="metric"><span>Termin</span><p>ab SoSe 2027</p></div>
               </div>
               <div class="impact-row">
                 <span class="impact-pill social">sozial</span>
                 <span class="impact-pill economic">ökonomisch</span>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="stakeholder-slide" data-slider="laborsynergien" data-title="Studierende">
-          <div class="slide-content single">
-
+          <div class="slide-content">
             <div class="goal-card purple">
               <div class="stakeholder-label">Studierende</div>
               <h3>Buchungsplattform starten</h3>
@@ -1052,6 +1042,24 @@
               </div>
             </div>
 
+            <div class="goal-card green">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Laboreinführungskurs FB6/7 belegen</h3>
+              <ul>
+                <li>Studierende lernen Geräte beider Fachbereiche kennen</li>
+                <li>FB 6 und FB 7 erklären sich gegenseitig Labore und Arbeitsweisen</li>
+                <li>Grundlage für gemeinsame Projekte, Praxisnähe und Forschung schaffen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>2 Laboreinführungen pro Semester</p></div>
+                <div class="metric"><span>Termin</span><p>ab SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -1062,7 +1070,7 @@
     <div class="final-box">
       <h2>Kritische Einordnung</h2>
       <p>
-        Die Ziele zeigen, woran BHT 2033 messbar wird: Bis 2027 müssen ein Orientierungssemester getestet, drei Transfercluster festgelegt und eine gemeinsame Buchungsplattform gestartet sein. Bis 2029 müssen 15 % weniger Abbrüche im ersten Studienjahr, 50 KMU-Partnerschaften und 80 % Praxis-Abschlussarbeiten erreicht werden. Ohne diese Umsetzung bleibt BHT 2033 nur ein Versprechen.
+        Die Ziele zeigen, woran BHT 2033 messbar wird: Bis 2027 müssen ein Orientierungssemester getestet, drei Transfercluster festgelegt und eine gemeinsame Buchungsplattform gestartet sein. Bis 2029 müssen 15 % weniger Abbrüche im ersten Studienjahr, 50 KMU-Partnerschaften, 80 % Praxis-Abschlussarbeiten und 10 Praxisprojekte mit öffentlichen Einrichtungen erreicht werden. Ohne diese Umsetzung bleibt BHT 2033 nur ein Versprechen.
       </p>
     </div>
 
@@ -1071,7 +1079,7 @@
     </p>
 
     <div class="seq-nav-container">
-      <a href="Leitbild.html" class="btn-prev">← Zurück zu: Leitbild</a>
+      <a href="leitbild.html" class="btn-prev">← Zurück zu: Leitbild</a>
       <a href="quellen.html" class="btn-next">Weiter zu: Quellen →</a>
     </div>
 

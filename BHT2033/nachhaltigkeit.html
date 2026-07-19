@@ -11,17 +11,15 @@
       --text-main: #1e293b;
       --primary-color: #0f172a;
       --secondary-color: #1e3a8a;
-      --accent-blue: #3b82f6;
+      --accent-color: #3b82f6;
       --accent-orange: #fb7e03;
       --accent-cyan: #0f9ca8;
-      --muted-color: #64748b;
       --card-bg: #ffffff;
       --border-color: #e2e8f0;
       --soft-blue: #eff6ff;
       --soft-orange: #fff7ed;
       --soft-green: #f0fdf4;
       --soft-purple: #faf5ff;
-      --soft-cyan: #ecfeff;
     }
 
     * {
@@ -34,7 +32,7 @@
     body {
       background-color: var(--bg-main);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.55;
     }
 
     .global-nav {
@@ -51,8 +49,8 @@
 
     .global-nav-brand {
       color: white;
-      font-weight: 800;
-      font-size: 1.1rem;
+      font-weight: 700;
+      font-size: 1.05rem;
       text-decoration: none;
     }
 
@@ -65,7 +63,7 @@
     .global-nav-back {
       color: #93c5fd;
       text-decoration: none;
-      font-weight: 700;
+      font-weight: 600;
       font-size: 0.9rem;
       background: rgba(255, 255, 255, 0.06);
       padding: 8px 16px;
@@ -80,223 +78,284 @@
       transform: translateX(-2px);
     }
 
-    .hero {
-      padding: 70px 20px 45px;
+    .header-banner {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 50px 20px;
       text-align: center;
     }
 
-    .hero-label {
+    .header-banner p {
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--accent-cyan);
-      font-size: 0.75rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .hero h1 {
-      font-size: 2.4rem;
-      line-height: 1.15;
-      font-weight: 850;
-      color: var(--primary-color);
-      letter-spacing: -0.8px;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
-    .hero-subtitle {
-      color: var(--muted-color);
-      font-size: 1rem;
-      margin-bottom: 24px;
+    .header-banner h1 {
+      font-size: 2.1rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .main-content {
+      max-width: 1120px;
+      margin: 24px auto 50px auto;
+      padding: 0 20px;
     }
 
     .intro-box {
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: left;
-      border-left: 3px solid var(--accent-orange);
-      padding-left: 22px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px 24px;
+      margin-bottom: 22px;
+      text-align: center;
       color: #475569;
-      font-size: 0.98rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
     }
 
-    main {
-      max-width: 1180px;
-      margin: 0 auto 70px;
-      padding: 0 22px;
+    .intro-box p {
+      font-size: 0.96rem;
+      margin-bottom: 0;
     }
 
-    section {
-      margin-top: 48px;
-    }
-
-    .section-kicker {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent-cyan);
-      font-size: 0.72rem;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-size: 1.45rem;
-      color: var(--primary-color);
-      font-weight: 850;
-      margin-bottom: 18px;
-      letter-spacing: -0.3px;
-    }
-
-    .section-note {
-      color: var(--muted-color);
-      font-size: 0.92rem;
-      max-width: 850px;
+    .main-tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
       margin-bottom: 22px;
     }
 
-    .logic-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .logic-card {
+    .main-tab-btn {
+      flex: 1;
+      min-width: 220px;
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-    }
-
-    .logic-card:nth-child(1) {
-      background: var(--soft-blue);
-    }
-
-    .logic-card:nth-child(2) {
-      background: var(--soft-purple);
-    }
-
-    .logic-card:nth-child(3) {
-      background: var(--soft-green);
-    }
-
-    .logic-number {
-      color: #94a3b8;
-      font-size: 0.72rem;
-      font-weight: 850;
-      margin-bottom: 8px;
-    }
-
-    .logic-card h3 {
-      color: var(--primary-color);
-      font-size: 1rem;
-      margin-bottom: 8px;
-    }
-
-    .logic-card p {
-      color: #475569;
-      font-size: 0.9rem;
-    }
-
-    .dimension-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .dimension-card {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
+      padding: 14px 16px;
       border-radius: 12px;
-      padding: 16px 18px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #475569;
+      text-align: center;
+      transition: all 0.2s ease;
     }
 
-    .dimension-card strong {
+    .main-tab-btn .tab-num {
       display: block;
-      color: var(--primary-color);
-      margin-bottom: 4px;
-      font-size: 0.92rem;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #94a3b8;
+      margin-bottom: 3px;
     }
 
-    .dimension-card span {
-      color: #64748b;
-      font-size: 0.82rem;
+    .main-tab-btn:hover {
+      border-color: var(--accent-color);
     }
 
-    .rec-section {
+    .main-tab-btn.active {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      border-color: var(--secondary-color);
+      color: white;
+    }
+
+    .main-tab-btn.active .tab-num {
+      color: #93c5fd;
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
-      margin-top: 34px;
+      border-radius: 16px;
+      padding: 26px;
+      margin-bottom: 26px;
+      box-shadow: 0 4px 8px rgba(15, 23, 42, 0.04);
     }
 
-    .rec-head {
-      padding: 26px 28px;
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      color: white;
-      display: grid;
-      grid-template-columns: 0.4fr 2.2fr 1.2fr;
-      gap: 22px;
-      align-items: center;
+    h2 {
+      font-size: 1.34rem;
+      color: var(--primary-color);
+      border-left: 4px solid var(--accent-color);
+      padding-left: 12px;
+      margin-bottom: 14px;
+      font-weight: 650;
+      letter-spacing: -0.3px;
     }
 
-    .rec-num {
-      width: 58px;
-      height: 58px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.12);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.1rem;
-      font-weight: 850;
-      border: 1px solid rgba(255,255,255,0.18);
+    h3 {
+      font-size: 1rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      font-weight: 600;
     }
 
-    .rec-head h2 {
-      font-size: 1.35rem;
-      line-height: 1.2;
-      margin-bottom: 6px;
+    p {
+      color: #475569;
+      font-size: 0.94rem;
+      margin-bottom: 12px;
     }
 
-    .rec-head p {
-      color: #dbeafe;
-      font-size: 0.92rem;
+    ul {
+      margin-left: 20px;
+      margin-bottom: 0;
     }
 
-    .rec-meta {
+    li {
+      color: #475569;
+      font-size: 0.91rem;
+      margin-bottom: 7px;
+    }
+
+    .meta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: flex-end;
+      margin: 16px 0 18px 0;
     }
 
     .meta-tag {
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
+      display: inline-block;
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: #334155;
       border-radius: 999px;
       padding: 6px 10px;
       font-size: 0.72rem;
-      font-weight: 800;
-      color: #ffffff;
-      white-space: nowrap;
+      font-weight: 600;
     }
 
-    .goal-grid {
+    .meta-tag.blue {
+      background: var(--soft-blue);
+      color: #1e3a8a;
+      border-color: #bfdbfe;
+    }
+
+    .meta-tag.orange {
+      background: var(--soft-orange);
+      color: #9a3412;
+      border-color: #fed7aa;
+    }
+
+    .meta-tag.green {
+      background: var(--soft-green);
+      color: #166534;
+      border-color: #bbf7d0;
+    }
+
+    .recommendation-note {
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-orange);
+      border-radius: 10px;
+      padding: 15px 18px;
+      margin-bottom: 18px;
+    }
+
+    .recommendation-note p {
+      margin-bottom: 0;
+      font-size: 0.92rem;
+    }
+
+    .stakeholder-switch {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .arrow-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .arrow-btn:hover {
+      background: var(--soft-blue);
+      border-color: #bfdbfe;
+    }
+
+    .stakeholder-status {
+      text-align: center;
+      flex: 1;
+    }
+
+    .stakeholder-status span {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #94a3b8;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .stakeholder-status strong {
+      color: var(--primary-color);
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    .stakeholder-slide {
+      display: none;
+      min-height: 390px;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .stakeholder-slide.active {
+      display: block;
+    }
+
+    .slide-content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
-      padding: 22px;
+      align-items: stretch;
+    }
+
+    .slide-content.single {
+      grid-template-columns: 1fr;
+      max-width: 640px;
+      margin: 0 auto;
     }
 
     .goal-card {
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
       background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
       padding: 20px;
       position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.035);
     }
 
     .goal-card::before {
@@ -307,122 +366,120 @@
       height: 4px;
       width: 100%;
       background: var(--accent-orange);
-      border-radius: 14px 14px 0 0;
+    }
+
+    .goal-card.blue::before {
+      background: var(--accent-color);
+    }
+
+    .goal-card.green::before {
+      background: #22c55e;
+    }
+
+    .goal-card.purple::before {
+      background: #8b5cf6;
     }
 
     .stakeholder-label {
       text-transform: uppercase;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.5px;
       font-size: 0.68rem;
       color: var(--accent-cyan);
-      font-weight: 850;
+      font-weight: 650;
       margin-bottom: 8px;
     }
 
     .goal-card h3 {
-      color: var(--primary-color);
       font-size: 1rem;
-      margin-bottom: 12px;
       line-height: 1.35;
+      margin-bottom: 12px;
     }
 
-    .smart-row {
+    .goal-card ul {
+      margin-left: 18px;
+    }
+
+    .metric-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
       margin-top: 14px;
     }
 
-    .smart-item {
+    .metric {
       background: #f8fafc;
       border: 1px solid var(--border-color);
-      border-radius: 10px;
+      border-radius: 9px;
       padding: 10px 12px;
     }
 
-    .smart-item span {
+    .metric span {
       display: block;
       color: #94a3b8;
-      font-size: 0.68rem;
-      font-weight: 850;
+      font-size: 0.66rem;
+      font-weight: 650;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
+      letter-spacing: 1px;
       margin-bottom: 2px;
     }
 
-    .smart-item strong {
+    .metric p {
+      margin-bottom: 0;
       color: #334155;
       font-size: 0.82rem;
       line-height: 1.35;
     }
 
-    .goal-tags {
+    .impact-row {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
       margin-top: 14px;
     }
 
-    .goal-tag {
+    .impact-pill {
       display: inline-block;
       border-radius: 999px;
       padding: 5px 9px;
       font-size: 0.7rem;
-      font-weight: 800;
-      background: var(--soft-blue);
+      font-weight: 600;
+    }
+
+    .impact-pill.economic {
+      background: #eff6ff;
       color: #1e3a8a;
       border: 1px solid #bfdbfe;
     }
 
-    .goal-tag.green {
-      background: var(--soft-green);
+    .impact-pill.social {
+      background: #f0fdf4;
       color: #166534;
-      border-color: #bbf7d0;
+      border: 1px solid #bbf7d0;
     }
 
-    .goal-tag.orange {
-      background: var(--soft-orange);
+    .impact-pill.ecological {
+      background: #fff7ed;
       color: #9a3412;
-      border-color: #fed7aa;
+      border: 1px solid #fed7aa;
     }
 
-    .summary-table-wrap {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+    .dot-row {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 16px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
     }
 
-    th,
-    td {
-      padding: 14px 16px;
-      text-align: left;
-      vertical-align: top;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 0.86rem;
-    }
-
-    th {
-      background: #0f172a;
-      color: white;
-      font-weight: 850;
-      font-size: 0.78rem;
-      letter-spacing: 0.4px;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    td:first-child {
-      font-weight: 800;
-      color: var(--primary-color);
+    .dot.active {
+      background: var(--secondary-color);
     }
 
     .final-box {
@@ -430,28 +487,32 @@
       border: 1px solid var(--border-color);
       border-left: 4px solid var(--accent-orange);
       border-radius: 14px;
-      padding: 26px 28px;
-      margin-top: 42px;
+      padding: 22px 24px;
+      margin-top: 26px;
     }
 
     .final-box h2 {
-      color: var(--primary-color);
-      font-size: 1.25rem;
+      border-left: none;
+      padding-left: 0;
+      font-size: 1.2rem;
       margin-bottom: 10px;
+      font-weight: 650;
     }
 
-    .final-box p {
-      color: #475569;
-      max-width: 900px;
-      font-size: 0.95rem;
+    .source-footer {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      color: #64748b;
+      text-align: right;
+      font-style: italic;
     }
 
     .seq-nav-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 50px;
-      padding-top: 20px;
+      margin-top: 42px;
+      padding-top: 18px;
       border-top: 1px solid var(--border-color);
     }
 
@@ -471,7 +532,7 @@
       text-decoration: none;
       padding: 16px 28px;
       border-radius: 12px;
-      font-weight: 700;
+      font-weight: 650;
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
       transition: all 0.2s ease-in-out;
     }
@@ -481,40 +542,27 @@
       box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
     }
 
-    .source-footer {
-      margin-top: 26px;
-      font-size: 0.82rem;
-      color: #64748b;
-      text-align: right;
-      font-style: italic;
-    }
+    @media (max-width: 850px) {
+      .slide-content,
+      .slide-content.single {
+        grid-template-columns: 1fr;
+        max-width: none;
+      }
 
-    @media (max-width: 950px) {
-      .logic-grid,
-      .dimension-row,
-      .goal-grid,
-      .rec-head {
+      .stakeholder-slide {
+        min-height: auto;
+      }
+
+      .metric-row {
         grid-template-columns: 1fr;
       }
 
-      .rec-meta {
-        justify-content: flex-start;
+      .header-banner h1 {
+        font-size: 1.9rem;
       }
 
-      .smart-row {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .summary-table-wrap {
-        overflow-x: auto;
-      }
-
-      table {
-        min-width: 850px;
+      .section-card {
+        padding: 22px;
       }
 
       .seq-nav-container {
@@ -539,417 +587,501 @@
     <a href="index.html" class="global-nav-back">← Zum Dashboard</a>
   </nav>
 
-  <header class="hero">
-    <div class="hero-label">Teil 2 · Transformation und Verantwortung</div>
+  <div class="header-banner">
+    <p>Teil 2 · Transformation und Verantwortung</p>
     <h1>Nachhaltige Ziele</h1>
-    <div class="hero-subtitle">Operative SMART-Ziele für zentrale Stakeholder</div>
+  </div>
+
+  <main class="main-content">
 
     <div class="intro-box">
       <p>
-        Nachhaltige Ziele werden hier nicht als Zusatzthema verstanden, sondern als Steuerungsinstrument. Die strategischen Handlungsempfehlungen werden in operative Ziele übersetzt, damit ihre Wirkung messbar wird.
+        Nachhaltige Ziele steuern und messen mittels operativer SMART-Ziele die Umsetzung unserer definierten Handlungsempfehlungen.
       </p>
     </div>
-  </header>
 
-  <main>
+    <div class="main-tab-nav">
+      <button class="main-tab-btn active" onclick="switchMainTab('studieneinstieg', this)">
+        <span class="tab-num">1</span>Studieneinstieg
+      </button>
+      <button class="main-tab-btn" onclick="switchMainTab('reallabor', this)">
+        <span class="tab-num">2</span>Reallabore
+      </button>
+      <button class="main-tab-btn" onclick="switchMainTab('laborsynergien', this)">
+        <span class="tab-num">3</span>Labor-Synergien
+      </button>
+    </div>
 
-    <section>
-      <div class="section-kicker">Zielsystem</div>
-      <h2 class="section-title">Von der Strategie zur Messung</h2>
+    <!-- TAB 1: STUDIENEINSTIEG -->
+    <div class="tab-panel active" id="panel-studieneinstieg">
+      <div class="section-card">
+        <h2>Kurs- und Einstiegsmöglichkeiten 2026–2029</h2>
 
-      <div class="logic-grid">
-        <div class="logic-card">
-          <div class="logic-number">01</div>
-          <h3>Strategische Richtung</h3>
-          <p>Die BHT bündelt Profilfelder, Studienzugang, Laborinfrastruktur und Praxis-Transfer.</p>
+        <div class="meta-row">
+          <span class="meta-tag blue">WO-Strategie</span>
+          <span class="meta-tag orange">Prio A</span>
+          <span class="meta-tag green">Studienzugang</span>
+          <span class="meta-tag">Peer-Mentoring</span>
         </div>
 
-        <div class="logic-card">
-          <div class="logic-number">02</div>
-          <h3>Operative Übersetzung</h3>
-          <p>Jede Handlungsempfehlung wird für relevante Stakeholder in konkrete Ziele übersetzt.</p>
+        <div class="recommendation-note">
+          <p>
+            Handlungsempfehlung: Institutionalisierung des verbindlichen Studieneinstiegs. Die BHT soll unterschiedliche Vorwissenstände früh erkennen und den Einstieg besser begleiten.
+          </p>
         </div>
 
-        <div class="logic-card">
-          <div class="logic-number">03</div>
-          <h3>Messbare Steuerung</h3>
-          <p>Jedes Ziel enthält eine Quote, Anzahl oder Prozentzahl und einen klaren Zieltermin.</p>
+        <div class="stakeholder-switch">
+          <button class="arrow-btn" onclick="moveStakeholder('studieneinstieg', -1)">‹</button>
+          <div class="stakeholder-status">
+            <span id="status-studieneinstieg-count">1 / 3</span>
+            <strong id="status-studieneinstieg-title">Hochschulleitung / Präsidium</strong>
+          </div>
+          <button class="arrow-btn" onclick="moveStakeholder('studieneinstieg', 1)">›</button>
         </div>
+
+        <div class="stakeholder-slide active" data-slider="studieneinstieg" data-title="Hochschulleitung / Präsidium">
+          <div class="slide-content">
+
+            <div class="goal-card blue">
+              <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
+              <h3>BHT-Startcheck vorbereiten</h3>
+              <ul>
+                <li>Arbeitsgruppe mit Lehre, Verwaltung und Studienberatung</li>
+                <li>einheitliches Einstiegs-Raster entwickeln</li>
+                <li>Grundlage für das Orientierungssemester schaffen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>1 Arbeitsgruppe / 12 Beteiligte</p></div>
+                <div class="metric"><span>Termin</span><p>WiSe 2026/27</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill social">sozial</span>
+              </div>
+            </div>
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
+              <h3>Abbruchrisiko im ersten Studienjahr senken</h3>
+              <ul>
+                <li>Studienverlauf in den 3 Core-Studiengängen auswerten</li>
+                <li>Teilnahme, Bestehen und Abbruch nach jedem Semester dokumentieren</li>
+                <li>Maßnahmen nach jeder Pilotkohorte anpassen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>15 % weniger Abbrüche im ersten Studienjahr</p></div>
+                <div class="metric"><span>Termin</span><p>Kontrolle jedes Semester / Ziel Ende 2029</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="studieneinstieg" data-title="Studierende">
+          <div class="slide-content">
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Orientierungssemester testen</h3>
+              <ul>
+                <li>Start in 3 ingenieurwissenschaftlichen Core-Studiengängen</li>
+                <li>20 % der Bachelor-Neustudierenden erreichen</li>
+                <li>Stärken und Lücken vor dem regulären Studienverlauf erkennen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>20 % der Bachelor-Neustudierenden</p></div>
+                <div class="metric"><span>Termin</span><p>SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+              </div>
+            </div>
+
+            <div class="goal-card">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Peer-Mentoring „Ankommen an der BHT“ aufbauen</h3>
+              <ul>
+                <li>Begleitung durch erfahrene Studierende</li>
+                <li>Unterstützung im ersten Semester</li>
+                <li>mehr Orientierung und weniger Anonymität</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>60 Peer-Mentoren</p></div>
+                <div class="metric"><span>Termin</span><p>WiSe 2027/28</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="studieneinstieg" data-title="Mitarbeitende / Lehrende">
+          <div class="slide-content single">
+
+            <div class="goal-card purple">
+              <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
+              <h3>Profilgrundlagen-Kurse testen</h3>
+              <ul>
+                <li>Mathe, Gestaltung, HCI und KI/Robotik</li>
+                <li>im Orientierungssemester ausprobieren</li>
+                <li>anrechenbar in 3 Core-Studiengängen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>6 Profilgrundlagen-Kurse</p></div>
+                <div class="metric"><span>Termin</span><p>SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="dot-row" id="dots-studieneinstieg"></div>
       </div>
+    </div>
 
-      <div class="dimension-row">
-        <div class="dimension-card">
-          <strong>Ökonomisch</strong>
-          <span>Ressourcen, Finanzierung, Studienerfolg, Kooperationen</span>
-        </div>
+    <!-- TAB 2: REALLABORE -->
+    <div class="tab-panel" id="panel-reallabor">
+      <div class="section-card">
+        <h2>Transfercluster, Joint Labs und Praxisformate 2026–2029</h2>
 
-        <div class="dimension-card">
-          <strong>Ökologisch</strong>
-          <span>gemeinsame Nutzung von Infrastruktur, weniger Doppelstrukturen, Ressourceneffizienz</span>
-        </div>
-
-        <div class="dimension-card">
-          <strong>Sozial</strong>
-          <span>Zugang, Beteiligung, Betreuung, regionale Verantwortung</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="rec-section">
-      <div class="rec-head">
-        <div class="rec-num">01</div>
-        <div>
-          <h2>Profilfelder sichtbar bündeln</h2>
-          <p>Transformation Design, Human-Computer Interaction und Humanoide Robotik werden als gemeinsame Zukunftsfelder der BHT sichtbar gemacht.</p>
-        </div>
-        <div class="rec-meta">
-          <span class="meta-tag">Profilbildung</span>
-          <span class="meta-tag">Interdisziplinarität</span>
-          <span class="meta-tag">Sichtbarkeit</span>
-        </div>
-      </div>
-
-      <div class="goal-grid">
-        <div class="goal-card">
-          <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Ende 2026 beschließt die BHT drei verbindliche Profilfelder für BHT 2033.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>3 beschlossene Profilfelder</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2026</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Strategieboard</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>gesamt BHT</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag green">sozial</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Studierende</div>
-          <h3>Im SoSe 2027 nehmen mindestens 20 % der Studierenden aus FB 6 und FB 7 am ersten interfakultären HCI-Lehrprojekt teil.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>Teilnahmequote 20 %</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Lehrende FB 6 / FB 7</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>FB 6 und FB 7</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag">ökonomisch</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Mitarbeitende und Lehrende</div>
-          <h3>Bis WiSe 2026/27 arbeiten mindestens 15 Lehrende und Mitarbeitende aus 4 Fachbereichen in Profilfeld-Teams mit.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>15 Personen / 4 Fachbereiche</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>WiSe 2026/27</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Hochschulleitung</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>interdisziplinäre Teams</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag">ökonomisch</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Praxispartner</div>
-          <h3>Bis Ende 2028 entstehen mindestens 10 Praxisprojekte in den drei Profilfeldern mit Partnern aus Berlin-Brandenburg.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>10 Praxisprojekte</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Fachbereiche</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Berlin-Brandenburg</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag green">sozial</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="rec-section">
-      <div class="rec-head">
-        <div class="rec-num">02</div>
-        <div>
-          <h2>Laborzugang und Shared Equipment aufbauen</h2>
-          <p>Labore und technische Ressourcen werden transparenter erfasst, zugänglicher gemacht und fachbereichsübergreifend genutzt.</p>
-        </div>
-        <div class="rec-meta">
-          <span class="meta-tag">Labore</span>
-          <span class="meta-tag">Ressourcen</span>
-          <span class="meta-tag">Shared Service</span>
-        </div>
-      </div>
-
-      <div class="goal-grid">
-        <div class="goal-card">
-          <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Ende 2026 werden 100 % der Laborausstattungen in FB 6 und FB 7 auditiert und inventarisiert.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>100 % Inventarisierung</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2026</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Laborleitungen</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>FB 6 und FB 7</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag orange">ökologisch</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Studierende</div>
-          <h3>Im SoSe 2027 erhalten Studierende Zugang zu mindestens 30 freigeschalteten Geräten über die Shared-Equipment-Plattform.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>30 freigeschaltete Geräte</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Laborleitungen / Fachbereiche</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>digitale Plattform</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag orange">ökologisch</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Mitarbeitende</div>
-          <h3>Bis SoSe 2027 werden mindestens 20 Laborverantwortliche und Mitarbeitende im Umgang mit der Shared-Equipment-Plattform geschult.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>20 geschulte Personen</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>SoSe 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Hochschulleitung / IT / Labore</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Labor- und Verwaltungsbereiche</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag">ökonomisch</span>
-          </div>
-        </div>
-
-        <div class="goal-card">
-          <div class="stakeholder-label">Fachbereiche</div>
-          <h3>Bis Ende 2028 wird das Shared-Service-Prinzip auf 100 % der technisch ausgerichteten Fachbereiche übertragen.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>100 % der technischen Fachbereiche</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Dekanate</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>technische Fachbereiche</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag orange">ökologisch</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="rec-section">
-      <div class="rec-head">
-        <div class="rec-num">03</div>
-        <div>
-          <h2>Praxis-Transfer in Berlin-Brandenburg stärken</h2>
-          <p>Kooperationen mit KMU, Verwaltung, Zivilgesellschaft und Praxispartnern werden messbar ausgebaut.</p>
-        </div>
-        <div class="rec-meta">
-          <span class="meta-tag">Transfer</span>
+        <div class="meta-row">
+          <span class="meta-tag blue">SO-Strategie</span>
+          <span class="meta-tag orange">Prio B</span>
+          <span class="meta-tag green">Reallabor</span>
           <span class="meta-tag">KMU</span>
-          <span class="meta-tag">Region</span>
+          <span class="meta-tag">Forschung</span>
         </div>
+
+        <div class="recommendation-note">
+          <p>
+            Handlungsempfehlung: Transformation der Laborlandschaften zum regionalen Reallabor. Die BHT soll ihre Labore stärker für Praxis, Forschung und regionale Partner nutzen.
+          </p>
+        </div>
+
+        <div class="stakeholder-switch">
+          <button class="arrow-btn" onclick="moveStakeholder('reallabor', -1)">‹</button>
+          <div class="stakeholder-status">
+            <span id="status-reallabor-count">1 / 5</span>
+            <strong id="status-reallabor-title">Hochschulleitung / Präsidium</strong>
+          </div>
+          <button class="arrow-btn" onclick="moveStakeholder('reallabor', 1)">›</button>
+        </div>
+
+        <div class="stakeholder-slide active" data-slider="reallabor" data-title="Hochschulleitung / Präsidium">
+          <div class="slide-content single">
+
+            <div class="goal-card blue">
+              <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
+              <h3>Transfercluster festlegen</h3>
+              <ul>
+                <li>Transformation Design</li>
+                <li>Human-Computer Interaction</li>
+                <li>Humanoide Robotik</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>3 Transfercluster</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2026</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="reallabor" data-title="Wirtschaft und Praxispartner">
+          <div class="slide-content">
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Wirtschaft und Praxispartner</div>
+              <h3>Joint Labs für Praxisprojekte starten</h3>
+              <ul>
+                <li>gemeinsame Projekte mit KMU</li>
+                <li>Einbindung von Handwerk und Berliner Verwaltung</li>
+                <li>Arbeit an konkreten Problemstellungen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>3 physische Joint Labs</p></div>
+                <div class="metric"><span>Termin</span><p>Mitte 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill social">sozial</span>
+              </div>
+            </div>
+
+            <div class="goal-card purple">
+              <div class="stakeholder-label">Wirtschaft und Praxispartner</div>
+              <h3>KMU-Partnerschaften aufbauen</h3>
+              <ul>
+                <li>Partner aus Berlin-Brandenburg</li>
+                <li>Fokus auf KI, Responsible Design und Bildungsrobotik</li>
+                <li>Startup Hub als Unterstützungsstruktur nutzen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>50 aktive KMU-Partnerschaften</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2029</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill social">sozial</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="reallabor" data-title="Studierende">
+          <div class="slide-content single">
+
+            <div class="goal-card">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Abschlussarbeiten mit Praxispartnern verbinden</h3>
+              <ul>
+                <li>Themen aus den drei Transferclustern</li>
+                <li>Praxisfragen aus Berlin-Brandenburg</li>
+                <li>stärkerer Bezug zwischen Studium und Anwendung</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>80 % Praxis-Abschlussarbeiten</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2029</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="reallabor" data-title="Gesellschaft und regionale Öffentlichkeit">
+          <div class="slide-content single">
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Gesellschaft und regionale Öffentlichkeit</div>
+              <h3>GLASBOX-Formate öffnen</h3>
+              <ul>
+                <li>KI-Kompetenztraining</li>
+                <li>Robotik zum Anfassen</li>
+                <li>Responsible-Design-Werkstätten</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>6 Formate / 300 Teilnehmende pro Jahr</p></div>
+                <div class="metric"><span>Termin</span><p>ab 2028 pro Semester</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="stakeholder-slide" data-slider="reallabor" data-title="Land Berlin / Senat">
+          <div class="slide-content single">
+
+            <div class="goal-card blue">
+              <div class="stakeholder-label">Land Berlin / Senat</div>
+              <h3>Transfer in öffentliche Aufgabenfelder stärken</h3>
+              <ul>
+                <li>Praxisprojekte mit Berliner Verwaltung und öffentlichen Einrichtungen</li>
+                <li>Reallabore auf regionale Problemstellungen ausrichten</li>
+                <li>Anschlussmöglichkeiten für Studierende schaffen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>10 Praxisprojekte, davon 5 mit Anschlussoption</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2029</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill social">sozial</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="dot-row" id="dots-reallabor"></div>
       </div>
+    </div>
 
-      <div class="goal-grid">
-        <div class="goal-card">
-          <div class="stakeholder-label">Wirtschaft und Praxispartner</div>
-          <h3>Bis Ende 2029 baut die BHT 50 aktive KMU-Praxispartnerschaften in Berlin-Brandenburg auf.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>50 aktive Partnerschaften</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2029</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Fachbereiche</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Berlin-Brandenburg</strong></div>
+    <!-- TAB 3: LABOR-SYNERGIEN -->
+    <div class="tab-panel" id="panel-laborsynergien">
+      <div class="section-card">
+        <h2>Laborpool, Buchungsplattform und FB6/7 Lehrprojekt 2026–2028</h2>
+
+        <div class="meta-row">
+          <span class="meta-tag blue">Interne Konsolidierung</span>
+          <span class="meta-tag orange">Prio A</span>
+          <span class="meta-tag green">Shared Equipment</span>
+          <span class="meta-tag">FB 6 &amp; FB 7</span>
+        </div>
+
+        <div class="recommendation-note">
+          <p>
+            Handlungsempfehlung: Aufbrechen von Silostrukturen durch gemeinsame Labor-Synergien. Die BHT soll Doppelstrukturen abbauen und Geräte einfacher auffindbar und nutzbar machen.
+          </p>
+        </div>
+
+        <div class="stakeholder-switch">
+          <button class="arrow-btn" onclick="moveStakeholder('laborsynergien', -1)">‹</button>
+          <div class="stakeholder-status">
+            <span id="status-laborsynergien-count">1 / 3</span>
+            <strong id="status-laborsynergien-title">Hochschulleitung / Präsidium</strong>
           </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag green">sozial</span>
+          <button class="arrow-btn" onclick="moveStakeholder('laborsynergien', 1)">›</button>
+        </div>
+
+        <div class="stakeholder-slide active" data-slider="laborsynergien" data-title="Hochschulleitung / Präsidium">
+          <div class="slide-content">
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
+              <h3>Shared-Equipment-Policy beschließen</h3>
+              <ul>
+                <li>keine isolierten Doppelbeschaffungen</li>
+                <li>Großgeräte gemeinsam nutzen</li>
+                <li>klare Regeln für Buchung und Freigabe</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>1 Policy / 0 neue Doppelbeschaffungen</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2026</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
+            <div class="goal-card blue">
+              <div class="stakeholder-label">Hochschulleitung / Präsidium</div>
+              <h3>Shared Equipment ausrollen</h3>
+              <ul>
+                <li>auf alle technischen Fachbereiche übertragen</li>
+                <li>gemeinsame Buchungslogik nutzen</li>
+                <li>vorhandene Geräte besser auslasten</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>100 % der technischen Fachbereiche</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2028</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="goal-card">
-          <div class="stakeholder-label">Studierende</div>
-          <h3>Bis Ende 2029 entstehen 80 % aller Abschlussarbeiten mit Praxispartnern aus Berlin-Brandenburg.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>80 % Praxis-Abschlussarbeiten</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Ende 2029</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Fachbereiche / Praxispartner</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Studium und Transfer</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag">ökonomisch</span>
+        <div class="stakeholder-slide" data-slider="laborsynergien" data-title="Mitarbeitende / Lehrende">
+          <div class="slide-content">
+
+            <div class="goal-card blue">
+              <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
+              <h3>Labor-Audit FB 6 &amp; FB 7 durchführen</h3>
+              <ul>
+                <li>Laborausstattung vollständig erfassen</li>
+                <li>30 Geräte fachbereichsübergreifend freigeben</li>
+                <li>besseren Überblick über vorhandene Ressourcen schaffen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>100 % Inventarisierung / 30 Geräte</p></div>
+                <div class="metric"><span>Termin</span><p>Ende 2026</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
+            <div class="goal-card">
+              <div class="stakeholder-label">Mitarbeitende / Lehrende</div>
+              <h3>FB6/7 Lehrprojekt starten</h3>
+              <ul>
+                <li>gemeinsames Modul von FB 6 und FB 7</li>
+                <li>inhaltliche Arbeit zu Mensch-Technik-Interaktion</li>
+                <li>Projektarbeit mit Dozenteninput aus beiden Fachbereichen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>1 gemeinsames Lehrprojekt pro Semester</p></div>
+                <div class="metric"><span>Termin</span><p>ab SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="goal-card">
-          <div class="stakeholder-label">Hochschulleitung</div>
-          <h3>Bis Mitte 2027 startet die BHT 3 Joint Labs mit Praxispartnern und interdisziplinären BHT-Teams.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>3 Joint Labs</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>Mitte 2027</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Präsidium / Transferstelle</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>BHT und Partnerstandorte</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag">ökonomisch</span>
-            <span class="goal-tag orange">ökologisch</span>
-            <span class="goal-tag green">sozial</span>
+        <div class="stakeholder-slide" data-slider="laborsynergien" data-title="Studierende">
+          <div class="slide-content">
+
+            <div class="goal-card purple">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Buchungsplattform starten</h3>
+              <ul>
+                <li>Geräte sehen und anfragen können</li>
+                <li>Nutzung nur mit Freigabe und Einweisung</li>
+                <li>Laborzugang transparenter machen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>30 einsehbare oder anfragbare Geräte</p></div>
+                <div class="metric"><span>Termin</span><p>SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
+            <div class="goal-card green">
+              <div class="stakeholder-label">Studierende</div>
+              <h3>Laboreinführungskurs FB6/7 belegen</h3>
+              <ul>
+                <li>Studierende lernen Geräte beider Fachbereiche kennen</li>
+                <li>FB 6 und FB 7 erklären sich gegenseitig Labore und Arbeitsweisen</li>
+                <li>Grundlage für gemeinsame Projekte, Praxisnähe und Forschung schaffen</li>
+              </ul>
+              <div class="metric-row">
+                <div class="metric"><span>Messgröße</span><p>2 Laboreinführungen pro Semester</p></div>
+                <div class="metric"><span>Termin</span><p>ab SoSe 2027</p></div>
+              </div>
+              <div class="impact-row">
+                <span class="impact-pill social">sozial</span>
+                <span class="impact-pill economic">ökonomisch</span>
+                <span class="impact-pill ecological">ökologisch</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
-        <div class="goal-card">
-          <div class="stakeholder-label">Gesellschaft und regionale Öffentlichkeit</div>
-          <h3>Ab 2028 organisiert die BHT jährlich 6 öffentliche Transferformate mit mindestens 300 Teilnehmenden aus Stadtgesellschaft und Region.</h3>
-          <div class="smart-row">
-            <div class="smart-item"><span>Messgröße</span><strong>6 Formate / 300 Teilnehmende</strong></div>
-            <div class="smart-item"><span>Termin</span><strong>jährlich ab 2028</strong></div>
-            <div class="smart-item"><span>Verantwortung</span><strong>Transferstelle / Kommunikation</strong></div>
-            <div class="smart-item"><span>Zielort</span><strong>Campus, GLASBOX, Wedding</strong></div>
-          </div>
-          <div class="goal-tags">
-            <span class="goal-tag green">sozial</span>
-            <span class="goal-tag orange">ökologisch</span>
-          </div>
-        </div>
+        <div class="dot-row" id="dots-laborsynergien"></div>
       </div>
-    </section>
-
-    <section>
-      <div class="section-kicker">Übersicht</div>
-      <h2 class="section-title">SMART-Ziele nach Handlungsempfehlung</h2>
-      <p class="section-note">
-        Die Übersicht bündelt die operativen Ziele nach Stakeholder, Zeitraum und Messgröße.
-      </p>
-
-      <div class="summary-table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Handlungsempfehlung</th>
-              <th>Stakeholder</th>
-              <th>Operatives Ziel</th>
-              <th>Zeitrahmen</th>
-              <th>Kennzahl / Messgröße</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Profilfelder bündeln</td>
-              <td>Hochschulleitung</td>
-              <td>3 verbindliche Profilfelder für BHT 2033 beschließen</td>
-              <td>Ende 2026</td>
-              <td>3 Profilfelder</td>
-            </tr>
-
-            <tr>
-              <td>Profilfelder bündeln</td>
-              <td>Studierende</td>
-              <td>Teilnahme am ersten interfakultären HCI-Lehrprojekt</td>
-              <td>SoSe 2027</td>
-              <td>20 % Teilnahmequote aus FB 6 und FB 7</td>
-            </tr>
-
-            <tr>
-              <td>Profilfelder bündeln</td>
-              <td>Mitarbeitende und Lehrende</td>
-              <td>Aufbau interdisziplinärer Profilfeld-Teams</td>
-              <td>WiSe 2026/27</td>
-              <td>15 Personen aus 4 Fachbereichen</td>
-            </tr>
-
-            <tr>
-              <td>Profilfelder bündeln</td>
-              <td>Praxispartner</td>
-              <td>Praxisprojekte in den drei Profilfeldern umsetzen</td>
-              <td>Ende 2028</td>
-              <td>10 Praxisprojekte</td>
-            </tr>
-
-            <tr>
-              <td>Shared Equipment</td>
-              <td>Hochschulleitung</td>
-              <td>Laborausstattung in FB 6 und FB 7 auditieren</td>
-              <td>Ende 2026</td>
-              <td>100 % Inventarisierung</td>
-            </tr>
-
-            <tr>
-              <td>Shared Equipment</td>
-              <td>Studierende</td>
-              <td>Zugang zu Laborressourcen über Plattform ermöglichen</td>
-              <td>SoSe 2027</td>
-              <td>30 freigeschaltete Geräte</td>
-            </tr>
-
-            <tr>
-              <td>Shared Equipment</td>
-              <td>Mitarbeitende</td>
-              <td>Schulung zur Shared-Equipment-Plattform</td>
-              <td>SoSe 2027</td>
-              <td>20 geschulte Personen</td>
-            </tr>
-
-            <tr>
-              <td>Shared Equipment</td>
-              <td>Fachbereiche</td>
-              <td>Shared-Service-Prinzip ausrollen</td>
-              <td>Ende 2028</td>
-              <td>100 % der technischen Fachbereiche</td>
-            </tr>
-
-            <tr>
-              <td>Praxis-Transfer</td>
-              <td>Wirtschaft und Praxispartner</td>
-              <td>KMU-Praxispartnerschaften aufbauen</td>
-              <td>Ende 2029</td>
-              <td>50 aktive Partnerschaften</td>
-            </tr>
-
-            <tr>
-              <td>Praxis-Transfer</td>
-              <td>Studierende</td>
-              <td>Abschlussarbeiten mit Praxispartnern verbinden</td>
-              <td>Ende 2029</td>
-              <td>80 % Praxis-Abschlussarbeiten</td>
-            </tr>
-
-            <tr>
-              <td>Praxis-Transfer</td>
-              <td>Hochschulleitung</td>
-              <td>Joint Labs mit Praxispartnern starten</td>
-              <td>Mitte 2027</td>
-              <td>3 Joint Labs</td>
-            </tr>
-
-            <tr>
-              <td>Praxis-Transfer</td>
-              <td>Gesellschaft und regionale Öffentlichkeit</td>
-              <td>Öffentliche Transferformate für Stadtgesellschaft und Region umsetzen</td>
-              <td>jährlich ab 2028</td>
-              <td>6 Formate / 300 Teilnehmende</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
+    </div>
 
     <div class="final-box">
-      <h2>Kernaussage</h2>
+      <h2>Kritische Einordnung</h2>
       <p>
-        Die nachhaltigen Ziele machen die Strategie steuerbar. Entscheidend ist nicht nur, welche Zukunftsfelder die BHT benennt, sondern ob diese für Studierende, Mitarbeitende, Fachbereiche, Praxispartner und regionale Öffentlichkeit messbar wirksam werden.
+        Die Ziele zeigen, woran BHT 2033 messbar wird: Bis 2027 müssen ein Orientierungssemester getestet, drei Transfercluster festgelegt und eine gemeinsame Buchungsplattform gestartet sein. Bis 2029 müssen 15 % weniger Abbrüche im ersten Studienjahr, 50 KMU-Partnerschaften, 80 % Praxis-Abschlussarbeiten und 10 Praxisprojekte mit öffentlichen Einrichtungen erreicht werden. Ohne diese Umsetzung bleibt BHT 2033 nur ein Versprechen.
       </p>
     </div>
 
@@ -963,6 +1095,68 @@
     </div>
 
   </main>
+
+  <script>
+    const sliderState = {
+      studieneinstieg: 0,
+      reallabor: 0,
+      laborsynergien: 0
+    };
+
+    function switchMainTab(name, btn) {
+      document.querySelectorAll('.main-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + name).classList.add('active');
+      updateStakeholder(name);
+    }
+
+    function getSlides(name) {
+      return Array.from(document.querySelectorAll('.stakeholder-slide[data-slider="' + name + '"]'));
+    }
+
+    function moveStakeholder(name, direction) {
+      const slides = getSlides(name);
+      sliderState[name] = (sliderState[name] + direction + slides.length) % slides.length;
+      updateStakeholder(name);
+    }
+
+    function goToStakeholder(name, index) {
+      sliderState[name] = index;
+      updateStakeholder(name);
+    }
+
+    function updateStakeholder(name) {
+      const slides = getSlides(name);
+      const current = sliderState[name];
+
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === current);
+      });
+
+      const title = slides[current].dataset.title;
+      document.getElementById('status-' + name + '-count').textContent = (current + 1) + ' / ' + slides.length;
+      document.getElementById('status-' + name + '-title').textContent = title;
+
+      const dotContainer = document.getElementById('dots-' + name);
+      dotContainer.innerHTML = '';
+
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (index === current ? ' active' : '');
+        dot.onclick = function() {
+          goToStakeholder(name, index);
+        };
+        dotContainer.appendChild(dot);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      updateStakeholder('studieneinstieg');
+      updateStakeholder('reallabor');
+      updateStakeholder('laborsynergien');
+    });
+  </script>
 
 </body>
 </html>
